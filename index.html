@@ -7,110 +7,146 @@
 
 <title>Last Human Message</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
 
 <style>
 
 *{
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+
+html,body{
+    width:100%;
+    min-height:100%;
+}
+
 
 body{
 
-margin:0;
-min-height:100vh;
+    font-family:'Inter',sans-serif;
 
-font-family:'Inter',sans-serif;
+    background:
+    radial-gradient(circle at 50% 0%, rgba(255,0,0,.8), transparent 35%),
+    radial-gradient(circle at bottom, rgba(120,0,0,.8), transparent 45%),
+    linear-gradient(135deg,#050505,#350000,#080000);
 
-background:
-radial-gradient(circle at 50% 0%, #c00000 0%, #550000 35%, #050505 85%);
+    color:white;
 
-color:white;
-
-overflow-x:hidden;
-
-}
-
-
-body::before{
-
-content:"◈ ✦ ∞ ◉ ? ✦ ◈";
-
-position:fixed;
-
-top:25px;
-
-width:100%;
-
-text-align:center;
-
-font-size:28px;
-
-letter-spacing:20px;
-
-color:rgba(255,255,255,.15);
+    overflow-x:hidden;
 
 }
 
 
+
+/* mysterious symbols */
+
+.background-symbols{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    pointer-events:none;
+
+    opacity:.15;
+
+    font-size:45px;
+
+    letter-spacing:35px;
+
+    line-height:3;
+
+    color:white;
+
+    z-index:0;
+
+}
+
+
+
+/* main */
 
 .container{
 
-width:90%;
+    position:relative;
 
-max-width:900px;
+    z-index:2;
 
-margin:auto;
+    width:90%;
 
-padding:70px 20px;
+    max-width:950px;
 
-text-align:center;
+    margin:auto;
+
+    padding:70px 20px 50px;
+
+    text-align:center;
 
 }
 
 
+
+/* logo */
 
 .symbol{
 
-font-size:65px;
+    font-size:75px;
 
-text-shadow:0 0 35px red;
+    margin-bottom:15px;
+
+    text-shadow:
+    0 0 15px red,
+    0 0 40px red;
 
 }
-
 
 
 .logo{
 
-margin-top:20px;
+    font-size:14px;
 
-font-size:13px;
+    letter-spacing:12px;
 
-letter-spacing:10px;
+    color:#ffcccc;
 
-font-weight:700;
-
-color:#ffcccc;
+    font-weight:700;
 
 }
 
 
 
+/* title */
+
+
 h1{
 
-font-family:'Space Grotesk',sans-serif;
+    font-family:'Space Grotesk',sans-serif;
 
-font-size:clamp(50px,9vw,95px);
+    font-size:clamp(55px,10vw,100px);
 
-line-height:.95;
+    font-weight:700;
 
-letter-spacing:-4px;
+    line-height:.9;
 
-margin:35px 0;
+    letter-spacing:-4px;
 
-text-shadow:
+    margin:45px 0 25px;
 
-0 0 25px rgba(255,0,0,.8);
+    text-shadow:
+
+    0 0 20px rgba(255,0,0,.9),
+    0 0 60px rgba(255,0,0,.4);
 
 }
 
@@ -118,91 +154,138 @@ text-shadow:
 
 .subtitle{
 
-font-size:clamp(24px,4vw,40px);
+    font-size:clamp(25px,5vw,42px);
 
-font-weight:900;
+    font-weight:900;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* description */
+
+
+.description{
+
+    max-width:750px;
+
+    margin:auto;
+
+    color:#eeeeee;
+
+    font-size:22px;
+
+    line-height:2;
+
+    font-weight:500;
 
 }
 
 
 
-.text{
+.description span{
 
-max-width:720px;
+    color:white;
 
-margin:40px auto;
-
-font-size:22px;
-
-line-height:2;
-
-color:#eee;
+    font-weight:900;
 
 }
 
+
+
+
+/* glass card */
 
 
 .card{
 
-margin-top:55px;
+    margin-top:55px;
 
-padding:50px 35px;
+    padding:50px 35px;
 
-background:
+    border-radius:40px;
 
-linear-gradient(
+    background:
 
-145deg,
+    linear-gradient(
+    145deg,
+    rgba(255,255,255,.18),
+    rgba(255,255,255,.05)
+    );
 
-rgba(255,255,255,.14),
+    border:
 
-rgba(255,255,255,.04)
+    1px solid rgba(255,255,255,.25);
 
-);
 
-border:
+    backdrop-filter:blur(25px);
 
-1px solid rgba(255,255,255,.25);
 
-border-radius:35px;
+    box-shadow:
 
-backdrop-filter:blur(20px);
+    0 30px 100px rgba(0,0,0,.8),
 
-box-shadow:
-
-0 25px 90px rgba(0,0,0,.8);
+    inset 0 0 40px rgba(255,0,0,.1);
 
 }
+
 
 
 
 .price{
 
-font-family:'Space Grotesk',sans-serif;
+    font-family:'Space Grotesk',sans-serif;
 
-font-size:80px;
+    font-size:90px;
 
-font-weight:900;
+    font-weight:900;
 
-}
+    text-shadow:
 
-
-
-.card p{
-
-font-size:21px;
-
-line-height:1.8;
-
-color:#ddd;
+    0 0 25px red;
 
 }
 
 
 
-a{
+.card-title{
 
-text-decoration:none;
+    margin-top:15px;
+
+    font-size:25px;
+
+    font-weight:900;
+
+}
+
+
+
+.card-text{
+
+    margin-top:20px;
+
+    color:#ddd;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+}
+
+
+
+
+
+/* button */
+
+
+.button-link{
+
+    display:inline-block;
+
+    margin-top:35px;
 
 }
 
@@ -210,31 +293,48 @@ text-decoration:none;
 
 button{
 
-margin-top:30px;
 
-padding:23px 60px;
+    padding:23px 65px;
 
-border:0;
 
-border-radius:60px;
+    border:none;
 
-background:white;
 
-color:#650000;
+    border-radius:60px;
 
-font-size:20px;
 
-font-weight:900;
+    background:
 
-letter-spacing:2px;
+    linear-gradient(
+    135deg,
+    #ffffff,
+    #dddddd
+    );
 
-cursor:pointer;
 
-transition:.3s;
+    color:#650000;
 
-box-shadow:
 
-0 0 40px rgba(255,255,255,.25);
+    font-size:20px;
+
+
+    font-weight:900;
+
+
+    letter-spacing:2px;
+
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+
+    0 0 30px rgba(255,255,255,.4);
+
+
+    transition:.35s;
+
 
 }
 
@@ -242,48 +342,207 @@ box-shadow:
 
 button:hover{
 
-transform:scale(1.07);
+    transform:scale(1.08);
+
+    box-shadow:
+
+    0 0 50px rgba(255,255,255,.8);
 
 }
 
+
+
+
+
+/* trust */
 
 
 .trust{
 
-margin-top:45px;
+    margin-top:50px;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-gap:30px;
+    gap:35px;
 
-flex-wrap:wrap;
-
-font-size:14px;
-
-color:#bbb;
-
-letter-spacing:1px;
+    flex-wrap:wrap;
 
 }
+
+
+.trust div{
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    color:#ccc;
+
+    font-size:14px;
+
+}
+
 
 
 
 .footer{
 
-margin-top:60px;
+    margin-top:70px;
 
-font-size:14px;
+    color:#999;
 
-color:#999;
-A thought waiting to be discovered.<br><br>
+    font-size:14px;
 
-Maybe a secret.<br>
-Maybe a memory.<br>
-Maybe a sentence you remember forever.
+    letter-spacing:2px;
+
+}
+
+
+
+
+@media(max-width:600px){
+
+
+.container{
+
+    padding-top:45px;
+
+}
+
+
+h1{
+
+    letter-spacing:-2px;
+
+}
+
+
+.card{
+
+    padding:35px 20px;
+
+}
+
+
+.price{
+
+    font-size:70px;
+
+}
+
+
+button{
+
+    width:100%;
+
+}
+
+
+.description{
+
+    font-size:18px;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+<div class="background-symbols">
+
+◈ ✦ ∞ ◉ ? ◈ ✦ ∞ ◉ ? ◈
 
 </div>
+
+
+
+<div class="container">
+
+
+
+<div class="symbol">
+
+◈ ✦ ∞
+
+</div>
+
+
+
+<div class="logo">
+
+GLOBAL HUMAN ARCHIVE
+
+</div>
+
+
+
+
+<h1>
+
+LAST HUMAN<br>
+
+MESSAGE
+
+</h1>
+
+
+
+
+<div class="subtitle">
+
+Someone left a message for you.
+
+</div>
+
+
+
+
+<div class="description">
+
+
+A stranger you will never meet.<br>
+
+A thought that survived time.<br>
+
+A message waiting for the right person.<br><br>
+
+
+<span>
+Maybe a secret.
+</span>
+
+<br>
+
+<span>
+Maybe a memory.
+</span>
+
+<br>
+
+<span>
+Maybe words that change something.
+</span>
+
+
+
+</div>
+
 
 
 
@@ -291,45 +550,91 @@ Maybe a sentence you remember forever.
 <div class="card">
 
 
+
 <div class="price">
+
 $2
+
 </div>
 
 
-<p>
 
-Unlock one hidden message.<br><br>
+<div class="card-title">
 
-Then leave your own words<br>
-for the next human.
+Unlock the hidden message
 
-</p>
+</div>
 
 
 
-<a href="./payment.html">
+
+<div class="card-text">
+
+
+Access one anonymous human message.<br>
+
+Read what someone wanted the world to know.<br><br>
+
+
+After reading, you can leave your own message<br>
+
+for another stranger.
+
+
+
+</div>
+
+
+
+
+<a class="button-link" href="./payment.html">
+
 
 <button>
+
 REVEAL MESSAGE
+
 </button>
+
 
 </a>
 
 
+
+
 </div>
+
+
 
 
 
 
 <div class="trust">
 
-<span>◉ Anonymous</span>
 
-<span>◈ Global</span>
+<div>
 
-<span>∞ Human Stories</span>
+◉ Anonymous
 
 </div>
+
+
+<div>
+
+◈ Worldwide
+
+</div>
+
+
+<div>
+
+∞ Human Stories
+
+</div>
+
+
+</div>
+
 
 
 
@@ -345,5 +650,7 @@ A connection between strangers around the world
 </div>
 
 
+
 </body>
+
 </html>
