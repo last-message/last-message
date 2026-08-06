@@ -7,8 +7,6 @@
 
 <title>Last Human Message</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-
 <style>
 
 *{
@@ -16,292 +14,92 @@ box-sizing:border-box;
 }
 
 body{
-
 margin:0;
-
 min-height:100vh;
-
-font-family:'Inter',sans-serif;
-
+font-family:Arial,Helvetica,sans-serif;
 background:
-radial-gradient(circle at 50% 0%, #b40000 0%, #520000 35%, #050505 80%);
-
+radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
 color:white;
-
 overflow-x:hidden;
-
 }
 
 
 body:before{
-
 content:"◈ ✦ ∞ ◉ ? ✦ ◈";
-
 position:fixed;
-
-top:25px;
-
+top:20px;
+left:0;
 width:100%;
-
 text-align:center;
-
-font-size:25px;
-
-letter-spacing:18px;
-
-color:rgba(255,255,255,.18);
-
+font-size:28px;
+letter-spacing:25px;
+color:rgba(255,255,255,0.15);
 }
 
 
 .container{
-
-max-width:900px;
-
 width:90%;
-
+max-width:850px;
 margin:auto;
-
 padding:70px 20px;
-
 text-align:center;
-
 }
-
 
 
 .symbol{
-
-font-size:60px;
-
-text-shadow:0 0 30px #ff0000;
-
+font-size:55px;
+opacity:.8;
 }
-
 
 
 .logo{
-
-margin-top:15px;
-
-font-size:13px;
-
-letter-spacing:10px;
-
-color:#ffcccc;
-
-font-weight:700;
-
+font-size:16px;
+letter-spacing:8px;
+color:#ffbbbb;
+margin-top:20px;
 }
-
 
 
 h1{
-
-font-family:'Space Grotesk',sans-serif;
-
-font-size:clamp(48px,9vw,90px);
-
-font-weight:700;
-
-line-height:.95;
-
-letter-spacing:-3px;
-
-margin:35px 0;
-
+font-size:clamp(45px,8vw,80px);
+font-weight:900;
+line-height:1;
+margin:30px 0;
 text-shadow:
-
-0 0 20px rgba(255,0,0,.8);
-
+0 0 20px #ff0000;
 }
-
 
 
 .subtitle{
-
-font-size:clamp(22px,4vw,38px);
-
-font-weight:900;
-
+font-size:clamp(22px,4vw,35px);
+font-weight:bold;
 }
-
 
 
 .text{
-
-max-width:700px;
-
 margin:35px auto;
-
-font-size:21px;
-
-line-height:2;
-
-font-weight:500;
-
+font-size:22px;
+line-height:1.8;
+max-width:650px;
 color:#eeeeee;
-
 }
-
 
 
 .card{
 
 margin-top:50px;
+padding:45px 30px;
 
-padding:45px 35px;
+background:rgba(255,255,255,.08);
 
-background:
-
-linear-gradient(
-
-145deg,
-
-rgba(255,255,255,.12),
-
-rgba(255,255,255,.04)
-
-);
-
-border:1px solid rgba(255,255,255,.25);
-
-border-radius:35px;
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-
-0 20px 80px rgba(0,0,0,.8);
-
+padding:30px 20px;
 }
-
-
-
-.price{
-
-font-family:'Space Grotesk',sans-serif;
-
-font-size:70px;
-
-font-weight:900;
-
-}
-
-
-
-.card p{
-
-font-size:20px;
-
-line-height:1.8;
-
-color:#ddd;
-
-}
-
-
 
 button{
-
-margin-top:30px;
-
-padding:22px 55px;
-
-border:0;
-
-border-radius:60px;
-
-background:white;
-
-color:#600000;
-
-font-family:'Inter',sans-serif;
-
-font-weight:900;
-
-font-size:20px;
-
-letter-spacing:2px;
-
-cursor:pointer;
-
-box-shadow:
-
-0 0 40px rgba(255,255,255,.25);
-
-transition:.3s;
-
-}
-
-
-
-button:hover{
-
-transform:scale(1.07);
-
-}
-
-
-
-.trust{
-
-margin-top:45px;
-
-display:flex;
-
-justify-content:center;
-
-gap:25px;
-
-flex-wrap:wrap;
-
-font-size:14px;
-
-color:#bbb;
-
-letter-spacing:1px;
-
-}
-
-
-
-.footer{
-
-margin-top:60px;
-
-color:#aaa;
-
-font-size:14px;
-
-}
-
-
-
-@media(max-width:600px){
-
-.container{
-
-padding-top:55px;
-
-}
-
-
-.card{
-
-padding:35px 20px;
-
-}
-
-
-button{
-
 width:100%;
-
 }
 
 }
-
 
 </style>
 
@@ -320,7 +118,7 @@ width:100%;
 
 
 <div class="logo">
-GLOBAL HUMAN ARCHIVE
+GLOBAL HUMAN CONNECTION
 </div>
 
 
@@ -331,19 +129,18 @@ MESSAGE
 
 
 <div class="subtitle">
-Someone left a message for you.
+A stranger left something for you...
 </div>
 
 
 <div class="text">
 
-A stranger you will never meet.<br>
-
-A thought you were never supposed to find.<br><br>
+You don't know who they are.<br>
+You don't know what they wrote.<br><br>
 
 Maybe a secret.<br>
 Maybe a memory.<br>
-Maybe a sentence that stays with you forever.
+Maybe a sentence that changes everything.
 
 </div>
 
@@ -357,17 +154,15 @@ $2
 
 
 <p>
-
-Unlock one hidden message.<br><br>
+Unlock the hidden message.<br><br>
 
 Then leave your own words<br>
 for the next human.
-
 </p>
 
 
 <button>
-REVEAL MESSAGE
+◉ REVEAL THE MESSAGE
 </button>
 
 
@@ -375,21 +170,9 @@ REVEAL MESSAGE
 
 
 
-<div class="trust">
-
-<span>◉ Anonymous</span>
-
-<span>◈ Global</span>
-
-<span>∞ Human Stories</span>
-
-</div>
-
-
-
 <div class="footer">
 
-A connection between strangers around the world
+◈ A chain of thoughts from humans around the world ∞
 
 </div>
 
