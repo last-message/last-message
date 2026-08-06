@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Secure Payment</title>
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+body{
+
+margin:0;
+min-height:100vh;
+
+font-family:Arial,Helvetica,sans-serif;
+
+background:
+radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
+
+color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+}
+
+
+.container{
+
+width:90%;
+max-width:700px;
+
+}
+
+
+.symbol{
+
+font-size:65px;
+
+text-shadow:
+0 0 35px red;
+
+}
+
+
+.logo{
+
+font-size:14px;
+
+letter-spacing:8px;
+
+color:#ffbbbb;
+
+margin-top:20px;
+
+}
+
+
+h1{
+
+font-size:55px;
+
+font-weight:900;
+
+margin:30px 0;
+
+text-shadow:
+0 0 20px red;
+
+}
+
+
+.card{
+
+padding:45px 30px;
+
+background:
+
+rgba(255,255,255,.09);
+
+border:
+
+1px solid rgba(255,255,255,.25);
+
+border-radius:35px;
+
+backdrop-filter:blur(20px);
+
+box-shadow:
+
+0 0 70px rgba(0,0,0,.8);
+
+}
+
+
+.amount{
+
+font-size:80px;
+
+font-weight:900;
+
+}
+
+
+.network{
+
+font-size:28px;
+
+font-weight:900;
+
+color:#ffcccc;
+
+margin:20px;
+
+}
+
+
+.info{
+
+font-size:20px;
+
+line-height:1.8;
+
+}
+
+
+.wallet{
+
+margin-top:25px;
+
+padding:20px;
+
+background:
+
+rgba(0,0,0,.5);
+
+border-radius:20px;
+
+font-size:18px;
+
+word-break:break-all;
+
+border:1px solid rgba(255,255,255,.2);
+
+}
+
+
+button{
+
+margin-top:25px;
+
+padding:22px 60px;
+
+border:none;
+
+border-radius:60px;
+
+background:white;
+
+color:#700000;
+
+font-size:22px;
+
+font-weight:900;
+
+cursor:pointer;
+
+box-shadow:
+
+0 0 35px rgba(255,255,255,.3);
+
+}
+
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+
+.warning{
+
+margin-top:25px;
+
+color:#ffcccc;
+
+font-size:15px;
+
+line-height:1.6;
+
+}
+
+
+.status{
+
+margin-top:30px;
+
+color:#ddd;
+
+font-size:18px;
+
+}
+
+
+@media(max-width:600px){
+
+h1{
+
+font-size:42px;
+
+}
+
+
+.amount{
+
+font-size:65px;
+
+}
+
+
+button{
+
+width:100%;
+
+padding:22px 15px;
+
+}
+
+
+.card{
+
+padding:35px 20px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<div class="symbol">
+◈ ✦ ∞
+</div>
+
+
+<div class="logo">
+GLOBAL HUMAN CONNECTION
+</div>
+
+
+<h1>
+PAYMENT
+</h1>
+
+
+<div class="card">
+
+
+<div class="amount">
+$2
+</div>
+
+
+<div class="network">
+USDT TRC20
+</div>
+
+
+<div class="info">
+
+Send exactly <b>2 USDT</b><br>
+
+Network:
+<b>TRON (TRC20)</b>
+
+</div>
+
+
+
+<div class="wallet">
+
+TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx
+
+</div>
+
+
+
+<button onclick="copyWallet()">
+
+COPY WALLET ADDRESS
+
+</button>
+
+
+
+<div class="warning">
+
+Only send USDT on TRC20 network.<br>
+Sending another network may result in loss.
+
+</div>
+
+
+
+<div class="status">
+
+Waiting for payment confirmation...
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+function copyWallet(){
+
+navigator.clipboard.writeText(
+"TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx"
+);
+
+alert("Wallet address copied");
+
+}
+
+</script>
+
+
+</body>
+</html>
