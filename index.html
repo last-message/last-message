@@ -16,31 +16,39 @@ box-sizing:border-box;
 }
 
 body{
+
 margin:0;
 min-height:100vh;
+
 font-family:'Inter',sans-serif;
 
 background:
-radial-gradient(circle at 50% 0%, #b40000 0%, #520000 35%, #050505 80%);
+radial-gradient(circle at 50% 0%, #c00000 0%, #550000 35%, #050505 85%);
 
 color:white;
+
 overflow-x:hidden;
+
 }
 
 
-body:before{
+body::before{
 
 content:"◈ ✦ ∞ ◉ ? ✦ ◈";
 
 position:fixed;
+
 top:25px;
+
 width:100%;
+
 text-align:center;
 
-font-size:25px;
-letter-spacing:18px;
+font-size:28px;
 
-color:rgba(255,255,255,.18);
+letter-spacing:20px;
+
+color:rgba(255,255,255,.15);
 
 }
 
@@ -48,8 +56,10 @@ color:rgba(255,255,255,.18);
 
 .container{
 
-max-width:900px;
 width:90%;
+
+max-width:900px;
+
 margin:auto;
 
 padding:70px 20px;
@@ -62,9 +72,9 @@ text-align:center;
 
 .symbol{
 
-font-size:60px;
+font-size:65px;
 
-text-shadow:0 0 30px #ff0000;
+text-shadow:0 0 35px red;
 
 }
 
@@ -72,15 +82,15 @@ text-shadow:0 0 30px #ff0000;
 
 .logo{
 
-margin-top:15px;
+margin-top:20px;
 
 font-size:13px;
 
 letter-spacing:10px;
 
-color:#ffcccc;
-
 font-weight:700;
+
+color:#ffcccc;
 
 }
 
@@ -90,18 +100,17 @@ h1{
 
 font-family:'Space Grotesk',sans-serif;
 
-font-size:clamp(48px,9vw,90px);
-
-font-weight:700;
+font-size:clamp(50px,9vw,95px);
 
 line-height:.95;
 
-letter-spacing:-3px;
+letter-spacing:-4px;
 
 margin:35px 0;
 
 text-shadow:
-0 0 20px rgba(255,0,0,.8);
+
+0 0 25px rgba(255,0,0,.8);
 
 }
 
@@ -109,7 +118,7 @@ text-shadow:
 
 .subtitle{
 
-font-size:clamp(22px,4vw,38px);
+font-size:clamp(24px,4vw,40px);
 
 font-weight:900;
 
@@ -119,17 +128,15 @@ font-weight:900;
 
 .text{
 
-max-width:700px;
+max-width:720px;
 
-margin:35px auto;
+margin:40px auto;
 
-font-size:21px;
+font-size:22px;
 
 line-height:2;
 
-font-weight:500;
-
-color:#eeeeee;
+color:#eee;
 
 }
 
@@ -137,25 +144,33 @@ color:#eeeeee;
 
 .card{
 
-margin-top:50px;
+margin-top:55px;
 
-padding:45px 35px;
+padding:50px 35px;
 
 background:
+
 linear-gradient(
+
 145deg,
-rgba(255,255,255,.12),
+
+rgba(255,255,255,.14),
+
 rgba(255,255,255,.04)
+
 );
 
-border:1px solid rgba(255,255,255,.25);
+border:
+
+1px solid rgba(255,255,255,.25);
 
 border-radius:35px;
 
 backdrop-filter:blur(20px);
 
 box-shadow:
-0 20px 80px rgba(0,0,0,.8);
+
+0 25px 90px rgba(0,0,0,.8);
 
 }
 
@@ -165,7 +180,7 @@ box-shadow:
 
 font-family:'Space Grotesk',sans-serif;
 
-font-size:70px;
+font-size:80px;
 
 font-weight:900;
 
@@ -175,7 +190,7 @@ font-weight:900;
 
 .card p{
 
-font-size:20px;
+font-size:21px;
 
 line-height:1.8;
 
@@ -185,11 +200,19 @@ color:#ddd;
 
 
 
+a{
+
+text-decoration:none;
+
+}
+
+
+
 button{
 
 margin-top:30px;
 
-padding:22px 55px;
+padding:23px 60px;
 
 border:0;
 
@@ -197,22 +220,21 @@ border-radius:60px;
 
 background:white;
 
-color:#600000;
-
-font-family:'Inter',sans-serif;
-
-font-weight:900;
+color:#650000;
 
 font-size:20px;
+
+font-weight:900;
 
 letter-spacing:2px;
 
 cursor:pointer;
 
-box-shadow:
-0 0 40px rgba(255,255,255,.25);
-
 transition:.3s;
+
+box-shadow:
+
+0 0 40px rgba(255,255,255,.25);
 
 }
 
@@ -234,7 +256,7 @@ display:flex;
 
 justify-content:center;
 
-gap:25px;
+gap:30px;
 
 flex-wrap:wrap;
 
@@ -252,18 +274,40 @@ letter-spacing:1px;
 
 margin-top:60px;
 
-color:#aaa;
-
 font-size:14px;
 
-}
+color:#999;
+A thought waiting to be discovered.<br><br>
+
+Maybe a secret.<br>
+Maybe a memory.<br>
+Maybe a sentence you remember forever.
+
+</div>
 
 
 
-a{
 
-text-decoration:none;
-<a href="payment.html">
+<div class="card">
+
+
+<div class="price">
+$2
+</div>
+
+
+<p>
+
+Unlock one hidden message.<br><br>
+
+Then leave your own words<br>
+for the next human.
+
+</p>
+
+
+
+<a href="./payment.html">
 
 <button>
 REVEAL MESSAGE
@@ -273,6 +317,7 @@ REVEAL MESSAGE
 
 
 </div>
+
 
 
 
@@ -288,6 +333,7 @@ REVEAL MESSAGE
 
 
 
+
 <div class="footer">
 
 A connection between strangers around the world
@@ -295,9 +341,9 @@ A connection between strangers around the world
 </div>
 
 
+
 </div>
 
 
 </body>
 </html>
-	
