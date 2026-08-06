@@ -1,107 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Last Human Message</title>
 
 <style>
- 
+
+*{
+box-sizing:border-box;
+}
+
 body{
 margin:0;
-padding:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#5b0000;
-color:#ffffff;
-display:flex;
-justify-content:center;
-align-items:center;
 min-height:100vh;
+font-family:Arial,Helvetica,sans-serif;
+background:
+radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
+color:white;
+overflow-x:hidden;
 }
+
+
+body:before{
+content:"◈ ✦ ∞ ◉ ? ✦ ◈";
+position:fixed;
+top:20px;
+left:0;
+width:100%;
+text-align:center;
+font-size:28px;
+letter-spacing:25px;
+color:rgba(255,255,255,0.15);
+}
+
 
 .container{
 width:90%;
-max-width:700px;
+max-width:850px;
+margin:auto;
+padding:70px 20px;
 text-align:center;
 }
 
+
+.symbol{
+font-size:55px;
+opacity:.8;
+}
+
+
+.logo{
+font-size:16px;
+letter-spacing:8px;
+color:#ffbbbb;
+margin-top:20px;
+}
+
+
 h1{
-font-size:48px;
+font-size:clamp(45px,8vw,80px);
 font-weight:900;
-margin-bottom:20px;
+line-height:1;
+margin:30px 0;
+text-shadow:
+0 0 20px #ff0000;
 }
 
-h2{
-font-size:28px;
-margin-bottom:30px;
+
+.subtitle{
+font-size:clamp(22px,4vw,35px);
+font-weight:bold;
 }
 
-p{
-font-size:20px;
+
+.text{
+margin:35px auto;
+font-size:22px;
 line-height:1.8;
+max-width:650px;
+color:#eeeeee;
+}
+
+
+.card{
+
+margin-top:50px;
+padding:45px 30px;
+
+background:rgba(255,255,255,.08);
+
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+box-shadow:
+0 0 50px rgba(0,0,0,.7);
+
+}
+
+
+.price{
+font-size:50px;
+font-weight:900;
+}
+
+
+button{
+
+margin-top:30px;
+
+padding:20px 50px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#700000;
+
+font-size:22px;
+
+font-weight:900;
+
+cursor:pointer;
+
+}
+
+
+button:hover{
+transform:scale(1.05);
+}
+
+
+.footer{
+
+margin-top:60px;
+
+font-size:16px;
+
+color:#cccccc;
+
+}
+
+
+@media(max-width:600px){
+
+.container{
+padding-top:50px;
 }
 
 .card{
-background:#770000;
-padding:35px;
-border-radius:20px;
-margin-top:35px;
+padding:30px 20px;
 }
 
 button{
-margin-top:25px;
-padding:18px 40px;
-font-size:22px;
-font-weight:bold;
-border:none;
-border-radius:40px;
-background:white;
-color:#770000;
-cursor:pointer;
+width:100%;
 }
 
-button:hover{
-opacity:0.9;
 }
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<h1>LAST HUMAN MESSAGE</h1>
 
-<h2>A stranger left a message for you.</h2>
+<div class="symbol">
+◈ ✦ ∞
+</div>
 
-<p>
+
+<div class="logo">
+GLOBAL HUMAN CONNECTION
+</div>
+
+
+<h1>
+LAST HUMAN<br>
+MESSAGE
+</h1>
+
+
+<div class="subtitle">
+A stranger left something for you...
+</div>
+
+
+<div class="text">
+
 You don't know who they are.<br>
-You don't know what they wrote.<br>
-Maybe it's a secret.<br>
-Maybe it's a life experience.<br>
-Maybe it will change your day.
-</p>
+You don't know what they wrote.<br><br>
+
+Maybe a secret.<br>
+Maybe a memory.<br>
+Maybe a sentence that changes everything.
+
+</div>
+
+
 
 <div class="card">
 
-<h2>$2</h2>
+<div class="price">
+$2
+</div>
+
 
 <p>
-Unlock the last message.<br><br>
+Unlock the hidden message.<br><br>
 
-Then leave your own message<br>
-for the next person.
+Then leave your own words<br>
+for the next human.
 </p>
 
+
 <button>
-REVEAL THE MESSAGE
+◉ REVEAL THE MESSAGE
 </button>
 
-</div>
 
 </div>
+
+
+
+<div class="footer">
+
+◈ A chain of thoughts from humans around the world ∞
+
+</div>
+
+
+</div>
+
 
 </body>
 </html>
+	
