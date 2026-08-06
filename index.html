@@ -25,7 +25,7 @@ overflow-x:hidden;
 
 
 body:before{
-content:"◈ ✦ ∞ ◉ ? ✦ ◈";
+content:"◈   ✦   ∞   ◉   ?   ✦   ◈";
 position:fixed;
 top:20px;
 left:0;
@@ -92,6 +92,79 @@ padding:45px 30px;
 
 background:rgba(255,255,255,.08);
 
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:30px;
+
+backdrop-filter:blur(15px);
+
+box-shadow:
+0 0 50px rgba(0,0,0,.7);
+
+}
+
+
+.price{
+font-size:50px;
+font-weight:900;
+}
+
+
+button{
+
+margin-top:35px;
+
+padding:28px 75px;
+
+border:none;
+
+border-radius:60px;
+
+background:white;
+
+color:#700000;
+
+font-size:26px;
+
+font-weight:900;
+
+letter-spacing:2px;
+
+cursor:pointer;
+
+box-shadow:
+0 0 35px rgba(255,255,255,.35);
+
+transition:.3s;
+
+}
+
+
+button:hover{
+
+transform:scale(1.08);
+
+}
+
+
+.footer{
+
+margin-top:60px;
+
+font-size:16px;
+
+color:#cccccc;
+
+}
+
+
+@media(max-width:600px){
+
+.container{
+padding-top:50px;
+}
+
+.card{
 padding:30px 20px;
 }
 
