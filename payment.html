@@ -301,7 +301,10 @@ TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx
 
 </div>
 
-
+<div style="margin-top:20px;">
+  Order ID:
+  <strong id="orderId">Creating...</strong>
+</div>
 
 <button onclick="copyWallet()">
 
@@ -346,7 +349,54 @@ alert("Wallet address copied");
 
 }
 
+
+const WORKER_URL =
+"https://soft-shape-5b8a.aaa6654292.workers.dev";
+
+
+async function createOrder(){
+
+try{
+
+const response =
+await fetch(
+WORKER_URL + "/create-order"
+);
+
+if(!response.ok){
+throw new Error("Worker error");
+}
+
+const order =
+await response.json();
+
+console.log("Order created:",order);
+
+const orderElement =
+document.getElementById("orderId");
+
+if(orderElement){
+orderElement.textContent =
+order.orderId;
+}
+
+}catch(error){
+
+console.error(
+"Could not create order:",
+error
+);
+
+}
+
+}
+
+
+createOrder();
+
 </script>
+	
+
 
 
 </body>
