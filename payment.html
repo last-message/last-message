@@ -396,6 +396,117 @@ createOrder();
 
 </script>
 	
+<script>
+
+const WORKER_URL =
+"https://soft-shape-5b8a.aaa6654292.workers.dev";
+
+let orderId = null;
+
+
+// ساخت سفارش
+async function createOrder(){
+
+    try{
+
+        const response =
+            await fetch(
+                WORKER_URL + "/create-order"
+            );
+
+        const order =
+            await response.json();
+
+        orderId =
+            order.orderId;
+
+        console.log(
+            "Order ID:",
+            orderId
+        );
+
+        checkPayment();
+
+    }catch(error){
+
+        console.error(
+            "Order creation failed:",
+            error
+        );
+
+    }
+
+}
+
+
+// بررسی پرداخت
+async function checkPayment(){
+
+    if(!orderId){
+        return;
+    }
+
+    try{
+
+        const response =
+            await fetch(
+                WORKER_URL +
+                "/check-payment?orderId=" +
+                encodeURIComponent(orderId)
+            );
+
+        const result =
+            await response.json();
+
+        console.log(
+            "Payment status:",
+            result
+        );
+
+
+        if(result.paid === true){
+
+            document.querySelector(
+                ".status"
+            ).innerHTML =
+                "✓ PAYMENT CONFIRMED";
+
+            return;
+
+        }
+
+
+        document.querySelector(
+            ".status"
+        ).innerHTML =
+            "Waiting for payment confirmation...";
+
+
+        setTimeout(
+            checkPayment,
+            5000
+        );
+
+    }catch(error){
+
+        console.error(
+            "Payment check failed:",
+            error
+        );
+
+        setTimeout(
+            checkPayment,
+            10000
+        );
+
+    }
+
+}
+
+
+createOrder();
+
+</script>
 
 
 
