@@ -24,7 +24,7 @@ background:
 radial-gradient(
 circle at top,
 #b30000 0%,
-#4a0000 35%,
+#4a0000 36%,
 #080808 100%
 );
 
@@ -32,29 +32,43 @@ color:white;
 
 display:flex;
 justify-content:center;
-align-items:center;
+align-items:flex-start;
 
-padding:30px 15px;
-
+padding:
+55px 25px 80px;
 }
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
 
 .container{
 
 width:100%;
-max-width:850px;
+
+max-width:1100px;
+
+margin:0 auto;
 
 }
 
-.symbol{
 
-font-size:58px;
+/* =========================
+   HEADER
+========================= */
+
+.symbol{
 
 text-align:center;
 
-text-shadow:
-0 0 35px red;
+font-size:62px;
 
-margin-bottom:15px;
+text-shadow:
+0 0 35px
+rgba(255,0,0,.85);
+
+margin-bottom:12px;
 
 }
 
@@ -64,11 +78,11 @@ text-align:center;
 
 font-size:13px;
 
-letter-spacing:7px;
+letter-spacing:8px;
 
-color:#ffbbbb;
+color:#ffbaba;
 
-margin-bottom:15px;
+margin-bottom:18px;
 
 }
 
@@ -76,14 +90,19 @@ h1{
 
 text-align:center;
 
-font-size:52px;
+font-size:
+clamp(42px,5vw,64px);
 
 font-weight:900;
 
-margin:20px 0 10px;
+letter-spacing:-1.5px;
+
+margin:
+12px 0 10px;
 
 text-shadow:
-0 0 20px red;
+0 0 25px
+rgba(255,0,0,.6);
 
 }
 
@@ -91,31 +110,127 @@ text-shadow:
 
 text-align:center;
 
-color:#ddd;
+font-size:
+clamp(16px,2vw,19px);
 
-font-size:18px;
+color:#d0d0d0;
 
-margin-bottom:35px;
+margin-bottom:42px;
 
 }
 
+
+/* =========================
+   CARD
+========================= */
+
 .card{
 
-padding:40px;
+width:100%;
+
+padding:
+50px 65px;
 
 background:
-rgba(255,255,255,.09);
+rgba(255,255,255,.085);
 
 border:
-1px solid rgba(255,255,255,.22);
+1px solid
+rgba(255,255,255,.20);
 
-border-radius:32px;
+border-radius:34px;
 
 backdrop-filter:
-blur(20px);
+blur(22px);
+
+-webkit-backdrop-filter:
+blur(22px);
 
 box-shadow:
-0 0 70px rgba(0,0,0,.8);
+0 25px 100px
+rgba(0,0,0,.70);
+
+}
+
+
+/* =========================
+   ORDER ID
+========================= */
+
+.order-card{
+
+width:100%;
+
+min-height:58px;
+
+padding:
+15px 20px;
+
+margin-bottom:35px;
+
+border-radius:17px;
+
+background:
+rgba(0,0,0,.28);
+
+border:
+1px solid
+rgba(255,255,255,.12);
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+gap:20px;
+
+}
+
+.order-label{
+
+font-size:12px;
+
+font-weight:800;
+
+letter-spacing:2px;
+
+text-transform:uppercase;
+
+color:#999;
+
+white-space:nowrap;
+
+}
+
+.order-value{
+
+font-family:
+monospace;
+
+font-size:14px;
+
+color:#e5e5e5;
+
+word-break:break-all;
+
+text-align:right;
+
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.row{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:28px;
 
 }
 
@@ -127,9 +242,9 @@ font-size:15px;
 
 font-weight:700;
 
-margin-bottom:9px;
+margin-bottom:10px;
 
-color:#ffdddd;
+color:#f3cccc;
 
 }
 
@@ -137,121 +252,207 @@ color:#ffdddd;
 
 width:100%;
 
-padding:17px 18px;
+padding:
+18px 19px;
 
-margin-bottom:22px;
+margin-bottom:25px;
 
-border-radius:15px;
+border-radius:16px;
 
 border:
-1px solid rgba(255,255,255,.22);
+1px solid
+rgba(255,255,255,.18);
 
 background:
-rgba(0,0,0,.45);
+rgba(0,0,0,.35);
 
 color:white;
 
-font-size:16px;
+font-size:17px;
 
 outline:none;
 
 transition:
-border .2s,
-box-shadow .2s;
+border-color .2s,
+box-shadow .2s,
+background .2s;
+
+}
+
+.field:hover{
+
+background:
+rgba(0,0,0,.43);
 
 }
 
 .field:focus{
 
 border-color:
-rgba(255,150,150,.8);
+rgba(255,145,145,.8);
+
+background:
+rgba(0,0,0,.48);
 
 box-shadow:
-0 0 15px
-rgba(255,0,0,.2);
+0 0 0 3px
+rgba(255,0,0,.08);
 
 }
 
 .field::placeholder{
 
-color:#999;
+color:#858585;
 
 }
 
-.row{
 
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-gap:18px;
-
-}
-
-textarea{
-
-min-height:280px;
-
-resize:vertical;
-
-line-height:1.6;
-
-}
+/* =========================
+   MESSAGE HEADER
+========================= */
 
 .message-header{
 
 display:flex;
 
-justify-content:
-space-between;
-
 align-items:center;
 
-margin-bottom:9px;
+justify-content:space-between;
+
+margin-top:4px;
+
+margin-bottom:10px;
+
+}
+
+.message-label{
+
+font-size:15px;
+
+font-weight:700;
+
+color:#f3cccc;
 
 }
 
 .counter{
 
-font-size:13px;
+font-size:14px;
 
-color:#aaa;
+color:#999;
+
+font-variant-numeric:
+tabular-nums;
 
 }
 
 .counter.warning{
 
-color:#ffaaaa;
+color:#ff9999;
 
 }
+
+
+/* =========================
+   MESSAGE BOX
+========================= */
+
+.message-box{
+
+width:100%;
+
+height:430px;
+
+min-height:430px;
+
+resize:vertical;
+
+padding:
+24px;
+
+margin-bottom:28px;
+
+border-radius:20px;
+
+border:
+1px solid
+rgba(255,255,255,.20);
+
+background:
+rgba(0,0,0,.38);
+
+color:white;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+font-size:17px;
+
+line-height:1.8;
+
+outline:none;
+
+transition:
+border-color .2s,
+box-shadow .2s;
+
+}
+
+.message-box:focus{
+
+border-color:
+rgba(255,145,145,.8);
+
+box-shadow:
+0 0 0 3px
+rgba(255,0,0,.08);
+
+}
+
+.message-box::placeholder{
+
+color:#777;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
 
 .submit{
 
 width:100%;
 
-padding:20px;
+padding:
+22px 30px;
 
 border:none;
 
-border-radius:50px;
+border-radius:60px;
 
 background:white;
 
-color:#700000;
+color:#680000;
 
-font-size:20px;
+font-size:
+clamp(18px,2vw,21px);
 
 font-weight:900;
+
+letter-spacing:.3px;
 
 cursor:pointer;
 
 box-shadow:
-0 0 35px
-rgba(255,255,255,.25);
+0 12px 40px
+rgba(0,0,0,.35);
 
 transition:
 transform .2s,
+box-shadow .2s,
 opacity .2s;
 
 }
@@ -259,13 +460,24 @@ opacity .2s;
 .submit:hover{
 
 transform:
-scale(1.02);
+translateY(-2px);
+
+box-shadow:
+0 16px 45px
+rgba(0,0,0,.45);
+
+}
+
+.submit:active{
+
+transform:
+translateY(0);
 
 }
 
 .submit:disabled{
 
-opacity:.55;
+opacity:.5;
 
 cursor:not-allowed;
 
@@ -273,46 +485,49 @@ transform:none;
 
 }
 
-.status{
 
-text-align:center;
+/* =========================
+   STATUS
+========================= */
+
+.status{
 
 min-height:25px;
 
 margin-top:22px;
 
+text-align:center;
+
 font-size:16px;
 
 color:#ddd;
 
-}
-
-.order{
-
-text-align:center;
-
-margin-top:25px;
-
-font-size:12px;
-
-color:#777;
-
-word-break:break-all;
+line-height:1.5;
 
 }
+
+
+/* =========================
+   NOTICE
+========================= */
 
 .notice{
 
-margin-top:25px;
+margin-top:28px;
 
-padding:16px;
+padding:
+18px 22px;
 
-border-radius:15px;
+border-radius:16px;
 
 background:
-rgba(0,0,0,.25);
+rgba(0,0,0,.22);
 
-color:#bbb;
+border:
+1px solid
+rgba(255,255,255,.08);
+
+color:#999;
 
 font-size:13px;
 
@@ -322,56 +537,62 @@ text-align:center;
 
 }
 
-@media(max-width:650px){
 
-body{
+/* =========================
+   LARGE DESKTOP
+========================= */
 
-padding:
-20px 12px;
-
-align-items:
-flex-start;
-
-}
+@media(min-width:1200px){
 
 .container{
 
-margin-top:20px;
-
-}
-
-.symbol{
-
-font-size:48px;
-
-}
-
-.logo{
-
-font-size:11px;
-
-letter-spacing:5px;
-
-}
-
-h1{
-
-font-size:38px;
-
-}
-
-.subtitle{
-
-font-size:16px;
+max-width:1100px;
 
 }
 
 .card{
 
 padding:
-28px 20px;
+55px 75px;
 
-border-radius:25px;
+}
+
+.message-box{
+
+height:450px;
+
+min-height:450px;
+
+}
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media(max-width:800px){
+
+body{
+
+padding:
+35px 15px 55px;
+
+}
+
+.container{
+
+max-width:650px;
+
+}
+
+.card{
+
+padding:
+35px 25px;
+
+border-radius:28px;
 
 }
 
@@ -384,9 +605,155 @@ gap:0;
 
 }
 
-textarea{
+}
 
-min-height:240px;
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
+
+body{
+
+padding:
+25px 12px 45px;
+
+}
+
+.symbol{
+
+font-size:48px;
+
+}
+
+.logo{
+
+font-size:10px;
+
+letter-spacing:5px;
+
+}
+
+h1{
+
+font-size:40px;
+
+}
+
+.subtitle{
+
+font-size:15px;
+
+margin-bottom:30px;
+
+}
+
+.card{
+
+padding:
+28px 18px;
+
+border-radius:24px;
+
+}
+
+.order-card{
+
+flex-direction:column;
+
+align-items:flex-start;
+
+gap:7px;
+
+padding:
+14px 16px;
+
+}
+
+.order-value{
+
+text-align:left;
+
+width:100%;
+
+font-size:12px;
+
+}
+
+.field{
+
+padding:
+17px;
+
+font-size:16px;
+
+}
+
+.message-box{
+
+height:330px;
+
+min-height:330px;
+
+padding:
+19px;
+
+font-size:16px;
+
+line-height:1.7;
+
+border-radius:17px;
+
+}
+
+.submit{
+
+padding:
+20px 15px;
+
+}
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:400px){
+
+body{
+
+padding:
+20px 9px 35px;
+
+}
+
+.symbol{
+
+font-size:42px;
+
+}
+
+h1{
+
+font-size:35px;
+
+}
+
+.card{
+
+padding:
+24px 15px;
+
+}
+
+.message-box{
+
+height:300px;
+
+min-height:300px;
 
 }
 
@@ -400,7 +767,17 @@ GLOBAL HUMAN CONNECTION
 YOUR MESSAGE
 </h1><div class="subtitle">
 Leave something for the next person.
-</div><div class="card"><form id="messageForm" novalidate><div class="row"><div><label for="name">
+</div><div class="card"><div class="order-card"><div class="order-label">
+Order ID
+</div><div
+id="orderDisplay"
+class="order-value"
+>
+—
+</div></div><form
+id="messageForm"
+novalidate
+><div class="row"><div><label for="name">
 Name
 </label><input
 id="name"
@@ -456,23 +833,16 @@ autocomplete="address-level2"
 
 «»
 
-</div></div><div class="message-header"><label
-for="message"
-style="margin:0;"
-
-«»
-
+</div></div><div class="message-header"><div class="message-label">
 Your message
-</label>
-
-<div
+</div><div
 id="counter"
 class="counter"
 >
 0 / 4000
 </div></div><textarea
 id="message"
-class="field"
+class="message-box"
 name="message"
 placeholder="Write your message here..."
 maxlength="4000"
@@ -491,18 +861,14 @@ SEND MESSAGE
 id="status"
 class="status"
 aria-live="polite"
-></div></form><div class="notice">Your email is collected for the message submission
+></div></form><div class="notice">Your email is collected for message submission
 and should not be displayed publicly unless you choose
 to make it visible later.
 
-</div><div
-id="orderDisplay"
-class="order"
->
-Order ID: —
 </div></div></div><script>
 
-const MAX_MESSAGE_LENGTH = 4000;
+const MAX_MESSAGE_LENGTH =
+4000;
 
 const form =
 document.getElementById(
@@ -552,13 +918,18 @@ params.get(
 if(orderId){
 
 orderDisplay.textContent =
-"Order ID: " + orderId;
+orderId;
+
+}else{
+
+orderDisplay.textContent =
+"Not provided";
 
 }
 
 
 // ==============================
-// MESSAGE COUNTER
+// COUNTER
 // ==============================
 
 function updateCounter(){
@@ -570,7 +941,6 @@ counter.textContent =
 length +
 " / " +
 MAX_MESSAGE_LENGTH;
-
 
 if(length >= 3800){
 
@@ -588,7 +958,6 @@ counter.classList.remove(
 
 }
 
-
 messageInput.addEventListener(
 "input",
 updateCounter
@@ -598,7 +967,7 @@ updateCounter();
 
 
 // ==============================
-// PREVENT EMPTY MESSAGE
+// VALIDATION
 // ==============================
 
 function isBlank(value){
@@ -610,16 +979,11 @@ return !value
 }
 
 
-// ==============================
-// FORM SUBMIT
-// ==============================
-
 form.addEventListener(
 "submit",
 async function(event){
 
 event.preventDefault();
-
 
 statusElement.textContent =
 "";
@@ -737,10 +1101,6 @@ return;
 }
 
 
-// ==============================
-// TEMPORARY FRONT-END TEST
-// ==============================
-
 submitButton.disabled =
 true;
 
@@ -750,14 +1110,6 @@ submitButton.textContent =
 
 statusElement.textContent =
 "Preparing your message...";
-
-
-/*
-
-Worker connection will be added
-in the next step.
-
-*/
 
 
 setTimeout(
@@ -770,12 +1122,11 @@ submitButton.textContent =
 "SEND MESSAGE";
 
 statusElement.textContent =
-"Message form is ready. Worker connection will be added next.";
+"Ready for the next step.";
 
 },
 700
 );
-
 
 }
 );
@@ -793,12 +1144,12 @@ messageInput.addEventListener(
 function(){
 
 hasTyped =
-messageInput.value.trim()
+messageInput.value
+.trim()
 .length > 0;
 
 }
 );
-
 
 window.addEventListener(
 "beforeunload",
