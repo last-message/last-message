@@ -1,0 +1,820 @@
+<!DOCTYPE html><html lang="en">
+<head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leave Your Message</title><style>
+
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+margin:0;
+min-height:100vh;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:
+radial-gradient(
+circle at top,
+#b30000 0%,
+#4a0000 35%,
+#080808 100%
+);
+
+color:white;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+padding:30px 15px;
+
+}
+
+.container{
+
+width:100%;
+max-width:850px;
+
+}
+
+.symbol{
+
+font-size:58px;
+
+text-align:center;
+
+text-shadow:
+0 0 35px red;
+
+margin-bottom:15px;
+
+}
+
+.logo{
+
+text-align:center;
+
+font-size:13px;
+
+letter-spacing:7px;
+
+color:#ffbbbb;
+
+margin-bottom:15px;
+
+}
+
+h1{
+
+text-align:center;
+
+font-size:52px;
+
+font-weight:900;
+
+margin:20px 0 10px;
+
+text-shadow:
+0 0 20px red;
+
+}
+
+.subtitle{
+
+text-align:center;
+
+color:#ddd;
+
+font-size:18px;
+
+margin-bottom:35px;
+
+}
+
+.card{
+
+padding:40px;
+
+background:
+rgba(255,255,255,.09);
+
+border:
+1px solid rgba(255,255,255,.22);
+
+border-radius:32px;
+
+backdrop-filter:
+blur(20px);
+
+box-shadow:
+0 0 70px rgba(0,0,0,.8);
+
+}
+
+label{
+
+display:block;
+
+font-size:15px;
+
+font-weight:700;
+
+margin-bottom:9px;
+
+color:#ffdddd;
+
+}
+
+.field{
+
+width:100%;
+
+padding:17px 18px;
+
+margin-bottom:22px;
+
+border-radius:15px;
+
+border:
+1px solid rgba(255,255,255,.22);
+
+background:
+rgba(0,0,0,.45);
+
+color:white;
+
+font-size:16px;
+
+outline:none;
+
+transition:
+border .2s,
+box-shadow .2s;
+
+}
+
+.field:focus{
+
+border-color:
+rgba(255,150,150,.8);
+
+box-shadow:
+0 0 15px
+rgba(255,0,0,.2);
+
+}
+
+.field::placeholder{
+
+color:#999;
+
+}
+
+.row{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:18px;
+
+}
+
+textarea{
+
+min-height:280px;
+
+resize:vertical;
+
+line-height:1.6;
+
+}
+
+.message-header{
+
+display:flex;
+
+justify-content:
+space-between;
+
+align-items:center;
+
+margin-bottom:9px;
+
+}
+
+.counter{
+
+font-size:13px;
+
+color:#aaa;
+
+}
+
+.counter.warning{
+
+color:#ffaaaa;
+
+}
+
+.submit{
+
+width:100%;
+
+padding:20px;
+
+border:none;
+
+border-radius:50px;
+
+background:white;
+
+color:#700000;
+
+font-size:20px;
+
+font-weight:900;
+
+cursor:pointer;
+
+box-shadow:
+0 0 35px
+rgba(255,255,255,.25);
+
+transition:
+transform .2s,
+opacity .2s;
+
+}
+
+.submit:hover{
+
+transform:
+scale(1.02);
+
+}
+
+.submit:disabled{
+
+opacity:.55;
+
+cursor:not-allowed;
+
+transform:none;
+
+}
+
+.status{
+
+text-align:center;
+
+min-height:25px;
+
+margin-top:22px;
+
+font-size:16px;
+
+color:#ddd;
+
+}
+
+.order{
+
+text-align:center;
+
+margin-top:25px;
+
+font-size:12px;
+
+color:#777;
+
+word-break:break-all;
+
+}
+
+.notice{
+
+margin-top:25px;
+
+padding:16px;
+
+border-radius:15px;
+
+background:
+rgba(0,0,0,.25);
+
+color:#bbb;
+
+font-size:13px;
+
+line-height:1.6;
+
+text-align:center;
+
+}
+
+@media(max-width:650px){
+
+body{
+
+padding:
+20px 12px;
+
+align-items:
+flex-start;
+
+}
+
+.container{
+
+margin-top:20px;
+
+}
+
+.symbol{
+
+font-size:48px;
+
+}
+
+.logo{
+
+font-size:11px;
+
+letter-spacing:5px;
+
+}
+
+h1{
+
+font-size:38px;
+
+}
+
+.subtitle{
+
+font-size:16px;
+
+}
+
+.card{
+
+padding:
+28px 20px;
+
+border-radius:25px;
+
+}
+
+.row{
+
+grid-template-columns:
+1fr;
+
+gap:0;
+
+}
+
+textarea{
+
+min-height:240px;
+
+}
+
+}
+
+</style></head><body><div class="container"><div class="symbol">
+◈ ✦ ∞
+</div><div class="logo">
+GLOBAL HUMAN CONNECTION
+</div><h1>
+YOUR MESSAGE
+</h1><div class="subtitle">
+Leave something for the next person.
+</div><div class="card"><form id="messageForm" novalidate><div class="row"><div><label for="name">
+Name
+</label><input
+id="name"
+class="field"
+type="text"
+name="name"
+placeholder="Your name"
+maxlength="100"
+required
+autocomplete="name"
+
+«»
+
+</div><div><label for="email">
+Email
+</label><input
+id="email"
+class="field"
+type="email"
+name="email"
+placeholder="your@email.com"
+maxlength="254"
+required
+autocomplete="email"
+
+«»
+
+</div></div><div class="row"><div><label for="country">
+Country
+</label><input
+id="country"
+class="field"
+type="text"
+name="country"
+placeholder="Your country"
+maxlength="100"
+required
+autocomplete="country-name"
+
+«»
+
+</div><div><label for="city">
+City
+</label><input
+id="city"
+class="field"
+type="text"
+name="city"
+placeholder="Your city"
+maxlength="100"
+required
+autocomplete="address-level2"
+
+«»
+
+</div></div><div class="message-header"><label
+for="message"
+style="margin:0;"
+
+«»
+
+Your message
+</label>
+
+<div
+id="counter"
+class="counter"
+>
+0 / 4000
+</div></div><textarea
+id="message"
+class="field"
+name="message"
+placeholder="Write your message here..."
+maxlength="4000"
+required
+></textarea><button
+id="submitButton"
+class="submit"
+type="submit"
+
+«»
+
+SEND MESSAGE
+</button>
+
+<div
+id="status"
+class="status"
+aria-live="polite"
+></div></form><div class="notice">Your email is collected for the message submission
+and should not be displayed publicly unless you choose
+to make it visible later.
+
+</div><div
+id="orderDisplay"
+class="order"
+>
+Order ID: —
+</div></div></div><script>
+
+const MAX_MESSAGE_LENGTH = 4000;
+
+const form =
+document.getElementById(
+"messageForm"
+);
+
+const messageInput =
+document.getElementById(
+"message"
+);
+
+const counter =
+document.getElementById(
+"counter"
+);
+
+const statusElement =
+document.getElementById(
+"status"
+);
+
+const submitButton =
+document.getElementById(
+"submitButton"
+);
+
+const orderDisplay =
+document.getElementById(
+"orderDisplay"
+);
+
+
+// ==============================
+// ORDER ID
+// ==============================
+
+const params =
+new URLSearchParams(
+window.location.search
+);
+
+const orderId =
+params.get(
+"orderId"
+);
+
+if(orderId){
+
+orderDisplay.textContent =
+"Order ID: " + orderId;
+
+}
+
+
+// ==============================
+// MESSAGE COUNTER
+// ==============================
+
+function updateCounter(){
+
+const length =
+messageInput.value.length;
+
+counter.textContent =
+length +
+" / " +
+MAX_MESSAGE_LENGTH;
+
+
+if(length >= 3800){
+
+counter.classList.add(
+"warning"
+);
+
+}else{
+
+counter.classList.remove(
+"warning"
+);
+
+}
+
+}
+
+
+messageInput.addEventListener(
+"input",
+updateCounter
+);
+
+updateCounter();
+
+
+// ==============================
+// PREVENT EMPTY MESSAGE
+// ==============================
+
+function isBlank(value){
+
+return !value
+.replace(/\s/g,"")
+.length;
+
+}
+
+
+// ==============================
+// FORM SUBMIT
+// ==============================
+
+form.addEventListener(
+"submit",
+async function(event){
+
+event.preventDefault();
+
+
+statusElement.textContent =
+"";
+
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+
+const email =
+document
+.getElementById("email")
+.value
+.trim();
+
+
+const country =
+document
+.getElementById("country")
+.value
+.trim();
+
+
+const city =
+document
+.getElementById("city")
+.value
+.trim();
+
+
+const message =
+messageInput
+.value
+.trim();
+
+
+if(!name){
+
+statusElement.textContent =
+"Please enter your name.";
+
+return;
+
+}
+
+
+if(!email){
+
+statusElement.textContent =
+"Please enter your email.";
+
+return;
+
+}
+
+
+if(
+!/^[^\s@]+@[^\s@]+\.[^\s@]+$/
+.test(email)
+){
+
+statusElement.textContent =
+"Please enter a valid email.";
+
+return;
+
+}
+
+
+if(!country){
+
+statusElement.textContent =
+"Please enter your country.";
+
+return;
+
+}
+
+
+if(!city){
+
+statusElement.textContent =
+"Please enter your city.";
+
+return;
+
+}
+
+
+if(isBlank(message)){
+
+statusElement.textContent =
+"Please write a message.";
+
+messageInput.focus();
+
+return;
+
+}
+
+
+if(
+message.length >
+MAX_MESSAGE_LENGTH
+){
+
+statusElement.textContent =
+"Your message is too long.";
+
+return;
+
+}
+
+
+// ==============================
+// TEMPORARY FRONT-END TEST
+// ==============================
+
+submitButton.disabled =
+true;
+
+submitButton.textContent =
+"SENDING...";
+
+
+statusElement.textContent =
+"Preparing your message...";
+
+
+/*
+
+Worker connection will be added
+in the next step.
+
+*/
+
+
+setTimeout(
+function(){
+
+submitButton.disabled =
+false;
+
+submitButton.textContent =
+"SEND MESSAGE";
+
+statusElement.textContent =
+"Message form is ready. Worker connection will be added next.";
+
+},
+700
+);
+
+
+}
+);
+
+
+// ==============================
+// UNSAVED MESSAGE WARNING
+// ==============================
+
+let hasTyped =
+false;
+
+messageInput.addEventListener(
+"input",
+function(){
+
+hasTyped =
+messageInput.value.trim()
+.length > 0;
+
+}
+);
+
+
+window.addEventListener(
+"beforeunload",
+function(event){
+
+if(hasTyped){
+
+event.preventDefault();
+
+event.returnValue =
+"";
+
+}
+
+}
+);
+
+</script></body>
+</html>
