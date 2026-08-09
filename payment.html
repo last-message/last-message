@@ -1,603 +1,166 @@
 <!DOCTYPE html><html lang="en">
 <head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leave Your Message</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Secure Payment</title><style>
 
 *{
 box-sizing:border-box;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 margin:0;
 min-height:100vh;
-
-font-family:
-Arial,
-Helvetica,
-sans-serif;
+font-family:Arial,Helvetica,sans-serif;
 
 background:
-radial-gradient(
-circle at top,
-#b30000 0%,
-#4a0000 36%,
-#080808 100%
-);
-
-color:#fff;
-
-display:flex;
-justify-content:center;
-
-padding:
-50px 20px 70px;
-}
-
-.container{
-width:100%;
-max-width:900px;
-}
-
-.symbol{
-text-align:center;
-font-size:58px;
-
-text-shadow:
-0 0 35px rgba(255,0,0,.8);
-
-margin-bottom:12px;
-}
-
-.logo{
-text-align:center;
-
-font-size:12px;
-letter-spacing:7px;
-
-color:#ffbcbc;
-
-margin-bottom:20px;
-}
-
-h1{
-text-align:center;
-
-font-size:
-clamp(38px,6vw,58px);
-
-font-weight:900;
-
-margin:
-15px 0 10px;
-
-letter-spacing:-1px;
-
-text-shadow:
-0 0 25px rgba(255,0,0,.55);
-}
-
-.subtitle{
-text-align:center;
-
-color:#d6d6d6;
-
-font-size:
-clamp(15px,2vw,18px);
-
-margin-bottom:38px;
-}
-
-.card{
-width:100%;
-
-padding:
-42px clamp(22px,5vw,55px);
-
-background:
-rgba(255,255,255,.085);
-
-border:
-1px solid rgba(255,255,255,.20);
-
-border-radius:32px;
-
-backdrop-filter:
-blur(22px);
-
--webkit-backdrop-filter:
-blur(22px);
-
-box-shadow:
-0 25px 90px rgba(0,0,0,.65);
-}
-
-/* =========================
-   ORDER ID
-========================= */
-
-.order-card{
-
-width:100%;
-
-padding:
-15px 18px;
-
-margin-bottom:32px;
-
-border-radius:18px;
-
-background:
-rgba(0,0,0,.28);
-
-border:
-1px solid rgba(255,255,255,.13);
-
-display:flex;
-
-align-items:center;
-
-justify-content:
-space-between;
-
-gap:15px;
-}
-
-.order-label{
-
-font-size:12px;
-
-font-weight:700;
-
-letter-spacing:1.5px;
-
-text-transform:uppercase;
-
-color:#aaa;
-
-white-space:nowrap;
-}
-
-.order-value{
-
-font-family:
-monospace;
-
-font-size:
-clamp(11px,1.8vw,14px);
-
-color:#eee;
-
-word-break:break-all;
-
-text-align:right;
-
-opacity:.9;
-}
-
-/* =========================
-   FORM
-========================= */
-
-label{
-
-display:block;
-
-font-size:14px;
-
-font-weight:700;
-
-margin-bottom:9px;
-
-color:#f3cccc;
-}
-
-.field{
-
-width:100%;
-
-padding:
-17px 18px;
-
-margin-bottom:23px;
-
-border-radius:15px;
-
-border:
-1px solid rgba(255,255,255,.18);
-
-background:
-rgba(0,0,0,.34);
-
-color:#fff;
-
-font-size:16px;
-
-outline:none;
-
-transition:
-border-color .2s,
-box-shadow .2s,
-background .2s;
-}
-
-.field:hover{
-
-background:
-rgba(0,0,0,.42);
-}
-
-.field:focus{
-
-border-color:
-rgba(255,145,145,.75);
-
-background:
-rgba(0,0,0,.48);
-
-box-shadow:
-0 0 0 3px
-rgba(255,0,0,.08);
-}
-
-.field::placeholder{
-
-color:#858585;
-}
-
-.row{
-
-display:grid;
-
-grid-template-columns:
-1fr 1fr;
-
-gap:22px;
-}
-
-.message-header{
-
-display:flex;
-
-justify-content:
-space-between;
-
-align-items:center;
-
-margin-top:3px;
-
-margin-bottom:9px;
-}
-
-.message-label{
-
-font-size:14px;
-
-font-weight:700;
-
-color:#f3cccc;
-}
-
-.counter{
-
-font-size:13px;
-
-color:#8f8f8f;
-
-font-variant-numeric:
-tabular-nums;
-}
-
-.counter.warning{
-
-color:#ff9d9d;
-}
-
-/* =========================
-   BIG MESSAGE BOX
-========================= */
-
-.message-box{
-
-width:100%;
-
-min-height:380px;
-
-height:380px;
-
-resize:vertical;
-
-padding:
-22px 20px;
-
-margin-bottom:24px;
-
-line-height:1.75;
-
-font-size:17px;
-
-border-radius:18px;
-
-border:
-1px solid rgba(255,255,255,.20);
-
-background:
-rgba(0,0,0,.38);
+radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
 
 color:white;
 
-outline:none;
-
-font-family:
-Arial,
-Helvetica,
-sans-serif;
-
-transition:
-border-color .2s,
-box-shadow .2s;
-}
-
-.message-box:focus{
-
-border-color:
-rgba(255,145,145,.75);
-
-box-shadow:
-0 0 0 3px
-rgba(255,0,0,.08);
-}
-
-.message-box::placeholder{
-
-color:#777;
-}
-
-/* =========================
-   BUTTON
-========================= */
-
-.submit{
-
-width:100%;
-
-padding:
-20px 25px;
-
-border:none;
-
-border-radius:60px;
-
-background:#fff;
-
-color:#680000;
-
-font-size:
-clamp(17px,2vw,20px);
-
-font-weight:900;
-
-letter-spacing:.3px;
-
-cursor:pointer;
-
-box-shadow:
-0 10px 35px
-rgba(0,0,0,.35);
-
-transition:
-transform .2s,
-box-shadow .2s,
-opacity .2s;
-}
-
-.submit:hover{
-
-transform:
-translateY(-2px);
-
-box-shadow:
-0 14px 40px
-rgba(0,0,0,.45);
-}
-
-.submit:active{
-
-transform:
-translateY(0);
-}
-
-.submit:disabled{
-
-opacity:.5;
-
-cursor:not-allowed;
-
-transform:none;
-}
-
-.status{
-
-min-height:25px;
-
-margin-top:20px;
+display:flex;
+justify-content:center;
+align-items:center;
 
 text-align:center;
-
-font-size:15px;
-
-color:#ddd;
-
-line-height:1.5;
-}
-
-.notice{
-
-margin-top:25px;
-
-padding:
-17px 20px;
-
-border-radius:15px;
-
-background:
-rgba(0,0,0,.22);
-
-border:
-1px solid rgba(255,255,255,.08);
-
-color:#999;
-
-font-size:12px;
-
-line-height:1.6;
-
-text-align:center;
-}
-
-/* =========================
-   TABLET
-========================= */
-
-@media(max-width:700px){
-
-body{
-
-padding:
-30px 14px 50px;
 }
 
 .container{
-
-max-width:
-600px;
+width:90%;
+max-width:700px;
 }
 
 .symbol{
-
-font-size:48px;
+font-size:65px;
+text-shadow:0 0 35px red;
 }
 
 .logo{
-
-font-size:10px;
-
-letter-spacing:5px;
-}
-
-.card{
-
-padding:
-30px 20px;
-
-border-radius:26px;
-}
-
-.row{
-
-grid-template-columns:
-1fr;
-
-gap:0;
-}
-
-.order-card{
-
-align-items:
-flex-start;
-
-flex-direction:
-column;
-
-gap:7px;
-
-padding:
-14px 16px;
-}
-
-.order-value{
-
-text-align:left;
-
-width:100%;
-}
-
-.message-box{
-
-height:330px;
-
-min-height:330px;
-
-font-size:16px;
-
-padding:19px;
-}
-
-}
-
-/* =========================
-   SMALL MOBILE
-========================= */
-
-@media(max-width:420px){
-
-body{
-
-padding:
-22px 10px 40px;
-}
-
-.symbol{
-
-font-size:42px;
+font-size:14px;
+letter-spacing:8px;
+color:#ffbbbb;
+margin-top:20px;
 }
 
 h1{
-
-margin-top:10px;
-}
-
-.subtitle{
-
-margin-bottom:28px;
+font-size:55px;
+font-weight:900;
+margin:30px 0;
+text-shadow:0 0 20px red;
 }
 
 .card{
-
-padding:
-25px 16px;
-
-border-radius:22px;
+padding:45px 30px;
+background:rgba(255,255,255,.09);
+border:1px solid rgba(255,255,255,.25);
+border-radius:35px;
+backdrop-filter:blur(20px);
+box-shadow:0 0 70px rgba(0,0,0,.8);
 }
 
-.field{
+.amount{
+font-size:80px;
+font-weight:900;
+}
 
-padding:
-16px;
+.network{
+font-size:28px;
+font-weight:900;
+color:#ffcccc;
+margin:20px;
+}
 
+.info{
+font-size:20px;
+line-height:1.8;
+}
+
+.wallet{
+margin-top:25px;
+padding:20px;
+background:rgba(0,0,0,.5);
+border-radius:20px;
+font-size:18px;
+word-break:break-all;
+border:1px solid rgba(255,255,255,.2);
+}
+
+.order{
+margin-top:20px;
 font-size:16px;
+word-break:break-all;
 }
 
-.message-box{
+.txid-box{
+margin-top:25px;
+}
 
-height:300px;
-
-min-height:300px;
-
-padding:
-17px;
-
+.txid-input{
+width:100%;
+padding:18px;
+border-radius:15px;
+border:1px solid rgba(255,255,255,.25);
+background:rgba(0,0,0,.5);
+color:white;
 font-size:16px;
-
-line-height:1.7;
+outline:none;
 }
 
-.submit{
+.txid-input::placeholder{
+color:#aaa;
+}
 
-padding:
-19px 15px;
+button{
+margin-top:25px;
+padding:22px 60px;
+border:none;
+border-radius:60px;
+background:white;
+color:#700000;
+font-size:22px;
+font-weight:900;
+cursor:pointer;
+box-shadow:0 0 35px rgba(255,255,255,.3);
+}
+
+button:hover{
+transform:scale(1.04);
+}
+
+.verify-button{
+width:100%;
+margin-top:15px;
+}
+
+.warning{
+margin-top:25px;
+color:#ffcccc;
+font-size:15px;
+line-height:1.6;
+}
+
+.status{
+margin-top:30px;
+color:#ddd;
+font-size:18px;
+line-height:1.5;
+}
+
+@media(max-width:600px){
+
+h1{
+font-size:42px;
+}
+
+.amount{
+font-size:65px;
+}
+
+button{
+width:100%;
+padding:22px 15px;
+}
+
+.card{
+padding:35px 20px;
 }
 
 }
@@ -607,397 +170,305 @@ padding:
 </div><div class="logo">
 GLOBAL HUMAN CONNECTION
 </div><h1>
-YOUR MESSAGE
-</h1><div class="subtitle">
-Leave something for the next person.
-</div><div class="card"><div class="order-card"><div class="order-label">
-Order ID
-</div><div
-id="orderDisplay"
-class="order-value"
->
-—
-</div></div><form
-id="messageForm"
-novalidate
-><div class="row"><div><label for="name">
-Name
-</label><input
-id="name"
-class="field"
+PAYMENT
+</h1><div class="card"><div class="amount">
+$2
+</div><div class="network">
+USDT TRC20
+</div><div class="info">Send exactly <b>2 USDT</b><br>
+
+Network:
+<b>TRON (TRC20)</b>
+
+</div><div class="wallet">
+TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx
+</div><div class="order">
+Order ID:
+<strong id="orderId">Creating...</strong>
+</div><button onclick="copyWallet()">
+COPY WALLET ADDRESS
+</button><div class="txid-box"><input
+id="txidInput"
+class="txid-input"
 type="text"
-name="name"
-placeholder="Your name"
-maxlength="100"
-required
-autocomplete="name"
+placeholder="Enter transaction hash after payment"
+autocomplete="off"
 
 «»
 
-</div><div><label for="email">
-Email
-</label><input
-id="email"
-class="field"
-type="email"
-name="email"
-placeholder="your@email.com"
-maxlength="254"
-required
-autocomplete="email"
+<button
+class="verify-button"
+onclick="verifyPayment()"
 
 «»
 
-</div></div><div class="row"><div><label for="country">
-Country
-</label><input
-id="country"
-class="field"
-type="text"
-name="country"
-placeholder="Your country"
-maxlength="100"
-required
-autocomplete="country-name"
-
-«»
-
-</div><div><label for="city">
-City
-</label><input
-id="city"
-class="field"
-type="text"
-name="city"
-placeholder="Your city"
-maxlength="100"
-required
-autocomplete="address-level2"
-
-«»
-
-</div></div><div class="message-header"><div class="message-label">
-Your message
-</div><div
-id="counter"
-class="counter"
->
-0 / 4000
-</div></div><textarea
-id="message"
-class="message-box"
-name="message"
-placeholder="Write your message here..."
-maxlength="4000"
-required
-></textarea><button
-id="submitButton"
-class="submit"
-type="submit"
-
-«»
-
-SEND MESSAGE
+VERIFY PAYMENT
 </button>
 
-<div
-id="status"
-class="status"
-aria-live="polite"
-></div></form><div class="notice">Your email is collected for message submission
-and should not be displayed publicly unless you choose
-to make it visible later.
+</div><div class="warning">Only send USDT on TRC20 network.<br>
+Sending another network may result in loss.
 
+</div><div class="status" id="status">
+Creating your order...
 </div></div></div><script>
 
-const MAX_MESSAGE_LENGTH =
-4000;
+const WORKER_URL =
+"https://soft-shape-5b8a.aaa6654292.workers.dev";
 
-const form =
-document.getElementById(
-"messageForm"
-);
+const PAYMENT_ADDRESS =
+"TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx";
 
-const messageInput =
-document.getElementById(
-"message"
-);
-
-const counter =
-document.getElementById(
-"counter"
-);
-
-const statusElement =
-document.getElementById(
-"status"
-);
-
-const submitButton =
-document.getElementById(
-"submitButton"
-);
-
-const orderDisplay =
-document.getElementById(
-"orderDisplay"
-);
+let orderId = null;
 
 
 // ==============================
-// ORDER ID FROM URL
+// COPY WALLET
 // ==============================
 
-const params =
-new URLSearchParams(
-window.location.search
-);
+async function copyWallet(){
 
-const orderId =
-params.get(
-"orderId"
-);
+    try{
 
-if(orderId){
+        await navigator.clipboard.writeText(
+            PAYMENT_ADDRESS
+        );
 
-orderDisplay.textContent =
-orderId;
+        alert(
+            "Wallet address copied"
+        );
 
-}else{
+    }catch(error){
 
-orderDisplay.textContent =
-"Not provided";
+        console.error(
+            "Copy failed:",
+            error
+        );
+
+        alert(
+            "Could not copy wallet address."
+        );
+
+    }
 
 }
 
 
 // ==============================
-// MESSAGE COUNTER
+// CREATE ORDER
 // ==============================
 
-function updateCounter(){
+async function createOrder(){
 
-const length =
-messageInput.value.length;
+    const status =
+        document.getElementById(
+            "status"
+        );
 
-counter.textContent =
-length +
-" / " +
-MAX_MESSAGE_LENGTH;
+    try{
 
-if(length >= 3800){
-
-counter.classList.add(
-"warning"
-);
-
-}else{
-
-counter.classList.remove(
-"warning"
-);
-
-}
-
-}
-
-messageInput.addEventListener(
-"input",
-updateCounter
-);
-
-updateCounter();
+        status.textContent =
+            "Creating your order...";
 
 
-// ==============================
-// FORM VALIDATION
-// ==============================
-
-function isBlank(value){
-
-return !value
-.replace(/\s/g,"")
-.length;
-
-}
+        const response =
+            await fetch(
+                WORKER_URL +
+                "/create-order"
+            );
 
 
-form.addEventListener(
-"submit",
-async function(event){
+        if(!response.ok){
 
-event.preventDefault();
+            throw new Error(
+                "Worker error: " +
+                response.status
+            );
 
-statusElement.textContent =
-"";
-
-const name =
-document
-.getElementById("name")
-.value
-.trim();
-
-const email =
-document
-.getElementById("email")
-.value
-.trim();
-
-const country =
-document
-.getElementById("country")
-.value
-.trim();
-
-const city =
-document
-.getElementById("city")
-.value
-.trim();
-
-const message =
-messageInput
-.value
-.trim();
+        }
 
 
-if(!name){
+        const order =
+            await response.json();
 
-statusElement.textContent =
-"Please enter your name.";
 
-return;
+        if(!order.orderId){
+
+            throw new Error(
+                "Worker did not return an Order ID"
+            );
+
+        }
+
+
+        orderId =
+            order.orderId;
+
+
+        document
+            .getElementById(
+                "orderId"
+            )
+            .textContent =
+            orderId;
+
+
+        console.log(
+            "Order created:",
+            order
+        );
+
+
+        status.textContent =
+            "Waiting for payment...";
+
+
+    }catch(error){
+
+        console.error(
+            "Order creation failed:",
+            error
+        );
+
+
+        document
+            .getElementById(
+                "orderId"
+            )
+            .textContent =
+            "ERROR";
+
+
+        status.textContent =
+            "Could not create order. Please refresh the page.";
+
+    }
 
 }
-
-if(!email){
-
-statusElement.textContent =
-"Please enter your email.";
-
-return;
-
-}
-
-if(
-!/^[^\s@]+@[^\s@]+\.[^\s@]+$/
-.test(email)
-){
-
-statusElement.textContent =
-"Please enter a valid email.";
-
-return;
-
-}
-
-if(!country){
-
-statusElement.textContent =
-"Please enter your country.";
-
-return;
-
-}
-
-if(!city){
-
-statusElement.textContent =
-"Please enter your city.";
-
-return;
-
-}
-
-if(isBlank(message)){
-
-statusElement.textContent =
-"Please write a message.";
-
-messageInput.focus();
-
-return;
-
-}
-
-if(
-message.length >
-MAX_MESSAGE_LENGTH
-){
-
-statusElement.textContent =
-"Your message is too long.";
-
-return;
-
-}
-
-
-submitButton.disabled =
-true;
-
-submitButton.textContent =
-"SENDING...";
-
-
-statusElement.textContent =
-"Preparing your message...";
-
-
-setTimeout(
-function(){
-
-submitButton.disabled =
-false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-statusElement.textContent =
-"Ready for the next step.";
-
-},
-700
-);
-
-}
-);
 
 
 // ==============================
-// UNSAVED MESSAGE WARNING
+// VERIFY PAYMENT BY TXID
 // ==============================
 
-let hasTyped =
-false;
+async function verifyPayment(){
 
-messageInput.addEventListener(
-"input",
-function(){
+    const input =
+        document.getElementById(
+            "txidInput"
+        );
 
-hasTyped =
-messageInput.value
-.trim()
-.length > 0;
+    const status =
+        document.getElementById(
+            "status"
+        );
+
+
+    const txid =
+        input.value.trim();
+
+
+    if(!orderId){
+
+        status.textContent =
+            "Order ID is not ready yet.";
+
+        return;
+
+    }
+
+
+    if(!txid){
+
+        status.textContent =
+            "Please enter your transaction hash.";
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    status.textContent =
+        "Verifying transaction...";
+
+
+    try{
+
+        const response =
+            await fetch(
+
+                WORKER_URL +
+                "/verify-payment?orderId=" +
+                encodeURIComponent(
+                    orderId
+                ) +
+                "&txid=" +
+                encodeURIComponent(
+                    txid
+                )
+
+            );
+
+
+        const result =
+            await response.json();
+
+
+        console.log(
+            "Verification result:",
+            result
+        );
+
+
+        if(result.paid === true){
+
+            status.innerHTML =
+                "✓ PAYMENT CONFIRMED";
+
+            return;
+
+        }
+
+
+        if(
+            result.status ===
+            "transaction_found"
+        ){
+
+            status.textContent =
+                "Transaction found. Please wait for confirmation.";
+
+            return;
+
+        }
+
+
+        status.textContent =
+            result.error ||
+            "Payment could not be verified yet.";
+
+    }catch(error){
+
+        console.error(
+            "Verification failed:",
+            error
+        );
+
+
+        status.textContent =
+            "Could not verify payment. Please try again.";
+
+    }
 
 }
-);
 
-window.addEventListener(
-"beforeunload",
-function(event){
 
-if(hasTyped){
+// ==============================
+// START
+// ==============================
 
-event.preventDefault();
-
-event.returnValue =
-"";
-
-}
-
-}
-);
+createOrder();
 
 </script></body>
 </html>
