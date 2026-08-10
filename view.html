@@ -1,7 +1,28 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Message</title><style>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="referrer"
+    content="no-referrer"
+>
+
+<meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; connect-src https://soft-shape-5b8a.aaa6654292.workers.dev; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
+>
+
+<title>Message</title>
+
+<style>
 
 *{
     box-sizing:border-box;
@@ -12,7 +33,9 @@ html{
 }
 
 body{
+
     margin:0;
+
     min-height:100vh;
 
     font-family:
@@ -31,19 +54,26 @@ body{
     color:white;
 
     display:flex;
+
     justify-content:center;
+
     align-items:flex-start;
 
-    padding:55px 20px 80px;
+    padding:
+        55px 20px 80px;
 }
 
 .container{
+
     width:100%;
+
     max-width:900px;
+
     margin:0 auto;
 }
 
 .symbol{
+
     text-align:center;
 
     font-size:62px;
@@ -56,6 +86,7 @@ body{
 }
 
 .logo{
+
     text-align:center;
 
     font-size:13px;
@@ -68,6 +99,7 @@ body{
 }
 
 h1{
+
     text-align:center;
 
     font-size:
@@ -86,6 +118,7 @@ h1{
 }
 
 .subtitle{
+
     text-align:center;
 
     font-size:
@@ -94,9 +127,12 @@ h1{
     color:#d0d0d0;
 
     margin-bottom:42px;
+
+    line-height:1.7;
 }
 
 .card{
+
     width:100%;
 
     padding:
@@ -123,6 +159,7 @@ h1{
 }
 
 .message-number{
+
     text-align:center;
 
     font-size:13px;
@@ -139,60 +176,12 @@ h1{
 }
 
 .message-number span{
+
     color:white;
 }
 
-.meta{
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:15px;
-
-    margin-bottom:30px;
-}
-
-.meta-box{
-    padding:18px;
-
-    border-radius:17px;
-
-    background:
-        rgba(0,0,0,.28);
-
-    border:
-        1px solid
-        rgba(255,255,255,.10);
-
-    text-align:center;
-}
-
-.meta-label{
-    display:block;
-
-    font-size:11px;
-
-    font-weight:800;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-
-    color:#888;
-
-    margin-bottom:8px;
-}
-
-.meta-value{
-    font-size:16px;
-
-    color:#eee;
-
-    word-break:break-word;
-}
-
 .message-box{
+
     width:100%;
 
     min-height:300px;
@@ -226,6 +215,7 @@ h1{
 }
 
 .message-author{
+
     margin-top:25px;
 
     text-align:right;
@@ -236,10 +226,12 @@ h1{
 }
 
 .message-author strong{
+
     color:#eee;
 }
 
 .status{
+
     min-height:25px;
 
     margin-top:25px;
@@ -254,6 +246,7 @@ h1{
 }
 
 .buttons{
+
     display:flex;
 
     gap:15px;
@@ -262,6 +255,7 @@ h1{
 }
 
 .action-button{
+
     flex:1;
 
     padding:
@@ -292,6 +286,7 @@ h1{
 }
 
 .action-button:hover{
+
     transform:
         translateY(-2px);
 
@@ -301,11 +296,13 @@ h1{
 }
 
 .action-button:active{
+
     transform:
         translateY(0);
 }
 
 .action-button:disabled{
+
     opacity:.45;
 
     cursor:not-allowed;
@@ -314,6 +311,7 @@ h1{
 }
 
 .back-button{
+
     background:
         rgba(255,255,255,.10);
 
@@ -327,12 +325,14 @@ h1{
 }
 
 .back-button:hover{
+
     box-shadow:
         0 10px 30px
         rgba(0,0,0,.35);
 }
 
 .notice{
+
     margin-top:28px;
 
     padding:
@@ -357,28 +357,28 @@ h1{
 }
 
 .hidden{
+
     display:none;
 }
 
 @media(max-width:700px){
 
     body{
+
         padding:
             35px 14px 55px;
     }
 
     .card{
+
         padding:
             32px 22px;
 
         border-radius:28px;
     }
 
-    .meta{
-        grid-template-columns:1fr;
-    }
-
     .buttons{
+
         flex-direction:column;
     }
 
@@ -387,29 +387,37 @@ h1{
 @media(max-width:500px){
 
     body{
+
         padding:
             25px 10px 45px;
     }
 
     .symbol{
+
         font-size:48px;
     }
 
     .logo{
+
         font-size:10px;
+
         letter-spacing:5px;
     }
 
     h1{
+
         font-size:40px;
     }
 
     .subtitle{
+
         font-size:15px;
+
         margin-bottom:30px;
     }
 
     .card{
+
         padding:
             27px 17px;
 
@@ -417,6 +425,7 @@ h1{
     }
 
     .message-box{
+
         min-height:280px;
 
         padding:22px;
@@ -428,137 +437,111 @@ h1{
 
 }
 
-</style></head><body><div class="container"><div class="symbol">
-    ◈ ✦ ∞
-</div>
+</style>
 
-<div class="logo">
-    GLOBAL HUMAN CONNECTION
-</div>
+</head>
 
-<h1>
-    MESSAGE
-</h1>
+<body>
 
-<div class="subtitle">
-    A message left by another human.
-</div>
+<div class="container">
 
-<div class="card">
-
-    <div
-        id="messageNumber"
-        class="message-number"
-    >
-        MESSAGE <span>—</span>
+    <div class="symbol">
+        ◈ ✦ ∞
     </div>
 
-    <div
-        id="meta"
-        class="meta hidden"
-    >
-
-        <div class="meta-box">
-
-            <span class="meta-label">
-                Name
-            </span>
-
-            <span
-                id="name"
-                class="meta-value"
-            >
-                —
-            </span>
-
-        </div>
-
-        <div class="meta-box">
-
-            <span class="meta-label">
-                Country
-            </span>
-
-            <span
-                id="country"
-                class="meta-value"
-            >
-                —
-            </span>
-
-        </div>
-
-        <div class="meta-box">
-
-            <span class="meta-label">
-                City
-            </span>
-
-            <span
-                id="city"
-                class="meta-value"
-            >
-                —
-            </span>
-
-        </div>
-
+    <div class="logo">
+        GLOBAL HUMAN CONNECTION
     </div>
 
-    <div
-        id="messageBox"
-        class="message-box"
-    >
-        Loading message...
+    <h1>
+        MESSAGE
+    </h1>
+
+    <div class="subtitle">
+        A message left by another human.
     </div>
 
-    <div
-        id="author"
-        class="message-author hidden"
-    >
-        — <strong></strong>
-    </div>
+    <div class="card">
 
-    <div
-        id="status"
-        class="status"
-        aria-live="polite"
-    >
-        Loading message...
-    </div>
-
-    <div class="buttons">
-
-        <button
-            id="previousButton"
-            class="action-button"
-            type="button"
-            disabled
+        <div
+            id="messageNumber"
+            class="message-number"
         >
-            PREVIOUS MESSAGE
-        </button>
+            MESSAGE <span>—</span>
+        </div>
 
-        <button
-            id="backButton"
-            class="action-button back-button"
-            type="button"
+        <div
+            id="messageBox"
+            class="message-box"
         >
-            BACK
-        </button>
+            Loading message...
+        </div>
 
-    </div>
+        <div
+            id="author"
+            class="message-author hidden"
+        >
+            — <strong></strong>
+        </div>
 
-    <div class="notice">
-        Messages are displayed through the project's message system.
-        Personal information is shown only when provided by the system.
+        <div
+            id="status"
+            class="status"
+            aria-live="polite"
+        >
+            Loading message...
+        </div>
+
+        <div class="buttons">
+
+            <button
+                id="previousButton"
+                class="action-button"
+                type="button"
+                disabled
+            >
+                PREVIOUS MESSAGE
+            </button>
+
+            <button
+                id="backButton"
+                class="action-button back-button"
+                type="button"
+            >
+                BACK
+            </button>
+
+        </div>
+
+        <div class="notice">
+
+            Messages are displayed through
+            the Global Human Connection
+            message system.
+
+            <br><br>
+
+            Please do not include passwords,
+            private keys, financial information,
+            or other highly sensitive information.
+
+        </div>
+
     </div>
 
 </div>
 
-</div><script>
+<script>
+
+"use strict";
+
+
+/* =====================================================
+   CONFIG
+===================================================== */
 
 const WORKER_URL =
-"https://soft-shape-5b8a.aaa6654292.workers.dev";
+    "https://soft-shape-5b8a.aaa6654292.workers.dev";
 
 
 /* =====================================================
@@ -566,54 +549,34 @@ const WORKER_URL =
 ===================================================== */
 
 const messageNumberElement =
-document.getElementById(
-    "messageNumber"
-);
-
-const metaElement =
-document.getElementById(
-    "meta"
-);
-
-const nameElement =
-document.getElementById(
-    "name"
-);
-
-const countryElement =
-document.getElementById(
-    "country"
-);
-
-const cityElement =
-document.getElementById(
-    "city"
-);
+    document.getElementById(
+        "messageNumber"
+    );
 
 const messageBox =
-document.getElementById(
-    "messageBox"
-);
+    document.getElementById(
+        "messageBox"
+    );
 
 const authorElement =
-document.getElementById(
-    "author"
-);
+    document.getElementById(
+        "author"
+    );
 
 const statusElement =
-document.getElementById(
-    "status"
-);
+    document.getElementById(
+        "status"
+    );
 
 const previousButton =
-document.getElementById(
-    "previousButton"
-);
+    document.getElementById(
+        "previousButton"
+    );
 
 const backButton =
-document.getElementById(
-    "backButton"
-);
+    document.getElementById(
+        "backButton"
+    );
 
 
 /* =====================================================
@@ -621,12 +584,33 @@ document.getElementById(
 ===================================================== */
 
 const params =
-new URLSearchParams(
-    window.location.search
-);
+    new URLSearchParams(
+        window.location.search
+    );
 
 const messageId =
-params.get("messageId");
+    params.get("messageId");
+
+
+/* =====================================================
+   BASIC MESSAGE ID VALIDATION
+===================================================== */
+
+function isValidMessageId(value){
+
+    if(
+        typeof value !== "string"
+    ){
+
+        return false;
+
+    }
+
+    return /^[a-f0-9-]{36}$/i.test(
+        value
+    );
+
+}
 
 
 /* =====================================================
@@ -635,13 +619,20 @@ params.get("messageId");
 
 async function loadMessage(){
 
-    if(!messageId){
+    if(
+        !isValidMessageId(
+            messageId
+        )
+    ){
+
+        messageNumberElement.textContent =
+            "MESSAGE —";
 
         messageBox.textContent =
-            "No message ID was provided.";
+            "This message link is invalid.";
 
         statusElement.textContent =
-            "Missing Message ID.";
+            "Invalid Message ID.";
 
         previousButton.disabled =
             true;
@@ -650,29 +641,38 @@ async function loadMessage(){
 
     }
 
+
     statusElement.textContent =
         "Loading message...";
 
     previousButton.disabled =
         true;
 
+
     try{
 
         const response =
             await fetch(
+
                 WORKER_URL +
                 "/get-message?messageId=" +
                 encodeURIComponent(
                     messageId
                 ),
+
                 {
                     method:"GET",
-                    cache:"no-store"
+
+                    cache:"no-store",
+
+                    credentials:"omit"
                 }
+
             );
 
 
         let result;
+
 
         try{
 
@@ -682,19 +682,15 @@ async function loadMessage(){
         }catch{
 
             throw new Error(
-                "Worker returned an invalid response."
+                "Invalid server response."
             );
 
         }
 
 
-        console.log(
-            "GET MESSAGE:",
-            result
-        );
-
-
-        if(!response.ok){
+        if(
+            !response.ok
+        ){
 
             throw new Error(
                 result.error ||
@@ -706,11 +702,11 @@ async function loadMessage(){
 
         if(
             result.success !== true ||
-            !result.message
+            !result.message ||
+            typeof result.message !== "object"
         ){
 
             throw new Error(
-                result.error ||
                 "Message not found."
             );
 
@@ -725,12 +721,14 @@ async function loadMessage(){
         statusElement.textContent =
             "Message loaded.";
 
+
     }catch(error){
 
         console.error(
             "GET MESSAGE ERROR:",
             error
         );
+
 
         messageBox.textContent =
             "Message could not be loaded.";
@@ -753,79 +751,99 @@ async function loadMessage(){
 
 function renderMessage(message){
 
+    /*
+     * IMPORTANT:
+     *
+     * All user-controlled values are rendered
+     * with textContent.
+     *
+     * No user message is inserted using
+     * innerHTML.
+     */
+
+
     const number =
-        message.messageNumber ??
-        "—";
+        Number.isSafeInteger(
+            message.messageNumber
+        )
+            ? message.messageNumber
+            : null;
+
 
     const name =
-        message.name ||
-        "Anonymous";
+        typeof message.name === "string" &&
+        message.name.trim()
+            ? message.name.trim()
+            : "Anonymous";
 
-    const country =
-        message.country ||
-        "—";
-
-    const city =
-        message.city ||
-        "—";
 
     const text =
-        message.message ||
+        typeof message.message === "string"
+            ? message.message
+            : "";
+
+
+    if(number !== null){
+
+        messageNumberElement.textContent =
+            "MESSAGE " +
+            String(number);
+
+    }else{
+
+        messageNumberElement.textContent =
+            "MESSAGE —";
+
+    }
+
+
+    /*
+     * Public view intentionally does NOT
+     * display email, country or city.
+     */
+
+    messageBox.textContent =
+        text ||
         "No message content.";
 
 
-    messageNumberElement.innerHTML =
-        "MESSAGE <span>" +
-        escapeHtml(
-            String(number)
-        ) +
-        "</span>";
-
-
-    nameElement.textContent =
+    authorElement.textContent =
+        "— " +
         name;
-
-    countryElement.textContent =
-        country;
-
-    cityElement.textContent =
-        city;
-
-
-    metaElement.classList.remove(
-        "hidden"
-    );
-
-
-    messageBox.textContent =
-        text;
 
 
     authorElement.classList.remove(
         "hidden"
     );
 
-    authorElement.innerHTML =
-        "— <strong>" +
-        escapeHtml(
-            name
-        ) +
-        "</strong>";
 
+    /*
+     * Previous-message availability is
+     * determined by the server response.
+     *
+     * The actual previous message is never
+     * trusted from client-side input.
+     */
 
     previousButton.disabled =
-        !message.previousMessageId;
+        !isValidMessageId(
+            message.previousMessageId
+        );
 
 }
 
 
 /* =====================================================
-   PREVIOUS MESSAGE
+   LOAD PREVIOUS MESSAGE
 ===================================================== */
 
 async function loadPreviousMessage(){
 
-    if(!messageId){
+    if(
+        !isValidMessageId(
+            messageId
+        )
+    ){
 
         return;
 
@@ -846,19 +864,26 @@ async function loadPreviousMessage(){
 
         const response =
             await fetch(
+
                 WORKER_URL +
                 "/previous-message?messageId=" +
                 encodeURIComponent(
                     messageId
                 ),
+
                 {
                     method:"GET",
-                    cache:"no-store"
+
+                    cache:"no-store",
+
+                    credentials:"omit"
                 }
+
             );
 
 
         let result;
+
 
         try{
 
@@ -868,19 +893,15 @@ async function loadPreviousMessage(){
         }catch{
 
             throw new Error(
-                "Worker returned an invalid response."
+                "Invalid server response."
             );
 
         }
 
 
-        console.log(
-            "PREVIOUS MESSAGE:",
-            result
-        );
-
-
-        if(!response.ok){
+        if(
+            !response.ok
+        ){
 
             throw new Error(
                 result.error ||
@@ -921,27 +942,30 @@ async function loadPreviousMessage(){
         }
 
 
-        /*
-         * The worker returns the previous
-         * message object, including its
-         * messageId.
-         */
-
         const previous =
             result.message;
 
 
-        if(!previous.messageId){
+        /*
+         * Never trust arbitrary navigation data.
+         */
+
+        if(
+            !isValidMessageId(
+                previous.messageId
+            )
+        ){
 
             throw new Error(
-                "Previous message ID is missing."
+                "Invalid previous message."
             );
 
         }
 
 
         /*
-         * Navigate to the previous message.
+         * Navigate only using the
+         * server-provided previous ID.
          */
 
         window.location.href =
@@ -957,6 +981,7 @@ async function loadPreviousMessage(){
             "PREVIOUS MESSAGE ERROR:",
             error
         );
+
 
         statusElement.textContent =
             error.message ||
@@ -1009,41 +1034,13 @@ previousButton.addEventListener(
 
 
 /* =====================================================
-   HTML ESCAPE
-===================================================== */
-
-function escapeHtml(value){
-
-    return String(value)
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
-
-/* =====================================================
    START
 ===================================================== */
 
 loadMessage();
 
-</script></body>
+</script>
+
+</body>
+
 </html>
