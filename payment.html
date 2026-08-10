@@ -1,25 +1,22 @@
-<!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Secure Payment</title><style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Secure Payment</title>
 
-*{
-box-sizing:border-box;
-}
+<style>
+*{box-sizing:border-box}
 
 body{
 margin:0;
 min-height:100vh;
 font-family:Arial,Helvetica,sans-serif;
-
-background:
-radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
-
+background:radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
 color:white;
-
 display:flex;
 justify-content:center;
 align-items:center;
-
 text-align:center;
 }
 
@@ -145,72 +142,91 @@ line-height:1.5;
 }
 
 @media(max-width:600px){
-
-h1{
-font-size:42px;
+h1{font-size:42px}
+.amount{font-size:65px}
+button{width:100%;padding:22px 15px}
+.card{padding:35px 20px}
 }
+</style>
+</head>
 
-.amount{
-font-size:65px;
-}
+<body>
 
-button{
-width:100%;
-padding:22px 15px;
-}
+<div class="container">
 
-.card{
-padding:35px 20px;
-}
-
-}
-
-</style></head><body><div class="container"><div class="symbol">
+<div class="symbol">
 ◈ ✦ ∞
-</div><div class="logo">
-GLOBAL HUMAN CONNECTION
-</div><h1>
-PAYMENT
-</h1><div class="card"><div class="amount">
-$2
-</div><div class="network">
-USDT TRC20
-</div><div class="info">Send exactly <b>2 USDT</b><br>
+</div>
 
+<div class="logo">
+GLOBAL HUMAN CONNECTION
+</div>
+
+<h1>
+PAYMENT
+</h1>
+
+<div class="card">
+
+<div class="amount">
+$2
+</div>
+
+<div class="network">
+USDT TRC20
+</div>
+
+<div class="info">
+Send exactly <b>2 USDT</b><br>
 Network:
 <b>TRON (TRC20)</b>
+</div>
 
-</div><div class="wallet">
+<div class="wallet">
 TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx
-</div><div class="order">
+</div>
+
+<div class="order">
 Order ID:
 <strong id="orderId">Creating...</strong>
-</div><button onclick="copyWallet()">
+</div>
+
+<button onclick="copyWallet()">
 COPY WALLET ADDRESS
-</button><div class="txid-box"><input
+</button>
+
+<div class="txid-box">
+
+<input
 id="txidInput"
 class="txid-input"
 type="text"
 placeholder="Enter transaction hash after payment"
 autocomplete="off"
-
-«»
+>
 
 <button
 class="verify-button"
 onclick="verifyPayment()"
-
-«»
-
+>
 VERIFY PAYMENT
 </button>
 
-</div><div class="warning">Only send USDT on TRC20 network.<br>
-Sending another network may result in loss.
+</div>
 
-</div><div class="status" id="status">
+<div class="warning">
+Only send USDT on TRC20 network.<br>
+Sending another network may result in loss.
+</div>
+
+<div class="status" id="status">
 Creating your order...
-</div></div></div><script>
+</div>
+
+</div>
+</div>
+
+<script>
 
 const WORKER_URL =
 "https://soft-shape-5b8a.aaa6654292.workers.dev";
@@ -233,9 +249,7 @@ async function copyWallet(){
             PAYMENT_ADDRESS
         );
 
-        alert(
-            "Wallet address copied"
-        );
+        alert("Wallet address copied");
 
     }catch(error){
 
@@ -260,22 +274,21 @@ async function copyWallet(){
 async function createOrder(){
 
     const status =
-        document.getElementById(
-            "status"
-        );
+        document.getElementById("status");
 
     try{
 
         status.textContent =
             "Creating your order...";
 
-
         const response =
             await fetch(
                 WORKER_URL +
-                "/create-order"
+                "/create-order",
+                {
+                    method:"GET"
+                }
             );
-
 
         if(!response.ok){
 
@@ -286,10 +299,8 @@ async function createOrder(){
 
         }
 
-
         const order =
             await response.json();
-
 
         if(!order.orderId){
 
@@ -299,28 +310,21 @@ async function createOrder(){
 
         }
 
-
         orderId =
             order.orderId;
 
-
         document
-            .getElementById(
-                "orderId"
-            )
+            .getElementById("orderId")
             .textContent =
             orderId;
-
 
         console.log(
             "Order created:",
             order
         );
 
-
         status.textContent =
             "Waiting for payment...";
-
 
     }catch(error){
 
@@ -329,14 +333,10 @@ async function createOrder(){
             error
         );
 
-
         document
-            .getElementById(
-                "orderId"
-            )
+            .getElementById("orderId")
             .textContent =
             "ERROR";
-
 
         status.textContent =
             "Could not create order. Please refresh the page.";
@@ -347,25 +347,19 @@ async function createOrder(){
 
 
 // ==============================
-// VERIFY PAYMENT BY TXID
+// VERIFY PAYMENT
 // ==============================
 
 async function verifyPayment(){
 
     const input =
-        document.getElementById(
-            "txidInput"
-        );
+        document.getElementById("txidInput");
 
     const status =
-        document.getElementById(
-            "status"
-        );
-
+        document.getElementById("status");
 
     const txid =
         input.value.trim();
-
 
     if(!orderId){
 
@@ -375,7 +369,6 @@ async function verifyPayment(){
         return;
 
     }
-
 
     if(!txid){
 
@@ -388,38 +381,48 @@ async function verifyPayment(){
 
     }
 
+    if(!/^[a-fA-F0-9]{64}$/.test(txid)){
+
+        status.textContent =
+            "Invalid transaction hash.";
+
+        input.focus();
+
+        return;
+
+    }
 
     status.textContent =
         "Verifying transaction...";
-
 
     try{
 
         const response =
             await fetch(
-
                 WORKER_URL +
-                "/verify-payment?orderId=" +
-                encodeURIComponent(
-                    orderId
-                ) +
-                "&txid=" +
-                encodeURIComponent(
-                    txid
-                )
+                "/verify-payment",
+                {
+                    method:"POST",
 
+                    headers:{
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:JSON.stringify({
+                        orderId:orderId,
+                        txid:txid
+                    })
+                }
             );
-
 
         const result =
             await response.json();
-
 
         console.log(
             "Verification result:",
             result
         );
-
 
         if(result.paid === true){
 
@@ -430,19 +433,14 @@ async function verifyPayment(){
 
         }
 
-
-        if(
-            result.status ===
-            "transaction_found"
-        ){
+        if(result.paid === false){
 
             status.textContent =
-                "Transaction found. Please wait for confirmation.";
+                "Payment not confirmed yet. Please wait for the transaction to appear on the TRON network.";
 
             return;
 
         }
-
 
         status.textContent =
             result.error ||
@@ -454,7 +452,6 @@ async function verifyPayment(){
             "Verification failed:",
             error
         );
-
 
         status.textContent =
             "Could not verify payment. Please try again.";
@@ -470,5 +467,7 @@ async function verifyPayment(){
 
 createOrder();
 
-</script></body>
+</script>
+
+</body>
 </html>
