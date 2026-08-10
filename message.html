@@ -1,438 +1,528 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leave Your Message</title><style>
-*{box-sizing:border-box}
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Last Human Message</title><style>
 
-html{scroll-behavior:smooth}
+*{
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
 
 body{
 margin:0;
 min-height:100vh;
-font-family:Arial,Helvetica,sans-serif;
-background:radial-gradient(circle at top,#b30000 0%,#4a0000 36%,#080808 100%);
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+background:
+radial-gradient(
+circle at top,
+#b30000 0%,
+#4a0000 36%,
+#080808 100%
+);
+
 color:white;
+
 display:flex;
 justify-content:center;
 align-items:flex-start;
-padding:55px 25px 80px;
+
+padding:
+55px 25px 80px;
 }
 
 .container{
 width:100%;
-max-width:1100px;
+max-width:1000px;
 margin:0 auto;
 }
 
 .symbol{
 text-align:center;
+
 font-size:62px;
-text-shadow:0 0 35px rgba(255,0,0,.85);
+
+text-shadow:
+0 0 35px
+rgba(255,0,0,.85);
+
 margin-bottom:12px;
 }
 
 .logo{
 text-align:center;
+
 font-size:13px;
+
 letter-spacing:8px;
+
 color:#ffbaba;
+
 margin-bottom:18px;
 }
 
 h1{
 text-align:center;
-font-size:clamp(42px,5vw,64px);
+
+font-size:
+clamp(42px,5vw,64px);
+
 font-weight:900;
+
 letter-spacing:-1.5px;
-margin:12px 0 10px;
-text-shadow:0 0 25px rgba(255,0,0,.6);
+
+margin:
+12px 0 10px;
+
+text-shadow:
+0 0 25px
+rgba(255,0,0,.6);
 }
 
 .subtitle{
 text-align:center;
-font-size:clamp(16px,2vw,19px);
+
+font-size:
+clamp(16px,2vw,19px);
+
 color:#d0d0d0;
+
 margin-bottom:42px;
 }
 
 .card{
 width:100%;
-padding:50px 65px;
-background:rgba(255,255,255,.085);
-border:1px solid rgba(255,255,255,.20);
+
+padding:
+50px 65px;
+
+background:
+rgba(255,255,255,.085);
+
+border:
+1px solid
+rgba(255,255,255,.20);
+
 border-radius:34px;
-backdrop-filter:blur(22px);
--webkit-backdrop-filter:blur(22px);
-box-shadow:0 25px 100px rgba(0,0,0,.70);
+
+backdrop-filter:
+blur(22px);
+
+-webkit-backdrop-filter:
+blur(22px);
+
+box-shadow:
+0 25px 100px
+rgba(0,0,0,.70);
 }
 
-.order-card{
-width:100%;
-min-height:58px;
-padding:15px 20px;
-margin-bottom:35px;
-border-radius:17px;
-background:rgba(0,0,0,.28);
-border:1px solid rgba(255,255,255,.12);
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px;
-}
-
-.order-label{
-font-size:12px;
-font-weight:800;
-letter-spacing:2px;
-text-transform:uppercase;
-color:#999;
-white-space:nowrap;
-}
-
-.order-value{
-font-family:monospace;
-font-size:14px;
-color:#e5e5e5;
-word-break:break-all;
-text-align:right;
-}
-
-.row{
+.meta{
 display:grid;
-grid-template-columns:1fr 1fr;
-gap:28px;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:20px;
+
+margin-bottom:30px;
 }
 
-label{
-display:block;
-font-size:15px;
-font-weight:700;
-margin-bottom:10px;
-color:#f3cccc;
+.meta-box{
+padding:
+18px 20px;
+
+border-radius:17px;
+
+background:
+rgba(0,0,0,.28);
+
+border:
+1px solid
+rgba(255,255,255,.12);
 }
 
-.field{
-width:100%;
-padding:18px 19px;
-margin-bottom:25px;
-border-radius:16px;
-border:1px solid rgba(255,255,255,.18);
-background:rgba(0,0,0,.35);
-color:white;
-font-size:17px;
-outline:none;
-transition:border-color .2s,box-shadow .2s,background .2s;
-}
+.meta-label{
+font-size:11px;
 
-.field:hover{
-background:rgba(0,0,0,.43);
-}
+font-weight:800;
 
-.field:focus{
-border-color:rgba(255,145,145,.8);
-background:rgba(0,0,0,.48);
-box-shadow:0 0 0 3px rgba(255,0,0,.08);
-}
+letter-spacing:2px;
 
-.field::placeholder{
-color:#858585;
-}
+text-transform:uppercase;
 
-.message-header{
-display:flex;
-align-items:center;
-justify-content:space-between;
-margin-top:4px;
-margin-bottom:10px;
-}
-
-.message-label{
-font-size:15px;
-font-weight:700;
-color:#f3cccc;
-}
-
-.counter{
-font-size:14px;
 color:#999;
-font-variant-numeric:tabular-nums;
+
+margin-bottom:8px;
 }
 
-.counter.warning{
-color:#ff9999;
+.meta-value{
+font-size:16px;
+
+color:#eee;
+
+word-break:break-word;
+}
+
+.message-number{
+text-align:center;
+
+font-size:14px;
+
+font-weight:800;
+
+letter-spacing:3px;
+
+color:#ffbaba;
+
+margin-bottom:25px;
+
+text-transform:uppercase;
 }
 
 .message-box{
 width:100%;
-height:430px;
-min-height:430px;
-resize:vertical;
-padding:24px;
-margin-bottom:28px;
-border-radius:20px;
-border:1px solid rgba(255,255,255,.20);
-background:rgba(0,0,0,.38);
-color:white;
-font-family:Arial,Helvetica,sans-serif;
-font-size:17px;
-line-height:1.8;
-outline:none;
-transition:border-color .2s,box-shadow .2s;
+
+min-height:360px;
+
+padding:30px;
+
+border-radius:22px;
+
+background:
+rgba(0,0,0,.38);
+
+border:
+1px solid
+rgba(255,255,255,.20);
+
+font-size:18px;
+
+line-height:1.9;
+
+color:#f5f5f5;
+
+white-space:pre-wrap;
+
+overflow-wrap:anywhere;
+
+box-shadow:
+inset 0 0 40px
+rgba(0,0,0,.25);
 }
 
-.message-box:focus{
-border-color:rgba(255,145,145,.8);
-box-shadow:0 0 0 3px rgba(255,0,0,.08);
+.actions{
+margin-top:30px;
+
+display:flex;
+
+flex-direction:column;
+
+gap:15px;
 }
 
-.message-box::placeholder{
-color:#777;
-}
-
-.submit{
+.button{
 width:100%;
-padding:22px 30px;
+
+padding:
+21px 30px;
+
 border:none;
+
 border-radius:60px;
+
 background:white;
+
 color:#680000;
-font-size:clamp(18px,2vw,21px);
+
+font-size:19px;
+
 font-weight:900;
-letter-spacing:.3px;
+
 cursor:pointer;
-box-shadow:0 12px 40px rgba(0,0,0,.35);
-transition:transform .2s,box-shadow .2s,opacity .2s;
+
+box-shadow:
+0 12px 40px
+rgba(0,0,0,.35);
+
+transition:
+transform .2s,
+box-shadow .2s,
+opacity .2s;
 }
 
-.submit:hover{
-transform:translateY(-2px);
-box-shadow:0 16px 45px rgba(0,0,0,.45);
+.button:hover{
+transform:
+translateY(-2px);
+
+box-shadow:
+0 16px 45px
+rgba(0,0,0,.45);
 }
 
-.submit:active{
-transform:translateY(0);
+.button:active{
+transform:
+translateY(0);
 }
 
-.submit:disabled{
+.button:disabled{
 opacity:.5;
+
 cursor:not-allowed;
+
 transform:none;
 }
 
 .status{
 min-height:25px;
+
 margin-top:22px;
+
 text-align:center;
+
 font-size:16px;
+
 color:#ddd;
-line-height:1.5;
+
+line-height:1.6;
 }
 
 .notice{
 margin-top:28px;
-padding:18px 22px;
+
+padding:
+18px 22px;
+
 border-radius:16px;
-background:rgba(0,0,0,.22);
-border:1px solid rgba(255,255,255,.08);
+
+background:
+rgba(0,0,0,.22);
+
+border:
+1px solid
+rgba(255,255,255,.08);
+
 color:#999;
+
 font-size:13px;
+
 line-height:1.6;
+
 text-align:center;
 }
 
-@media(min-width:1200px){
-.container{max-width:1100px}
-.card{padding:55px 75px}
-.message-box{
-height:450px;
-min-height:450px;
-}
+@media(max-width:800px){
+
+body{
+padding:
+35px 15px 55px;
 }
 
-@media(max-width:800px){
-body{padding:35px 15px 55px}
-.container{max-width:650px}
 .card{
-padding:35px 25px;
+padding:
+35px 25px;
+
 border-radius:28px;
 }
-.row{
+
+.meta{
 grid-template-columns:1fr;
-gap:0;
 }
+
+.message-box{
+min-height:330px;
+
+padding:23px;
+
+font-size:17px;
+}
+
 }
 
 @media(max-width:600px){
-body{padding:25px 12px 45px}
-.symbol{font-size:48px}
+
+body{
+padding:
+25px 12px 45px;
+}
+
+.symbol{
+font-size:48px;
+}
+
 .logo{
 font-size:10px;
+
 letter-spacing:5px;
 }
-h1{font-size:40px}
+
+h1{
+font-size:40px;
+}
+
 .subtitle{
 font-size:15px;
+
 margin-bottom:30px;
 }
+
 .card{
-padding:28px 18px;
+padding:
+28px 18px;
+
 border-radius:24px;
 }
-.order-card{
-flex-direction:column;
-align-items:flex-start;
-gap:7px;
-padding:14px 16px;
+
+.meta-box{
+padding:
+15px 16px;
 }
-.order-value{
-text-align:left;
-width:100%;
-font-size:12px;
-}
-.field{
-padding:17px;
-font-size:16px;
-}
+
 .message-box{
-height:330px;
-min-height:330px;
+min-height:300px;
+
 padding:19px;
+
 font-size:16px;
-line-height:1.7;
+
+line-height:1.8;
+
 border-radius:17px;
 }
-.submit{
-padding:20px 15px;
+
+.button{
+padding:
+20px 15px;
 }
+
 }
 
 @media(max-width:400px){
-body{padding:20px 9px 35px}
-.symbol{font-size:42px}
-h1{font-size:35px}
-.card{padding:24px 15px}
+
+body{
+padding:
+20px 9px 35px;
+}
+
+.symbol{
+font-size:42px;
+}
+
+h1{
+font-size:35px;
+}
+
+.card{
+padding:
+24px 15px;
+}
+
 .message-box{
-height:300px;
-min-height:300px;
+min-height:280px;
 }
+
 }
-</style></head><body><div class="container"><div class="symbol">◈ ✦ ∞</div><div class="logo">
+
+</style></head><body><div class="container"><div class="symbol">
+◈ ✦ ∞
+</div><div class="logo">
 GLOBAL HUMAN CONNECTION
-</div><h1>YOUR MESSAGE</h1><div class="subtitle">
-Leave something for the next person.
-</div><div class="card"><div class="order-card">
-<div class="order-label">Order ID</div>
-<div id="orderDisplay" class="order-value">
-Loading...
-</div>
-</div><form id="messageForm" novalidate><div class="row"><div>
-<label for="name">Name</label>
-<input
+</div><h1>
+LAST HUMAN MESSAGE
+</h1><div class="subtitle">
+One message. One person. One moment.
+</div><div class="card"><div
+id="messageNumber"
+class="message-number"
+>
+MESSAGE
+</div><div class="meta"><div class="meta-box"><div class="meta-label">
+Name
+</div><div
 id="name"
-class="field"
-type="text"
-name="name"
-placeholder="Your name"
-maxlength="100"
-required
-autocomplete="name"
+class="meta-value"
 >
-</div><div>
-<label for="email">Email</label>
-<input
-id="email"
-class="field"
-type="email"
-name="email"
-placeholder="your@email.com"
-maxlength="254"
-required
-autocomplete="email"
+Loading...
+</div></div><div class="meta-box"><div class="meta-label">
+Location
+</div><div
+id="location"
+class="meta-value"
 >
-</div></div><div class="row"><div>
-<label for="country">Country</label>
-<input
-id="country"
-class="field"
-type="text"
-name="country"
-placeholder="Your country"
-maxlength="100"
-required
-autocomplete="country-name"
->
-</div><div>
-<label for="city">City</label>
-<input
-id="city"
-class="field"
-type="text"
-name="city"
-placeholder="Your city"
-maxlength="100"
-required
-autocomplete="address-level2"
->
-</div></div><div class="message-header"><div class="message-label">
-Your message
-</div><div id="counter" class="counter">
-0 / 4000
-</div></div><textarea
-id="message"
+Loading...
+</div></div></div><div
+id="messageBox"
 class="message-box"
-name="message"
-placeholder="Write your message here..."
-maxlength="4000"
-required
-></textarea><button
-id="submitButton"
-class="submit"
-type="submit"
+>
+Loading message...
+</div><div class="actions"><button
+id="previousButton"
+class="button"
+onclick="loadPreviousMessage()"
 disabled
 
 «»
 
-CHECKING PAYMENT...
+PREVIOUS MESSAGE
 </button>
 
-<div
+</div><div
 id="status"
 class="status"
 aria-live="polite"
 >
-Checking your payment...
-</div></form><div class="notice">
-Your email is collected for message submission and should not be displayed publicly unless you choose to make it visible later.
-</div></div>
-</div><script>
+Loading message...
+</div><div class="notice">
+This message was left by another person.
+The previous message belongs to the person who came before them.
+</div></div></div><script>
 
 const WORKER_URL =
 "https://soft-shape-5b8a.aaa6654292.workers.dev";
 
-const MAX_MESSAGE_LENGTH = 4000;
 
-const form =
-document.getElementById("messageForm");
+/* =====================================================
+   ELEMENTS
+===================================================== */
 
-const messageInput =
-document.getElementById("message");
+const messageNumberElement =
+document.getElementById(
+"messageNumber"
+);
 
-const counter =
-document.getElementById("counter");
+const nameElement =
+document.getElementById(
+"name"
+);
+
+const locationElement =
+document.getElementById(
+"location"
+);
+
+const messageBox =
+document.getElementById(
+"messageBox"
+);
+
+const previousButton =
+document.getElementById(
+"previousButton"
+);
 
 const statusElement =
-document.getElementById("status");
-
-const submitButton =
-document.getElementById("submitButton");
-
-const orderDisplay =
-document.getElementById("orderDisplay");
+document.getElementById(
+"status"
+);
 
 
 /* =====================================================
-   GET ORDER ID
+   GET MESSAGE ID
 ===================================================== */
 
 const params =
@@ -440,459 +530,62 @@ new URLSearchParams(
 window.location.search
 );
 
-const orderId =
-params.get("orderId");
+let messageId =
+params.get("messageId");
 
 
-if(!orderId){
+/* =====================================================
+   LOAD MESSAGE
+===================================================== */
 
-orderDisplay.textContent =
-"Not provided";
+async function loadMessage(){
+
+if(!messageId){
+
+messageNumberElement.textContent =
+"INVALID MESSAGE";
+
+nameElement.textContent =
+"—";
+
+locationElement.textContent =
+"—";
+
+messageBox.textContent =
+"No message ID was provided.";
 
 statusElement.textContent =
-"Missing Order ID.";
+"Missing message ID.";
 
-submitButton.disabled = true;
+previousButton.disabled =
+true;
 
-}else{
-
-orderDisplay.textContent =
-orderId;
-
-checkOrder();
+return;
 
 }
 
 
-/* =====================================================
-   CHECK ORDER
-===================================================== */
-
-async function checkOrder(){
-
-submitButton.disabled = true;
-
-submitButton.textContent =
-"CHECKING PAYMENT...";
-
 statusElement.textContent =
-"Checking your payment...";
+"Loading message...";
+
+previousButton.disabled =
+true;
+
 
 try{
 
 const response =
 await fetch(
+
 WORKER_URL +
-"/check-order?orderId=" +
-encodeURIComponent(orderId),
+"/get-message?messageId=" +
+encodeURIComponent(messageId),
+
 {
 method:"GET",
 cache:"no-store"
 }
-);
 
-let result;
-
-try{
-
-result =
-await response.json();
-
-}catch{
-
-throw new Error(
-"Worker returned an invalid response."
-);
-
-}
-
-console.log(
-"CHECK ORDER:",
-result
-);
-
-if(!response.ok){
-
-throw new Error(
-result.error ||
-"Unable to check order."
-);
-
-}
-
-if(
-result.paid === true &&
-result.status === "paid"
-){
-
-statusElement.textContent =
-"Payment confirmed. You can leave your message.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(
-result.status === "pending"
-){
-
-statusElement.textContent =
-"Payment has not been confirmed yet.";
-
-submitButton.disabled = true;
-
-submitButton.textContent =
-"WAITING FOR PAYMENT";
-
-return;
-
-}
-
-statusElement.textContent =
-result.error ||
-"Payment has not been confirmed.";
-
-submitButton.disabled = true;
-
-}catch(error){
-
-console.error(
-"CHECK ORDER ERROR:",
-error
-);
-
-statusElement.textContent =
-error.message ||
-"Could not check payment.";
-
-submitButton.disabled = true;
-
-submitButton.textContent =
-"PAYMENT NOT CONFIRMED";
-
-}
-
-}
-
-
-/* =====================================================
-   MESSAGE COUNTER
-===================================================== */
-
-function updateCounter(){
-
-const length =
-messageInput.value.length;
-
-counter.textContent =
-length +
-" / " +
-MAX_MESSAGE_LENGTH;
-
-if(length >= 3800){
-
-counter.classList.add("warning");
-
-}else{
-
-counter.classList.remove("warning");
-
-}
-
-}
-
-messageInput.addEventListener(
-"input",
-updateCounter
-);
-
-updateCounter();
-
-
-/* =====================================================
-   HELPERS
-===================================================== */
-
-function isBlank(value){
-
-return !value
-.replace(/\s/g,"")
-.length;
-
-}
-
-
-/* =====================================================
-   SUBMIT MESSAGE
-===================================================== */
-
-form.addEventListener(
-"submit",
-async function(event){
-
-event.preventDefault();
-
-if(!orderId){
-
-statusElement.textContent =
-"Missing Order ID.";
-
-return;
-
-}
-
-submitButton.disabled = true;
-
-submitButton.textContent =
-"CHECKING...";
-
-statusElement.textContent =
-"Checking payment status...";
-
-
-try{
-
-/* ---------------------------------------------
-   CHECK PAYMENT ONE MORE TIME
---------------------------------------------- */
-
-const paymentResponse =
-await fetch(
-WORKER_URL +
-"/check-order?orderId=" +
-encodeURIComponent(orderId),
-{
-method:"GET",
-cache:"no-store"
-}
-);
-
-const paymentResult =
-await paymentResponse.json();
-
-console.log(
-"PAYMENT CHECK:",
-paymentResult
-);
-
-if(
-!paymentResponse.ok
-){
-
-throw new Error(
-paymentResult.error ||
-"Unable to check payment."
-);
-
-}
-
-if(
-paymentResult.paid !== true ||
-paymentResult.status !== "paid"
-){
-
-statusElement.textContent =
-"Payment has not been confirmed.";
-
-submitButton.disabled = true;
-
-submitButton.textContent =
-"PAYMENT NOT CONFIRMED";
-
-return;
-
-}
-
-
-/* ---------------------------------------------
-   READ FORM
---------------------------------------------- */
-
-const name =
-document
-.getElementById("name")
-.value
-.trim();
-
-const email =
-document
-.getElementById("email")
-.value
-.trim();
-
-const country =
-document
-.getElementById("country")
-.value
-.trim();
-
-const city =
-document
-.getElementById("city")
-.value
-.trim();
-
-const message =
-messageInput
-.value
-.trim();
-
-
-/* ---------------------------------------------
-   VALIDATION
---------------------------------------------- */
-
-if(!name){
-
-statusElement.textContent =
-"Please enter your name.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(!email){
-
-statusElement.textContent =
-"Please enter your email.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(
-!/^[^\s@]+@[^\s@]+\.[^\s@]+$/
-.test(email)
-){
-
-statusElement.textContent =
-"Please enter a valid email.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(!country){
-
-statusElement.textContent =
-"Please enter your country.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(!city){
-
-statusElement.textContent =
-"Please enter your city.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(isBlank(message)){
-
-statusElement.textContent =
-"Please write a message.";
-
-messageInput.focus();
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-if(
-message.length >
-MAX_MESSAGE_LENGTH
-){
-
-statusElement.textContent =
-"Your message is too long.";
-
-submitButton.disabled = false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-return;
-
-}
-
-
-/* ---------------------------------------------
-   SUBMIT TO WORKER
---------------------------------------------- */
-
-submitButton.textContent =
-"SENDING...";
-
-statusElement.textContent =
-"Submitting your message...";
-
-
-const response =
-await fetch(
-WORKER_URL +
-"/submit-message",
-{
-method:"POST",
-
-headers:{
-"Content-Type":
-"application/json"
-},
-
-body:JSON.stringify({
-
-orderId:orderId,
-
-name:name,
-
-email:email,
-
-country:country,
-
-city:city,
-
-message:message
-
-})
-}
 );
 
 
@@ -911,8 +604,9 @@ throw new Error(
 
 }
 
+
 console.log(
-"SUBMIT MESSAGE:",
+"GET MESSAGE:",
 result
 );
 
@@ -921,110 +615,356 @@ if(!response.ok){
 
 throw new Error(
 result.error ||
-"Message submission failed."
+"Message could not be loaded."
 );
 
 }
+
 
 if(
 result.success !== true ||
-result.submitted !== true
+!result.message
 ){
 
 throw new Error(
-result.error ||
-"Message was not submitted."
+"Message data is unavailable."
 );
+
+}
+
+
+displayMessage(
+result.message
+);
+
+
+/* ---------------------------------------------
+   Check whether previous message exists
+--------------------------------------------- */
+
+if(
+result.message.previousMessageId
+){
+
+previousButton.disabled =
+false;
+
+statusElement.textContent =
+"Message loaded.";
+
+}else{
+
+previousButton.disabled =
+true;
+
+statusElement.textContent =
+"This is the first message.";
+
+}
+
+
+}catch(error){
+
+console.error(
+"LOAD MESSAGE ERROR:",
+error
+);
+
+messageNumberElement.textContent =
+"MESSAGE NOT FOUND";
+
+nameElement.textContent =
+"—";
+
+locationElement.textContent =
+"—";
+
+messageBox.textContent =
+error.message ||
+"Could not load this message.";
+
+previousButton.disabled =
+true;
+
+statusElement.textContent =
+error.message ||
+"Could not load message.";
+
+}
+
+}
+
+
+/* =====================================================
+   DISPLAY MESSAGE
+===================================================== */
+
+function displayMessage(message){
+
+const number =
+message.messageNumber ||
+"—";
+
+const name =
+message.name ||
+"Anonymous";
+
+const country =
+message.country ||
+"";
+
+const city =
+message.city ||
+"";
+
+
+messageNumberElement.textContent =
+"MESSAGE #" +
+number;
+
+
+nameElement.textContent =
+name;
+
+
+if(
+country &&
+city
+){
+
+locationElement.textContent =
+city +
+", " +
+country;
+
+}else if(country){
+
+locationElement.textContent =
+country;
+
+}else if(city){
+
+locationElement.textContent =
+city;
+
+}else{
+
+locationElement.textContent =
+"—";
+
+}
+
+
+messageBox.textContent =
+message.message ||
+"";
+
+
+}
+
+
+/* =====================================================
+   LOAD PREVIOUS MESSAGE
+===================================================== */
+
+async function loadPreviousMessage(){
+
+if(!messageId){
+
+return;
+
+}
+
+
+previousButton.disabled =
+true;
+
+previousButton.textContent =
+"LOADING PREVIOUS MESSAGE...";
+
+statusElement.textContent =
+"Loading previous message...";
+
+
+try{
+
+const response =
+await fetch(
+
+WORKER_URL +
+"/previous-message?messageId=" +
+encodeURIComponent(messageId),
+
+{
+method:"GET",
+cache:"no-store"
+}
+
+);
+
+
+let result;
+
+try{
+
+result =
+await response.json();
+
+}catch{
+
+throw new Error(
+"Worker returned an invalid response."
+);
+
+}
+
+
+console.log(
+"PREVIOUS MESSAGE:",
+result
+);
+
+
+if(!response.ok){
+
+throw new Error(
+result.error ||
+"Could not load previous message."
+);
+
+}
+
+
+if(
+result.hasPrevious !== true ||
+!result.message
+){
+
+previousButton.disabled =
+true;
+
+previousButton.textContent =
+"NO PREVIOUS MESSAGE";
+
+statusElement.textContent =
+"This is the first message.";
+
+return;
 
 }
 
 
 /* ---------------------------------------------
-   SUCCESS
+   Move to previous message
 --------------------------------------------- */
 
-statusElement.innerHTML =
-"✓ MESSAGE SUBMITTED<br>" +
-"Message Number: " +
-result.messageNumber;
+messageId =
+result.message.messageId;
 
-submitButton.textContent =
-"MESSAGE SENT";
 
-submitButton.disabled = true;
+/*
+ * Update browser URL without
+ * reloading the entire page.
+ */
 
-document
-.getElementById("name")
-.disabled = true;
+const newUrl =
+window.location.pathname +
+"?messageId=" +
+encodeURIComponent(messageId);
 
-document
-.getElementById("email")
-.disabled = true;
 
-document
-.getElementById("country")
-.disabled = true;
+window.history.pushState(
+{},
+"",
+newUrl
+);
 
-document
-.getElementById("city")
-.disabled = true;
 
-messageInput.disabled = true;
+displayMessage(
+result.message
+);
+
+
+/*
+ * Check if the newly loaded message
+ * has another previous message.
+ */
+
+if(
+result.message.previousMessageId
+){
+
+previousButton.disabled =
+false;
+
+previousButton.textContent =
+"PREVIOUS MESSAGE";
+
+statusElement.textContent =
+"Previous message loaded.";
+
+}else{
+
+previousButton.disabled =
+true;
+
+previousButton.textContent =
+"NO PREVIOUS MESSAGE";
+
+statusElement.textContent =
+"This is the first message.";
+
+}
+
 
 }catch(error){
 
 console.error(
-"SUBMIT MESSAGE ERROR:",
+"PREVIOUS MESSAGE ERROR:",
 error
 );
 
 statusElement.textContent =
 error.message ||
-"Could not submit your message.";
+"Could not load previous message.";
 
-submitButton.textContent =
-"SEND MESSAGE";
+previousButton.disabled =
+false;
 
-submitButton.disabled = false;
+previousButton.textContent =
+"PREVIOUS MESSAGE";
 
 }
+
+}
+
+
+/* =====================================================
+   BROWSER BACK / FORWARD
+===================================================== */
+
+window.addEventListener(
+"popstate",
+function(){
+
+const newParams =
+new URLSearchParams(
+window.location.search
+);
+
+messageId =
+newParams.get("messageId");
+
+loadMessage();
 
 }
 );
 
 
 /* =====================================================
-   UNSAVED MESSAGE WARNING
+   START
 ===================================================== */
 
-let hasTyped = false;
+loadMessage();
 
-messageInput.addEventListener(
-"input",
-function(){
-
-hasTyped =
-messageInput.value
-.trim()
-.length > 0;
-
-}
-);
-
-window.addEventListener(
-"beforeunload",
-function(event){
-
-if(hasTyped){
-
-event.preventDefault();
-
-event.returnValue = "";
-
-}
-
-}
-);
-
-</script></body>
-</html>
+</script></body></html>
