@@ -1,486 +1,758 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Last Human Message</title><style>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>Leave Your Message</title>
+
+<style>
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-margin:0;
-min-height:100vh;
 
-font-family:
-Arial,
-Helvetica,
-sans-serif;
+    margin:0;
 
-background:
-radial-gradient(
-circle at top,
-#b30000 0%,
-#4a0000 36%,
-#080808 100%
-);
+    min-height:100vh;
 
-color:white;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-display:flex;
-justify-content:center;
-align-items:flex-start;
+    background:
+        radial-gradient(
+            circle at top,
+            #b30000 0%,
+            #4a0000 36%,
+            #080808 100%
+        );
 
-padding:
-55px 25px 80px;
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-start;
+
+    padding:
+        55px 20px 80px;
 }
+
 
 .container{
-width:100%;
-max-width:1000px;
-margin:0 auto;
+
+    width:100%;
+
+    max-width:900px;
+
+    margin:0 auto;
 }
+
 
 .symbol{
-text-align:center;
 
-font-size:62px;
+    text-align:center;
 
-text-shadow:
-0 0 35px
-rgba(255,0,0,.85);
+    font-size:62px;
 
-margin-bottom:12px;
+    text-shadow:
+        0 0 35px
+        rgba(255,0,0,.85);
+
+    margin-bottom:12px;
 }
+
 
 .logo{
-text-align:center;
 
-font-size:13px;
+    text-align:center;
 
-letter-spacing:8px;
+    font-size:13px;
 
-color:#ffbaba;
+    letter-spacing:8px;
 
-margin-bottom:18px;
+    color:#ffbaba;
+
+    margin-bottom:18px;
 }
+
 
 h1{
-text-align:center;
 
-font-size:
-clamp(42px,5vw,64px);
+    text-align:center;
 
-font-weight:900;
+    font-size:
+        clamp(42px,5vw,64px);
 
-letter-spacing:-1.5px;
+    font-weight:900;
 
-margin:
-12px 0 10px;
+    letter-spacing:-1.5px;
 
-text-shadow:
-0 0 25px
-rgba(255,0,0,.6);
+    margin:
+        12px 0 10px;
+
+    text-shadow:
+        0 0 25px
+        rgba(255,0,0,.6);
 }
+
 
 .subtitle{
-text-align:center;
 
-font-size:
-clamp(16px,2vw,19px);
+    text-align:center;
 
-color:#d0d0d0;
+    font-size:
+        clamp(16px,2vw,19px);
 
-margin-bottom:42px;
+    color:#d0d0d0;
+
+    margin-bottom:42px;
+
+    line-height:1.7;
 }
+
 
 .card{
-width:100%;
 
-padding:
-50px 65px;
+    width:100%;
 
-background:
-rgba(255,255,255,.085);
+    padding:
+        45px 50px;
 
-border:
-1px solid
-rgba(255,255,255,.20);
+    background:
+        rgba(255,255,255,.085);
 
-border-radius:34px;
+    border:
+        1px solid
+        rgba(255,255,255,.20);
 
-backdrop-filter:
-blur(22px);
+    border-radius:34px;
 
--webkit-backdrop-filter:
-blur(22px);
+    backdrop-filter:
+        blur(22px);
 
-box-shadow:
-0 25px 100px
-rgba(0,0,0,.70);
+    -webkit-backdrop-filter:
+        blur(22px);
+
+    box-shadow:
+        0 25px 100px
+        rgba(0,0,0,.70);
 }
 
-.meta{
-display:grid;
 
-grid-template-columns:
-1fr 1fr;
+.order-box{
 
-gap:20px;
+    text-align:center;
 
-margin-bottom:30px;
+    padding:
+        16px 20px;
+
+    margin-bottom:30px;
+
+    border-radius:17px;
+
+    background:
+        rgba(0,0,0,.28);
+
+    border:
+        1px solid
+        rgba(255,255,255,.12);
 }
 
-.meta-box{
-padding:
-18px 20px;
 
-border-radius:17px;
+.order-label{
 
-background:
-rgba(0,0,0,.28);
+    font-size:11px;
 
-border:
-1px solid
-rgba(255,255,255,.12);
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#888;
+
+    margin-bottom:7px;
 }
 
-.meta-label{
-font-size:11px;
 
-font-weight:800;
+.order-value{
 
-letter-spacing:2px;
+    font-size:15px;
 
-text-transform:uppercase;
+    color:#eee;
 
-color:#999;
-
-margin-bottom:8px;
+    word-break:break-all;
 }
 
-.meta-value{
-font-size:16px;
 
-color:#eee;
+.field{
 
-word-break:break-word;
+    margin-bottom:22px;
 }
 
-.message-number{
-text-align:center;
 
-font-size:14px;
+.field label{
 
-font-weight:800;
+    display:block;
 
-letter-spacing:3px;
+    margin-bottom:9px;
 
-color:#ffbaba;
+    font-size:12px;
 
-margin-bottom:25px;
+    font-weight:800;
 
-text-transform:uppercase;
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    color:#aaa;
 }
 
-.message-box{
-width:100%;
 
-min-height:360px;
+.field input,
+.field textarea{
 
-padding:30px;
+    width:100%;
 
-border-radius:22px;
+    padding:
+        17px 18px;
 
-background:
-rgba(0,0,0,.38);
+    border-radius:16px;
 
-border:
-1px solid
-rgba(255,255,255,.20);
+    border:
+        1px solid
+        rgba(255,255,255,.18);
 
-font-size:18px;
+    background:
+        rgba(0,0,0,.38);
 
-line-height:1.9;
+    color:white;
 
-color:#f5f5f5;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-white-space:pre-wrap;
+    font-size:16px;
 
-overflow-wrap:anywhere;
+    outline:none;
 
-box-shadow:
-inset 0 0 40px
-rgba(0,0,0,.25);
+    transition:
+        border .2s,
+        box-shadow .2s;
 }
 
-.actions{
-margin-top:30px;
 
-display:flex;
+.field input:focus,
+.field textarea:focus{
 
-flex-direction:column;
+    border-color:
+        rgba(255,150,150,.7);
 
-gap:15px;
+    box-shadow:
+        0 0 0 3px
+        rgba(255,0,0,.10);
 }
 
-.button{
-width:100%;
 
-padding:
-21px 30px;
+.field input::placeholder,
+.field textarea::placeholder{
 
-border:none;
-
-border-radius:60px;
-
-background:white;
-
-color:#680000;
-
-font-size:19px;
-
-font-weight:900;
-
-cursor:pointer;
-
-box-shadow:
-0 12px 40px
-rgba(0,0,0,.35);
-
-transition:
-transform .2s,
-box-shadow .2s,
-opacity .2s;
+    color:#777;
 }
 
-.button:hover{
-transform:
-translateY(-2px);
 
-box-shadow:
-0 16px 45px
-rgba(0,0,0,.45);
+.field textarea{
+
+    min-height:300px;
+
+    resize:vertical;
+
+    line-height:1.8;
 }
 
-.button:active{
-transform:
-translateY(0);
+
+.counter{
+
+    margin-top:7px;
+
+    text-align:right;
+
+    color:#777;
+
+    font-size:12px;
 }
 
-.button:disabled{
-opacity:.5;
 
-cursor:not-allowed;
+.row{
 
-transform:none;
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:16px;
 }
+
+
+.submit-button{
+
+    width:100%;
+
+    margin-top:10px;
+
+    padding:
+        21px 25px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:white;
+
+    color:#680000;
+
+    font-size:19px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 12px 40px
+        rgba(0,0,0,.35);
+
+    transition:
+        transform .2s,
+        box-shadow .2s,
+        opacity .2s;
+}
+
+
+.submit-button:hover{
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 16px 45px
+        rgba(0,0,0,.45);
+}
+
+
+.submit-button:active{
+
+    transform:
+        translateY(0);
+}
+
+
+.submit-button:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
 
 .status{
-min-height:25px;
 
-margin-top:22px;
+    min-height:26px;
 
-text-align:center;
+    margin-top:23px;
 
-font-size:16px;
+    text-align:center;
 
-color:#ddd;
+    color:#ddd;
 
-line-height:1.6;
+    font-size:16px;
+
+    line-height:1.6;
 }
+
 
 .notice{
-margin-top:28px;
 
-padding:
-18px 22px;
+    margin-top:28px;
 
-border-radius:16px;
+    padding:
+        18px 22px;
 
-background:
-rgba(0,0,0,.22);
+    border-radius:16px;
 
-border:
-1px solid
-rgba(255,255,255,.08);
+    background:
+        rgba(0,0,0,.22);
 
-color:#999;
+    border:
+        1px solid
+        rgba(255,255,255,.08);
 
-font-size:13px;
+    color:#888;
 
-line-height:1.6;
+    font-size:13px;
 
-text-align:center;
+    line-height:1.7;
+
+    text-align:center;
 }
 
-@media(max-width:800px){
 
-body{
-padding:
-35px 15px 55px;
+.back-button{
+
+    width:100%;
+
+    margin-top:15px;
+
+    padding:
+        17px 20px;
+
+    border-radius:60px;
+
+    background:
+        rgba(255,255,255,.08);
+
+    color:white;
+
+    border:
+        1px solid
+        rgba(255,255,255,.18);
+
+    font-size:15px;
+
+    font-weight:800;
+
+    cursor:pointer;
 }
 
-.card{
-padding:
-35px 25px;
 
-border-radius:28px;
+.hidden{
+
+    display:none;
 }
 
-.meta{
-grid-template-columns:1fr;
-}
 
-.message-box{
-min-height:330px;
+@media(max-width:700px){
 
-padding:23px;
+    body{
 
-font-size:17px;
-}
+        padding:
+            35px 14px 55px;
+    }
 
-}
 
-@media(max-width:600px){
+    .card{
 
-body{
-padding:
-25px 12px 45px;
-}
+        padding:
+            32px 22px;
 
-.symbol{
-font-size:48px;
-}
+        border-radius:28px;
+    }
 
-.logo{
-font-size:10px;
 
-letter-spacing:5px;
-}
+    .row{
 
-h1{
-font-size:40px;
-}
+        grid-template-columns:1fr;
+    }
 
-.subtitle{
-font-size:15px;
 
-margin-bottom:30px;
-}
+    .field textarea{
 
-.card{
-padding:
-28px 18px;
-
-border-radius:24px;
-}
-
-.meta-box{
-padding:
-15px 16px;
-}
-
-.message-box{
-min-height:300px;
-
-padding:19px;
-
-font-size:16px;
-
-line-height:1.8;
-
-border-radius:17px;
-}
-
-.button{
-padding:
-20px 15px;
-}
+        min-height:280px;
+    }
 
 }
 
-@media(max-width:400px){
 
-body{
-padding:
-20px 9px 35px;
+@media(max-width:500px){
+
+    body{
+
+        padding:
+            25px 10px 45px;
+    }
+
+
+    .symbol{
+
+        font-size:48px;
+    }
+
+
+    .logo{
+
+        font-size:10px;
+
+        letter-spacing:5px;
+    }
+
+
+    h1{
+
+        font-size:40px;
+    }
+
+
+    .subtitle{
+
+        font-size:15px;
+
+        margin-bottom:30px;
+    }
+
+
+    .card{
+
+        padding:
+            27px 17px;
+
+        border-radius:24px;
+    }
+
+
+    .field input,
+    .field textarea{
+
+        font-size:16px;
+    }
+
 }
 
-.symbol{
-font-size:42px;
-}
+</style>
 
-h1{
-font-size:35px;
-}
+</head>
 
-.card{
-padding:
-24px 15px;
-}
 
-.message-box{
-min-height:280px;
-}
+<body>
 
-}
 
-</style></head><body><div class="container"><div class="symbol">
-◈ ✦ ∞
-</div><div class="logo">
-GLOBAL HUMAN CONNECTION
-</div><h1>
-LAST HUMAN MESSAGE
-</h1><div class="subtitle">
-One message. One person. One moment.
-</div><div class="card"><div
-id="messageNumber"
-class="message-number"
->
-MESSAGE
-</div><div class="meta"><div class="meta-box"><div class="meta-label">
-Name
-</div><div
-id="name"
-class="meta-value"
->
-Loading...
-</div></div><div class="meta-box"><div class="meta-label">
-Location
-</div><div
-id="location"
-class="meta-value"
->
-Loading...
-</div></div></div><div
-id="messageBox"
-class="message-box"
->
-Loading message...
-</div><div class="actions"><button
-id="previousButton"
-class="button"
-onclick="loadPreviousMessage()"
-disabled
+<div class="container">
 
-«»
 
-PREVIOUS MESSAGE
-</button>
+    <div class="symbol">
+        ◈ ✦ ∞
+    </div>
 
-</div><div
-id="status"
-class="status"
-aria-live="polite"
->
-Loading message...
-</div><div class="notice">
-This message was left by another person.
-The previous message belongs to the person who came before them.
-</div></div></div><script>
+
+    <div class="logo">
+        GLOBAL HUMAN CONNECTION
+    </div>
+
+
+    <h1>
+        LEAVE YOUR MESSAGE
+    </h1>
+
+
+    <div class="subtitle">
+        Your words will become part of a chain<br>
+        passed from one human to another.
+    </div>
+
+
+    <div class="card">
+
+
+        <div
+            id="orderBox"
+            class="order-box"
+        >
+
+            <div class="order-label">
+                Order ID
+            </div>
+
+            <div
+                id="orderId"
+                class="order-value"
+            >
+                Checking...
+            </div>
+
+        </div>
+
+
+        <form
+            id="messageForm"
+        >
+
+
+            <div class="field">
+
+                <label for="name">
+                    Name
+                </label>
+
+                <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    maxlength="100"
+                    placeholder="Your name"
+                    autocomplete="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    maxlength="254"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="field">
+
+                    <label for="country">
+                        Country
+                    </label>
+
+                    <input
+                        id="country"
+                        name="country"
+                        type="text"
+                        maxlength="100"
+                        placeholder="Your country"
+                        autocomplete="country-name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label for="city">
+                        City
+                    </label>
+
+                    <input
+                        id="city"
+                        name="city"
+                        type="text"
+                        maxlength="100"
+                        placeholder="Your city"
+                        autocomplete="address-level2"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="field">
+
+                <label for="message">
+                    Your Message
+                </label>
+
+                <textarea
+                    id="message"
+                    name="message"
+                    maxlength="4000"
+                    placeholder="Write something for the next human..."
+                    required
+                ></textarea>
+
+                <div
+                    id="counter"
+                    class="counter"
+                >
+                    0 / 4000
+                </div>
+
+            </div>
+
+
+            <button
+                id="submitButton"
+                class="submit-button"
+                type="submit"
+                disabled
+            >
+                SUBMIT MY MESSAGE
+            </button>
+
+
+        </form>
+
+
+        <div
+            id="status"
+            class="status"
+            aria-live="polite"
+        >
+            Checking payment...
+        </div>
+
+
+        <button
+            id="backButton"
+            class="back-button"
+            type="button"
+        >
+            BACK
+        </button>
+
+
+        <div class="notice">
+
+            Your message will be stored as part of
+            the Global Human Connection archive.
+
+            <br><br>
+
+            Please do not include passwords,
+            private keys, financial information,
+            or other highly sensitive information.
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<script>
+
 
 const WORKER_URL =
 "https://soft-shape-5b8a.aaa6654292.workers.dev";
@@ -490,474 +762,550 @@ const WORKER_URL =
    ELEMENTS
 ===================================================== */
 
-const messageNumberElement =
+
+const form =
 document.getElementById(
-"messageNumber"
+    "messageForm"
 );
 
-const nameElement =
+
+const orderIdElement =
 document.getElementById(
-"name"
+    "orderId"
 );
 
-const locationElement =
+
+const nameInput =
 document.getElementById(
-"location"
+    "name"
 );
 
-const messageBox =
+
+const emailInput =
 document.getElementById(
-"messageBox"
+    "email"
 );
 
-const previousButton =
+
+const countryInput =
 document.getElementById(
-"previousButton"
+    "country"
 );
+
+
+const cityInput =
+document.getElementById(
+    "city"
+);
+
+
+const messageInput =
+document.getElementById(
+    "message"
+);
+
+
+const counterElement =
+document.getElementById(
+    "counter"
+);
+
+
+const submitButton =
+document.getElementById(
+    "submitButton"
+);
+
 
 const statusElement =
 document.getElementById(
-"status"
+    "status"
+);
+
+
+const backButton =
+document.getElementById(
+    "backButton"
 );
 
 
 /* =====================================================
-   GET MESSAGE ID
+   GET ORDER ID
 ===================================================== */
+
 
 const params =
 new URLSearchParams(
-window.location.search
-);
-
-let messageId =
-params.get("messageId");
-
-
-/* =====================================================
-   LOAD MESSAGE
-===================================================== */
-
-async function loadMessage(){
-
-if(!messageId){
-
-messageNumberElement.textContent =
-"INVALID MESSAGE";
-
-nameElement.textContent =
-"—";
-
-locationElement.textContent =
-"—";
-
-messageBox.textContent =
-"No message ID was provided.";
-
-statusElement.textContent =
-"Missing message ID.";
-
-previousButton.disabled =
-true;
-
-return;
-
-}
-
-
-statusElement.textContent =
-"Loading message...";
-
-previousButton.disabled =
-true;
-
-
-try{
-
-const response =
-await fetch(
-
-WORKER_URL +
-"/get-message?messageId=" +
-encodeURIComponent(messageId),
-
-{
-method:"GET",
-cache:"no-store"
-}
-
+    window.location.search
 );
 
 
-let result;
-
-try{
-
-result =
-await response.json();
-
-}catch{
-
-throw new Error(
-"Worker returned an invalid response."
-);
-
-}
+const orderId =
+params.get("orderId");
 
 
-console.log(
-"GET MESSAGE:",
-result
-);
-
-
-if(!response.ok){
-
-throw new Error(
-result.error ||
-"Message could not be loaded."
-);
-
-}
-
-
-if(
-result.success !== true ||
-!result.message
-){
-
-throw new Error(
-"Message data is unavailable."
-);
-
-}
-
-
-displayMessage(
-result.message
-);
-
-
-/* ---------------------------------------------
-   Check whether previous message exists
---------------------------------------------- */
-
-if(
-result.message.previousMessageId
-){
-
-previousButton.disabled =
+let paymentConfirmed =
 false;
 
-statusElement.textContent =
-"Message loaded.";
 
-}else{
+/* =====================================================
+   UPDATE COUNTER
+===================================================== */
 
-previousButton.disabled =
-true;
 
-statusElement.textContent =
-"This is the first message.";
+function updateCounter(){
+
+    const length =
+        messageInput.value.length;
+
+    counterElement.textContent =
+        length +
+        " / 4000";
 
 }
 
 
-}catch(error){
-
-console.error(
-"LOAD MESSAGE ERROR:",
-error
+messageInput.addEventListener(
+    "input",
+    updateCounter
 );
 
-messageNumberElement.textContent =
-"MESSAGE NOT FOUND";
 
-nameElement.textContent =
-"—";
+/* =====================================================
+   CHECK PAYMENT
+===================================================== */
 
-locationElement.textContent =
-"—";
 
-messageBox.textContent =
-error.message ||
-"Could not load this message.";
+async function checkPayment(){
 
-previousButton.disabled =
-true;
+    if(!orderId){
 
-statusElement.textContent =
-error.message ||
-"Could not load message.";
+        orderIdElement.textContent =
+            "MISSING";
 
-}
+        statusElement.textContent =
+            "No Order ID was provided.";
+
+        submitButton.disabled =
+            true;
+
+        return;
+
+    }
+
+
+    orderIdElement.textContent =
+        orderId;
+
+
+    statusElement.textContent =
+        "Checking payment...";
+
+
+    submitButton.disabled =
+        true;
+
+
+    try{
+
+        const response =
+            await fetch(
+
+                WORKER_URL +
+                "/check-order?orderId=" +
+                encodeURIComponent(
+                    orderId
+                ),
+
+                {
+                    method:"GET",
+                    cache:"no-store"
+                }
+
+            );
+
+
+        let result;
+
+
+        try{
+
+            result =
+                await response.json();
+
+        }catch{
+
+            throw new Error(
+                "Worker returned an invalid response."
+            );
+
+        }
+
+
+        console.log(
+            "CHECK ORDER:",
+            result
+        );
+
+
+        if(!response.ok){
+
+            throw new Error(
+                result.error ||
+                "Could not check order."
+            );
+
+        }
+
+
+        if(
+            result.success !== true
+        ){
+
+            throw new Error(
+                result.error ||
+                "Order could not be verified."
+            );
+
+        }
+
+
+        if(
+            result.paid === true &&
+            result.status === "paid"
+        ){
+
+            paymentConfirmed =
+                true;
+
+            submitButton.disabled =
+                false;
+
+            statusElement.textContent =
+                "Payment confirmed. You can now leave your message.";
+
+            return;
+
+        }
+
+
+        paymentConfirmed =
+            false;
+
+        submitButton.disabled =
+            true;
+
+        statusElement.textContent =
+            "Payment has not been confirmed yet.";
+
+    }catch(error){
+
+        console.error(
+            "CHECK PAYMENT ERROR:",
+            error
+        );
+
+
+        paymentConfirmed =
+            false;
+
+        submitButton.disabled =
+            true;
+
+        statusElement.textContent =
+            error.message ||
+            "Could not verify payment.";
+
+    }
 
 }
 
 
 /* =====================================================
-   DISPLAY MESSAGE
+   SUBMIT MESSAGE
 ===================================================== */
 
-function displayMessage(message){
 
-const number =
-message.messageNumber ||
-"—";
+form.addEventListener(
+    "submit",
+    async function(event){
 
-const name =
-message.name ||
-"Anonymous";
-
-const country =
-message.country ||
-"";
-
-const city =
-message.city ||
-"";
+        event.preventDefault();
 
 
-messageNumberElement.textContent =
-"MESSAGE #" +
-number;
+        if(!orderId){
+
+            statusElement.textContent =
+                "Missing Order ID.";
+
+            return;
+
+        }
 
 
-nameElement.textContent =
-name;
+        if(!paymentConfirmed){
+
+            statusElement.textContent =
+                "Payment has not been confirmed.";
+
+            return;
+
+        }
 
 
-if(
-country &&
-city
-){
-
-locationElement.textContent =
-city +
-", " +
-country;
-
-}else if(country){
-
-locationElement.textContent =
-country;
-
-}else if(city){
-
-locationElement.textContent =
-city;
-
-}else{
-
-locationElement.textContent =
-"—";
-
-}
+        const name =
+            nameInput.value.trim();
 
 
-messageBox.textContent =
-message.message ||
-"";
+        const email =
+            emailInput.value.trim();
 
 
-}
+        const country =
+            countryInput.value.trim();
+
+
+        const city =
+            cityInput.value.trim();
+
+
+        const message =
+            messageInput.value.trim();
+
+
+        if(!name){
+
+            statusElement.textContent =
+                "Please enter your name.";
+
+            nameInput.focus();
+
+            return;
+
+        }
+
+
+        if(!email){
+
+            statusElement.textContent =
+                "Please enter your email.";
+
+            emailInput.focus();
+
+            return;
+
+        }
+
+
+        if(!country){
+
+            statusElement.textContent =
+                "Please enter your country.";
+
+            countryInput.focus();
+
+            return;
+
+        }
+
+
+        if(!city){
+
+            statusElement.textContent =
+                "Please enter your city.";
+
+            cityInput.focus();
+
+            return;
+
+        }
+
+
+        if(!message){
+
+            statusElement.textContent =
+                "Please write your message.";
+
+            messageInput.focus();
+
+            return;
+
+        }
+
+
+        if(message.length > 4000){
+
+            statusElement.textContent =
+                "Your message is too long.";
+
+            messageInput.focus();
+
+            return;
+
+        }
+
+
+        submitButton.disabled =
+            true;
+
+
+        statusElement.textContent =
+            "Saving your message...";
+
+
+        try{
+
+
+            const response =
+                await fetch(
+
+                    WORKER_URL +
+                    "/submit-message",
+
+                    {
+
+                        method:"POST",
+
+                        headers:{
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify({
+
+                                orderId:
+                                    orderId,
+
+                                name:
+                                    name,
+
+                                email:
+                                    email,
+
+                                country:
+                                    country,
+
+                                city:
+                                    city,
+
+                                message:
+                                    message
+
+                            })
+
+                    }
+
+                );
+
+
+            let result;
+
+
+            try{
+
+                result =
+                    await response.json();
+
+            }catch{
+
+                throw new Error(
+                    "Worker returned an invalid response."
+                );
+
+            }
+
+
+            console.log(
+                "SUBMIT MESSAGE:",
+                result
+            );
+
+
+            if(!response.ok){
+
+                throw new Error(
+                    result.error ||
+                    "Message could not be submitted."
+                );
+
+            }
+
+
+            if(
+                result.success !== true ||
+                !result.messageId
+            ){
+
+                throw new Error(
+                    result.error ||
+                    "Message submission failed."
+                );
+
+            }
+
+
+            statusElement.textContent =
+                "Message saved successfully.";
+
+
+            /*
+             * Send the user to the
+             * newly created message.
+             */
+
+            window.location.href =
+                "view.html?messageId=" +
+                encodeURIComponent(
+                    result.messageId
+                );
+
+
+        }catch(error){
+
+            console.error(
+                "SUBMIT MESSAGE ERROR:",
+                error
+            );
+
+
+            submitButton.disabled =
+                !paymentConfirmed;
+
+
+            statusElement.textContent =
+                error.message ||
+                "Could not save your message.";
+
+        }
+
+    }
+);
 
 
 /* =====================================================
-   LOAD PREVIOUS MESSAGE
+   BACK BUTTON
 ===================================================== */
 
-async function loadPreviousMessage(){
 
-if(!messageId){
+backButton.addEventListener(
+    "click",
+    function(){
 
-return;
+        if(
+            window.history.length > 1
+        ){
 
-}
+            window.history.back();
 
+        }else{
 
-previousButton.disabled =
-true;
+            window.location.href =
+                "index.html";
 
-previousButton.textContent =
-"LOADING PREVIOUS MESSAGE...";
+        }
 
-statusElement.textContent =
-"Loading previous message...";
-
-
-try{
-
-const response =
-await fetch(
-
-WORKER_URL +
-"/previous-message?messageId=" +
-encodeURIComponent(messageId),
-
-{
-method:"GET",
-cache:"no-store"
-}
-
-);
-
-
-let result;
-
-try{
-
-result =
-await response.json();
-
-}catch{
-
-throw new Error(
-"Worker returned an invalid response."
-);
-
-}
-
-
-console.log(
-"PREVIOUS MESSAGE:",
-result
-);
-
-
-if(!response.ok){
-
-throw new Error(
-result.error ||
-"Could not load previous message."
-);
-
-}
-
-
-if(
-result.hasPrevious !== true ||
-!result.message
-){
-
-previousButton.disabled =
-true;
-
-previousButton.textContent =
-"NO PREVIOUS MESSAGE";
-
-statusElement.textContent =
-"This is the first message.";
-
-return;
-
-}
-
-
-/* ---------------------------------------------
-   Move to previous message
---------------------------------------------- */
-
-messageId =
-result.message.messageId;
-
-
-/*
- * Update browser URL without
- * reloading the entire page.
- */
-
-const newUrl =
-window.location.pathname +
-"?messageId=" +
-encodeURIComponent(messageId);
-
-
-window.history.pushState(
-{},
-"",
-newUrl
-);
-
-
-displayMessage(
-result.message
-);
-
-
-/*
- * Check if the newly loaded message
- * has another previous message.
- */
-
-if(
-result.message.previousMessageId
-){
-
-previousButton.disabled =
-false;
-
-previousButton.textContent =
-"PREVIOUS MESSAGE";
-
-statusElement.textContent =
-"Previous message loaded.";
-
-}else{
-
-previousButton.disabled =
-true;
-
-previousButton.textContent =
-"NO PREVIOUS MESSAGE";
-
-statusElement.textContent =
-"This is the first message.";
-
-}
-
-
-}catch(error){
-
-console.error(
-"PREVIOUS MESSAGE ERROR:",
-error
-);
-
-statusElement.textContent =
-error.message ||
-"Could not load previous message.";
-
-previousButton.disabled =
-false;
-
-previousButton.textContent =
-"PREVIOUS MESSAGE";
-
-}
-
-}
-
-
-/* =====================================================
-   BROWSER BACK / FORWARD
-===================================================== */
-
-window.addEventListener(
-"popstate",
-function(){
-
-const newParams =
-new URLSearchParams(
-window.location.search
-);
-
-messageId =
-newParams.get("messageId");
-
-loadMessage();
-
-}
+    }
 );
 
 
@@ -965,6 +1313,15 @@ loadMessage();
    START
 ===================================================== */
 
-loadMessage();
 
-</script></body></html>
+updateCounter();
+
+checkPayment();
+
+
+</script>
+
+
+</body>
+
+</html>
