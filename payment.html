@@ -3,150 +3,293 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Secure Payment</title>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+    box-sizing:border-box;
+}
 
 body{
-margin:0;
-min-height:100vh;
-font-family:Arial,Helvetica,sans-serif;
-background:radial-gradient(circle at top,#b30000 0%,#4a0000 35%,#080808 100%);
-color:white;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
+    margin:0;
+    min-height:100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #b30000 0%,
+            #4a0000 35%,
+            #080808 100%
+        );
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
 }
 
 .container{
-width:90%;
-max-width:700px;
+    width:90%;
+    max-width:700px;
 }
 
 .symbol{
-font-size:65px;
-text-shadow:0 0 35px red;
+    font-size:65px;
+
+    text-shadow:
+        0 0 35px red;
 }
 
 .logo{
-font-size:14px;
-letter-spacing:8px;
-color:#ffbbbb;
-margin-top:20px;
+    font-size:14px;
+
+    letter-spacing:8px;
+
+    color:#ffbbbb;
+
+    margin-top:20px;
 }
 
 h1{
-font-size:55px;
-font-weight:900;
-margin:30px 0;
-text-shadow:0 0 20px red;
+    font-size:55px;
+
+    font-weight:900;
+
+    margin:30px 0;
+
+    text-shadow:
+        0 0 20px red;
 }
 
 .card{
-padding:45px 30px;
-background:rgba(255,255,255,.09);
-border:1px solid rgba(255,255,255,.25);
-border-radius:35px;
-backdrop-filter:blur(20px);
-box-shadow:0 0 70px rgba(0,0,0,.8);
+    padding:45px 30px;
+
+    background:
+        rgba(255,255,255,.09);
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius:35px;
+
+    backdrop-filter:
+        blur(20px);
+
+    -webkit-backdrop-filter:
+        blur(20px);
+
+    box-shadow:
+        0 0 70px
+        rgba(0,0,0,.8);
 }
 
 .amount{
-font-size:80px;
-font-weight:900;
+    font-size:80px;
+
+    font-weight:900;
 }
 
 .network{
-font-size:28px;
-font-weight:900;
-color:#ffcccc;
-margin:20px;
+    font-size:28px;
+
+    font-weight:900;
+
+    color:#ffcccc;
+
+    margin:20px;
 }
 
 .info{
-font-size:20px;
-line-height:1.8;
+    font-size:20px;
+
+    line-height:1.8;
 }
 
 .wallet{
-margin-top:25px;
-padding:20px;
-background:rgba(0,0,0,.5);
-border-radius:20px;
-font-size:18px;
-word-break:break-all;
-border:1px solid rgba(255,255,255,.2);
+    margin-top:25px;
+
+    padding:20px;
+
+    background:
+        rgba(0,0,0,.5);
+
+    border-radius:20px;
+
+    font-size:18px;
+
+    word-break:break-all;
+
+    border:
+        1px solid
+        rgba(255,255,255,.2);
 }
 
 .order{
-margin-top:20px;
-font-size:16px;
-word-break:break-all;
+    margin-top:20px;
+
+    font-size:16px;
+
+    word-break:break-all;
 }
 
 .txid-box{
-margin-top:25px;
+    margin-top:25px;
 }
 
 .txid-input{
-width:100%;
-padding:18px;
-border-radius:15px;
-border:1px solid rgba(255,255,255,.25);
-background:rgba(0,0,0,.5);
-color:white;
-font-size:16px;
-outline:none;
+    width:100%;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    background:
+        rgba(0,0,0,.5);
+
+    color:white;
+
+    font-size:16px;
+
+    outline:none;
+}
+
+.txid-input:focus{
+    border-color:
+        rgba(255,255,255,.55);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(255,255,255,.08);
 }
 
 .txid-input::placeholder{
-color:#aaa;
+    color:#aaa;
 }
 
 button{
-margin-top:25px;
-padding:22px 60px;
-border:none;
-border-radius:60px;
-background:white;
-color:#700000;
-font-size:22px;
-font-weight:900;
-cursor:pointer;
-box-shadow:0 0 35px rgba(255,255,255,.3);
+    margin-top:25px;
+
+    padding:22px 60px;
+
+    border:none;
+
+    border-radius:60px;
+
+    background:white;
+
+    color:#700000;
+
+    font-size:22px;
+
+    font-weight:900;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 0 35px
+        rgba(255,255,255,.3);
+
+    transition:
+        transform .2s,
+        opacity .2s,
+        box-shadow .2s;
 }
 
-button:hover{
-transform:scale(1.04);
+button:hover:not(:disabled){
+    transform:
+        scale(1.04);
+}
+
+button:active:not(:disabled){
+    transform:
+        scale(.99);
+}
+
+button:disabled{
+    opacity:.5;
+
+    cursor:not-allowed;
+
+    transform:none;
 }
 
 .verify-button{
-width:100%;
-margin-top:15px;
+    width:100%;
+
+    margin-top:15px;
 }
 
 .warning{
-margin-top:25px;
-color:#ffcccc;
-font-size:15px;
-line-height:1.6;
+    margin-top:25px;
+
+    color:#ffcccc;
+
+    font-size:15px;
+
+    line-height:1.6;
 }
 
 .status{
-margin-top:30px;
-color:#ddd;
-font-size:18px;
-line-height:1.5;
+    min-height:27px;
+
+    margin-top:30px;
+
+    color:#ddd;
+
+    font-size:18px;
+
+    line-height:1.5;
+}
+
+.status.success{
+    color:#baffba;
+
+    font-weight:800;
+}
+
+.status.error{
+    color:#ffbaba;
 }
 
 @media(max-width:600px){
-h1{font-size:42px}
-.amount{font-size:65px}
-button{width:100%;padding:22px 15px}
-.card{padding:35px 20px}
+
+    h1{
+        font-size:42px;
+    }
+
+    .amount{
+        font-size:65px;
+    }
+
+    button{
+        width:100%;
+
+        padding:
+            22px 15px;
+    }
+
+    .card{
+        padding:
+            35px 20px;
+    }
+
 }
+
 </style>
 </head>
 
@@ -182,7 +325,8 @@ Network:
 <b>TRON (TRC20)</b>
 </div>
 
-<div class="wallet">
+<div class="wallet"
+     id="walletAddress">
 TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx
 </div>
 
@@ -191,23 +335,34 @@ Order ID:
 <strong id="orderId">Creating...</strong>
 </div>
 
-<button onclick="copyWallet()">
+<button
+    id="copyButton"
+    type="button"
+    onclick="copyWallet()"
+>
 COPY WALLET ADDRESS
 </button>
 
 <div class="txid-box">
 
 <input
-id="txidInput"
-class="txid-input"
-type="text"
-placeholder="Enter transaction hash after payment"
-autocomplete="off"
+    id="txidInput"
+    class="txid-input"
+    type="text"
+    inputmode="text"
+    maxlength="64"
+    placeholder="Enter transaction hash after payment"
+    autocomplete="off"
+    spellcheck="false"
+    aria-label="Transaction hash"
 >
 
 <button
-class="verify-button"
-onclick="verifyPayment()"
+    id="verifyButton"
+    class="verify-button"
+    type="button"
+    onclick="verifyPayment()"
+    disabled
 >
 VERIFY PAYMENT
 </button>
@@ -219,27 +374,110 @@ Only send USDT on TRC20 network.<br>
 Sending another network may result in loss.
 </div>
 
-<div class="status" id="status">
+<div
+    class="status"
+    id="status"
+    aria-live="polite"
+>
 Creating your order...
 </div>
 
 </div>
+
 </div>
 
 <script>
 
+"use strict";
+
+
+/* =====================================================
+   CONFIG
+===================================================== */
+
 const WORKER_URL =
-"https://soft-shape-5b8a.aaa6654292.workers.dev";
+    "https://soft-shape-5b8a.aaa6654292.workers.dev";
 
 const PAYMENT_ADDRESS =
-"TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx";
+    "TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx";
+
+const TXID_REGEX =
+    /^[a-fA-F0-9]{64}$/;
+
+
+/* =====================================================
+   STATE
+===================================================== */
 
 let orderId = null;
 
+let orderCreated = false;
 
-// ==============================
-// COPY WALLET
-// ==============================
+let verificationInProgress = false;
+
+let lastVerificationTime = 0;
+
+const VERIFY_COOLDOWN_MS =
+    5000;
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const orderIdElement =
+    document.getElementById(
+        "orderId"
+    );
+
+const txidInput =
+    document.getElementById(
+        "txidInput"
+    );
+
+const copyButton =
+    document.getElementById(
+        "copyButton"
+    );
+
+const verifyButton =
+    document.getElementById(
+        "verifyButton"
+    );
+
+const statusElement =
+    document.getElementById(
+        "status"
+    );
+
+
+/* =====================================================
+   STATUS
+===================================================== */
+
+function setStatus(
+    message,
+    type = ""
+){
+
+    statusElement.textContent =
+        message;
+
+    statusElement.className =
+        "status";
+
+    if(type){
+        statusElement.classList.add(
+            type
+        );
+    }
+
+}
+
+
+/* =====================================================
+   COPY WALLET
+===================================================== */
 
 async function copyWallet(){
 
@@ -249,17 +487,37 @@ async function copyWallet(){
             PAYMENT_ADDRESS
         );
 
-        alert("Wallet address copied");
+        const original =
+            copyButton.textContent;
+
+        copyButton.textContent =
+            "COPIED";
+
+        setStatus(
+            "Wallet address copied.",
+            "success"
+        );
+
+        setTimeout(
+            function(){
+
+                copyButton.textContent =
+                    original;
+
+            },
+            1800
+        );
 
     }catch(error){
 
         console.error(
-            "Copy failed:",
+            "COPY ERROR:",
             error
         );
 
-        alert(
-            "Could not copy wallet address."
+        setStatus(
+            "Could not copy the wallet address.",
+            "error"
         );
 
     }
@@ -267,133 +525,224 @@ async function copyWallet(){
 }
 
 
-// ==============================
-// CREATE ORDER
-// ==============================
+/* =====================================================
+   CREATE ORDER
+===================================================== */
 
 async function createOrder(){
 
-    const status =
-        document.getElementById("status");
+    if(orderCreated){
+        return;
+    }
+
+    setStatus(
+        "Creating your order..."
+    );
 
     try{
-
-        status.textContent =
-            "Creating your order...";
 
         const response =
             await fetch(
                 WORKER_URL +
                 "/create-order",
                 {
-                    method:"GET"
+                    method:"GET",
+
+                    cache:"no-store",
+
+                    headers:{
+                        "Accept":
+                            "application/json"
+                    }
                 }
             );
+
+
+        let result;
+
+        try{
+
+            result =
+                await response.json();
+
+        }catch{
+
+            throw new Error(
+                "Invalid server response."
+            );
+
+        }
+
 
         if(!response.ok){
 
             throw new Error(
-                "Worker error: " +
-                response.status
+                "Order could not be created."
             );
 
         }
 
-        const order =
-            await response.json();
 
-        if(!order.orderId){
+        if(
+            !result ||
+            typeof result.orderId !== "string" ||
+            !result.orderId
+        ){
 
             throw new Error(
-                "Worker did not return an Order ID"
+                "Invalid order response."
             );
 
         }
 
-        orderId =
-            order.orderId;
 
-        document
-            .getElementById("orderId")
-            .textContent =
+        orderId =
+            result.orderId;
+
+        orderCreated =
+            true;
+
+
+        orderIdElement.textContent =
             orderId;
 
-        console.log(
-            "Order created:",
-            order
+
+        verifyButton.disabled =
+            false;
+
+
+        setStatus(
+            "Waiting for payment..."
         );
 
-        status.textContent =
-            "Waiting for payment...";
 
     }catch(error){
 
         console.error(
-            "Order creation failed:",
+            "ORDER CREATION ERROR:",
             error
         );
 
-        document
-            .getElementById("orderId")
-            .textContent =
+
+        orderId =
+            null;
+
+        orderCreated =
+            false;
+
+
+        orderIdElement.textContent =
             "ERROR";
 
-        status.textContent =
-            "Could not create order. Please refresh the page.";
+
+        verifyButton.disabled =
+            true;
+
+
+        setStatus(
+            "Could not create an order. Please refresh the page.",
+            "error"
+        );
 
     }
 
 }
 
 
-// ==============================
-// VERIFY PAYMENT
-// ==============================
+/* =====================================================
+   VERIFY PAYMENT
+===================================================== */
 
 async function verifyPayment(){
 
-    const input =
-        document.getElementById("txidInput");
+    if(
+        verificationInProgress
+    ){
+        return;
+    }
 
-    const status =
-        document.getElementById("status");
-
-    const txid =
-        input.value.trim();
 
     if(!orderId){
 
-        status.textContent =
-            "Order ID is not ready yet.";
+        setStatus(
+            "Order ID is not ready yet.",
+            "error"
+        );
 
         return;
 
     }
+
+
+    const txid =
+        txidInput.value.trim();
+
 
     if(!txid){
 
-        status.textContent =
-            "Please enter your transaction hash.";
+        setStatus(
+            "Please enter your transaction hash.",
+            "error"
+        );
 
-        input.focus();
-
-        return;
-
-    }
-
-    if(!/^[a-fA-F0-9]{64}$/.test(txid)){
-
-        status.textContent =
-            "Invalid transaction hash.";
-
-        input.focus();
+        txidInput.focus();
 
         return;
 
     }
 
-    status.textContent =
-        "Verifying transaction...";
+
+    if(!TXID_REGEX.test(txid)){
+
+        setStatus(
+            "Invalid transaction hash.",
+            "error"
+        );
+
+        txidInput.focus();
+
+        return;
+
+    }
+
+
+    const now =
+        Date.now();
+
+
+    if(
+        now -
+        lastVerificationTime <
+        VERIFY_COOLDOWN_MS
+    ){
+
+        setStatus(
+            "Please wait a few seconds before trying again."
+        );
+
+        return;
+
+    }
+
+
+    verificationInProgress =
+        true;
+
+    lastVerificationTime =
+        now;
+
+
+    verifyButton.disabled =
+        true;
+
+    txidInput.disabled =
+        true;
+
+
+    setStatus(
+        "Verifying transaction..."
+    );
+
 
     try{
 
@@ -404,66 +753,167 @@ async function verifyPayment(){
                 {
                     method:"POST",
 
+                    cache:"no-store",
+
                     headers:{
                         "Content-Type":
+                            "application/json",
+
+                        "Accept":
                             "application/json"
                     },
 
                     body:JSON.stringify({
-                        orderId:orderId,
-                        txid:txid
+
+                        orderId:
+                            orderId,
+
+                        txid:
+                            txid
+
                     })
                 }
             );
 
-        const result =
-            await response.json();
+
+        let result;
+
+        try{
+
+            result =
+                await response.json();
+
+        }catch{
+
+            throw new Error(
+                "Invalid server response."
+            );
+
+        }
+
 
         console.log(
-            "Verification result:",
-            result
+            "Payment verification status:",
+            response.status
         );
 
-        if(result.paid === true){
 
-            status.innerHTML =
-                "✓ PAYMENT CONFIRMED";
+        if(
+            response.ok &&
+            result &&
+            result.paid === true
+        ){
+
+            setStatus(
+                "✓ PAYMENT CONFIRMED",
+                "success"
+            );
+
+            txidInput.disabled =
+                true;
+
+            verifyButton.disabled =
+                true;
 
             return;
 
         }
 
-        if(result.paid === false){
 
-            status.textContent =
-                "Payment not confirmed yet. Please wait for the transaction to appear on the TRON network.";
+        if(
+            result &&
+            result.paid === false
+        ){
+
+            setStatus(
+                "Payment has not been confirmed yet. Please wait for the transaction to be confirmed on the TRON network.",
+            );
 
             return;
 
         }
 
-        status.textContent =
-            result.error ||
-            "Payment could not be verified yet.";
+
+        if(
+            response.status === 409
+        ){
+
+            setStatus(
+                "This transaction cannot be used for this order.",
+                "error"
+            );
+
+            return;
+
+        }
+
+
+        setStatus(
+            "Payment could not be verified yet. Please try again.",
+            "error"
+        );
+
 
     }catch(error){
 
         console.error(
-            "Verification failed:",
+            "PAYMENT VERIFICATION ERROR:",
             error
         );
 
-        status.textContent =
-            "Could not verify payment. Please try again.";
+
+        setStatus(
+            "Could not verify the payment. Please try again.",
+            "error"
+        );
+
+    }finally{
+
+        verificationInProgress =
+            false;
+
+        txidInput.disabled =
+            false;
+
+        verifyButton.disabled =
+            !orderId;
 
     }
 
 }
 
 
-// ==============================
-// START
-// ==============================
+/* =====================================================
+   TXID INPUT
+===================================================== */
+
+txidInput.addEventListener(
+    "input",
+    function(){
+
+        const value =
+            txidInput.value.trim();
+
+
+        if(
+            value.length > 64
+        ){
+
+            txidInput.value =
+                value.slice(
+                    0,
+                    64
+                );
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   START
+===================================================== */
 
 createOrder();
 
@@ -471,3 +921,4 @@ createOrder();
 
 </body>
 </html>
+
