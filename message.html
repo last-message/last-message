@@ -1,6 +1,8 @@
 <!DOCTYPE html><html lang="en">
-<head><meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Leave Your Message</title><style>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leave Your Message</title><style>
 
 *{
 box-sizing:border-box;
@@ -11,7 +13,6 @@ scroll-behavior:smooth;
 }
 
 body{
-
 margin:0;
 min-height:100vh;
 
@@ -38,30 +39,14 @@ padding:
 55px 25px 80px;
 }
 
-
-/* =========================
-   MAIN CONTAINER
-========================= */
-
 .container{
-
 width:100%;
-
 max-width:1100px;
-
 margin:0 auto;
-
 }
 
-
-/* =========================
-   HEADER
-========================= */
-
 .symbol{
-
 text-align:center;
-
 font-size:62px;
 
 text-shadow:
@@ -69,32 +54,23 @@ text-shadow:
 rgba(255,0,0,.85);
 
 margin-bottom:12px;
-
 }
 
 .logo{
-
 text-align:center;
-
 font-size:13px;
-
 letter-spacing:8px;
-
 color:#ffbaba;
-
 margin-bottom:18px;
-
 }
 
 h1{
-
 text-align:center;
 
 font-size:
 clamp(42px,5vw,64px);
 
 font-weight:900;
-
 letter-spacing:-1.5px;
 
 margin:
@@ -103,29 +79,19 @@ margin:
 text-shadow:
 0 0 25px
 rgba(255,0,0,.6);
-
 }
 
 .subtitle{
-
 text-align:center;
 
 font-size:
 clamp(16px,2vw,19px);
 
 color:#d0d0d0;
-
 margin-bottom:42px;
-
 }
 
-
-/* =========================
-   CARD
-========================= */
-
 .card{
-
 width:100%;
 
 padding:
@@ -149,18 +115,10 @@ blur(22px);
 box-shadow:
 0 25px 100px
 rgba(0,0,0,.70);
-
 }
 
-
-/* =========================
-   ORDER ID
-========================= */
-
 .order-card{
-
 width:100%;
-
 min-height:58px;
 
 padding:
@@ -178,78 +136,53 @@ border:
 rgba(255,255,255,.12);
 
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
 
 gap:20px;
-
 }
 
 .order-label{
-
 font-size:12px;
-
 font-weight:800;
-
 letter-spacing:2px;
-
 text-transform:uppercase;
 
 color:#999;
-
 white-space:nowrap;
-
 }
 
 .order-value{
-
-font-family:
-monospace;
-
+font-family:monospace;
 font-size:14px;
 
 color:#e5e5e5;
 
 word-break:break-all;
-
 text-align:right;
-
 }
 
-
-/* =========================
-   FORM
-========================= */
-
 .row{
-
 display:grid;
 
 grid-template-columns:
 1fr 1fr;
 
 gap:28px;
-
 }
 
 label{
-
 display:block;
 
 font-size:15px;
-
 font-weight:700;
 
 margin-bottom:10px;
 
 color:#f3cccc;
-
 }
 
 .field{
-
 width:100%;
 
 padding:
@@ -276,18 +209,14 @@ transition:
 border-color .2s,
 box-shadow .2s,
 background .2s;
-
 }
 
 .field:hover{
-
 background:
 rgba(0,0,0,.43);
-
 }
 
 .field:focus{
-
 border-color:
 rgba(255,145,145,.8);
 
@@ -297,72 +226,43 @@ rgba(0,0,0,.48);
 box-shadow:
 0 0 0 3px
 rgba(255,0,0,.08);
-
 }
 
 .field::placeholder{
-
 color:#858585;
-
 }
 
-
-/* =========================
-   MESSAGE HEADER
-========================= */
-
 .message-header{
-
 display:flex;
-
 align-items:center;
-
 justify-content:space-between;
 
 margin-top:4px;
-
 margin-bottom:10px;
-
 }
 
 .message-label{
-
 font-size:15px;
-
 font-weight:700;
-
 color:#f3cccc;
-
 }
 
 .counter{
-
 font-size:14px;
-
 color:#999;
 
 font-variant-numeric:
 tabular-nums;
-
 }
 
 .counter.warning{
-
 color:#ff9999;
-
 }
 
-
-/* =========================
-   MESSAGE BOX
-========================= */
-
 .message-box{
-
 width:100%;
 
 height:430px;
-
 min-height:430px;
 
 resize:vertical;
@@ -389,7 +289,6 @@ Helvetica,
 sans-serif;
 
 font-size:17px;
-
 line-height:1.8;
 
 outline:none;
@@ -397,33 +296,22 @@ outline:none;
 transition:
 border-color .2s,
 box-shadow .2s;
-
 }
 
 .message-box:focus{
-
 border-color:
 rgba(255,145,145,.8);
 
 box-shadow:
 0 0 0 3px
 rgba(255,0,0,.08);
-
 }
 
 .message-box::placeholder{
-
 color:#777;
-
 }
 
-
-/* =========================
-   BUTTON
-========================= */
-
 .submit{
-
 width:100%;
 
 padding:
@@ -454,44 +342,29 @@ transition:
 transform .2s,
 box-shadow .2s,
 opacity .2s;
-
 }
 
 .submit:hover{
-
 transform:
 translateY(-2px);
 
 box-shadow:
 0 16px 45px
 rgba(0,0,0,.45);
-
 }
 
 .submit:active{
-
 transform:
 translateY(0);
-
 }
 
 .submit:disabled{
-
 opacity:.5;
-
 cursor:not-allowed;
-
 transform:none;
-
 }
 
-
-/* =========================
-   STATUS
-========================= */
-
 .status{
-
 min-height:25px;
 
 margin-top:22px;
@@ -503,16 +376,9 @@ font-size:16px;
 color:#ddd;
 
 line-height:1.5;
-
 }
 
-
-/* =========================
-   NOTICE
-========================= */
-
 .notice{
-
 margin-top:28px;
 
 padding:
@@ -534,227 +400,151 @@ font-size:13px;
 line-height:1.6;
 
 text-align:center;
-
 }
-
-
-/* =========================
-   LARGE DESKTOP
-========================= */
 
 @media(min-width:1200px){
 
 .container{
-
 max-width:1100px;
-
 }
 
 .card{
-
 padding:
 55px 75px;
-
 }
 
 .message-box{
-
 height:450px;
-
 min-height:450px;
-
 }
 
 }
-
-
-/* =========================
-   TABLET
-========================= */
 
 @media(max-width:800px){
 
 body{
-
 padding:
 35px 15px 55px;
-
 }
 
 .container{
-
 max-width:650px;
-
 }
 
 .card{
-
 padding:
 35px 25px;
 
 border-radius:28px;
-
 }
 
 .row{
-
 grid-template-columns:
 1fr;
 
 gap:0;
-
 }
 
 }
-
-
-/* =========================
-   MOBILE
-========================= */
 
 @media(max-width:600px){
 
 body{
-
 padding:
 25px 12px 45px;
-
 }
 
 .symbol{
-
 font-size:48px;
-
 }
 
 .logo{
-
 font-size:10px;
-
 letter-spacing:5px;
-
 }
 
 h1{
-
 font-size:40px;
-
 }
 
 .subtitle{
-
 font-size:15px;
-
 margin-bottom:30px;
-
 }
 
 .card{
-
 padding:
 28px 18px;
 
 border-radius:24px;
-
 }
 
 .order-card{
-
 flex-direction:column;
-
 align-items:flex-start;
 
 gap:7px;
 
 padding:
 14px 16px;
-
 }
 
 .order-value{
-
 text-align:left;
-
 width:100%;
-
 font-size:12px;
-
 }
 
 .field{
-
 padding:
 17px;
 
 font-size:16px;
-
 }
 
 .message-box{
-
 height:330px;
-
 min-height:330px;
 
 padding:
 19px;
 
 font-size:16px;
-
 line-height:1.7;
 
 border-radius:17px;
-
 }
 
 .submit{
-
 padding:
 20px 15px;
-
 }
 
 }
-
-
-/* =========================
-   SMALL MOBILE
-========================= */
 
 @media(max-width:400px){
 
 body{
-
 padding:
 20px 9px 35px;
-
 }
 
 .symbol{
-
 font-size:42px;
-
 }
 
 h1{
-
 font-size:35px;
-
 }
 
 .card{
-
 padding:
 24px 15px;
-
 }
 
 .message-box{
-
 height:300px;
-
 min-height:300px;
-
 }
 
 }
@@ -773,7 +563,7 @@ Order ID
 id="orderDisplay"
 class="order-value"
 >
-—
+Loading...
 </div></div><form
 id="messageForm"
 novalidate
@@ -851,21 +641,27 @@ required
 id="submitButton"
 class="submit"
 type="submit"
+disabled
 
 «»
 
-SEND MESSAGE
+CHECKING PAYMENT...
 </button>
 
 <div
 id="status"
 class="status"
 aria-live="polite"
-></div></form><div class="notice">Your email is collected for message submission
+>
+Checking your payment...
+</div></form><div class="notice">Your email is collected for message submission
 and should not be displayed publicly unless you choose
 to make it visible later.
 
 </div></div></div><script>
+
+const WORKER_URL =
+"https://soft-shape-5b8a.aaa6654292.workers.dev";
 
 const MAX_MESSAGE_LENGTH =
 4000;
@@ -901,9 +697,9 @@ document.getElementById(
 );
 
 
-// ==============================
+// =====================================================
 // ORDER ID
-// ==============================
+// =====================================================
 
 const params =
 new URLSearchParams(
@@ -911,26 +707,122 @@ window.location.search
 );
 
 const orderId =
-params.get(
-"orderId"
-);
+params.get("orderId");
 
-if(orderId){
 
-orderDisplay.textContent =
-orderId;
-
-}else{
+if(!orderId){
 
 orderDisplay.textContent =
 "Not provided";
 
+statusElement.textContent =
+"Missing Order ID.";
+
+submitButton.disabled =
+true;
+
+}else{
+
+orderDisplay.textContent =
+orderId;
+
+checkOrder();
+
 }
 
 
-// ==============================
+// =====================================================
+// CHECK PAYMENT
+// =====================================================
+
+async function checkOrder(){
+
+statusElement.textContent =
+"Checking payment...";
+
+submitButton.disabled =
+true;
+
+try{
+
+const response =
+await fetch(
+WORKER_URL +
+"/check-order?orderId=" +
+encodeURIComponent(orderId),
+{
+method:"GET",
+cache:"no-store"
+}
+);
+
+
+const result =
+await response.json();
+
+
+console.log(
+"Order status:",
+result
+);
+
+
+if(
+!response.ok
+){
+
+throw new Error(
+result.error ||
+"Unable to check order"
+);
+
+}
+
+
+if(
+result.paid === true &&
+result.status === "paid"
+){
+
+statusElement.textContent =
+"Payment confirmed. You can leave your message.";
+
+submitButton.disabled =
+false;
+
+return;
+
+}
+
+
+statusElement.textContent =
+"Payment has not been confirmed yet.";
+
+submitButton.disabled =
+true;
+
+
+}catch(error){
+
+console.error(
+"Order check failed:",
+error
+);
+
+statusElement.textContent =
+"Could not check payment. Please try again.";
+
+submitButton.disabled =
+true;
+
+}
+
+}
+
+
+// =====================================================
 // COUNTER
-// ==============================
+// =====================================================
 
 function updateCounter(){
 
@@ -942,7 +834,10 @@ length +
 " / " +
 MAX_MESSAGE_LENGTH;
 
-if(length >= 3800){
+
+if(
+length >= 3800
+){
 
 counter.classList.add(
 "warning"
@@ -958,6 +853,7 @@ counter.classList.remove(
 
 }
 
+
 messageInput.addEventListener(
 "input",
 updateCounter
@@ -966,9 +862,9 @@ updateCounter
 updateCounter();
 
 
-// ==============================
+// =====================================================
 // VALIDATION
-// ==============================
+// =====================================================
 
 function isBlank(value){
 
@@ -979,15 +875,83 @@ return !value
 }
 
 
+// =====================================================
+// SUBMIT MESSAGE
+// =====================================================
+
 form.addEventListener(
 "submit",
 async function(event){
 
 event.preventDefault();
 
-statusElement.textContent =
-"";
 
+if(!orderId){
+
+statusElement.textContent =
+"Missing Order ID.";
+
+return;
+
+}
+
+
+submitButton.disabled =
+true;
+
+statusElement.textContent =
+"Checking payment...";
+
+
+try{
+
+const paymentResponse =
+await fetch(
+WORKER_URL +
+"/check-order?orderId=" +
+encodeURIComponent(orderId),
+{
+method:"GET",
+cache:"no-store"
+}
+);
+
+
+const paymentResult =
+await paymentResponse.json();
+
+
+if(
+!paymentResponse.ok
+){
+
+throw new Error(
+paymentResult.error ||
+"Unable to check payment"
+);
+
+}
+
+
+if(
+paymentResult.paid !== true ||
+paymentResult.status !== "paid"
+){
+
+statusElement.textContent =
+"Payment has not been confirmed.";
+
+submitButton.disabled =
+true;
+
+return;
+
+}
+
+
+// ===================================================
+// READ FORM
+// ===================================================
 
 const name =
 document
@@ -995,13 +959,11 @@ document
 .value
 .trim();
 
-
 const email =
 document
 .getElementById("email")
 .value
 .trim();
-
 
 const country =
 document
@@ -1009,13 +971,11 @@ document
 .value
 .trim();
 
-
 const city =
 document
 .getElementById("city")
 .value
 .trim();
-
 
 const message =
 messageInput
@@ -1023,10 +983,17 @@ messageInput
 .trim();
 
 
+// ===================================================
+// VALIDATION
+// ===================================================
+
 if(!name){
 
 statusElement.textContent =
 "Please enter your name.";
+
+submitButton.disabled =
+false;
 
 return;
 
@@ -1037,6 +1004,9 @@ if(!email){
 
 statusElement.textContent =
 "Please enter your email.";
+
+submitButton.disabled =
+false;
 
 return;
 
@@ -1051,6 +1021,9 @@ if(
 statusElement.textContent =
 "Please enter a valid email.";
 
+submitButton.disabled =
+false;
+
 return;
 
 }
@@ -1061,6 +1034,9 @@ if(!country){
 statusElement.textContent =
 "Please enter your country.";
 
+submitButton.disabled =
+false;
+
 return;
 
 }
@@ -1070,6 +1046,9 @@ if(!city){
 
 statusElement.textContent =
 "Please enter your city.";
+
+submitButton.disabled =
+false;
 
 return;
 
@@ -1082,6 +1061,9 @@ statusElement.textContent =
 "Please write a message.";
 
 messageInput.focus();
+
+submitButton.disabled =
+false;
 
 return;
 
@@ -1096,48 +1078,157 @@ MAX_MESSAGE_LENGTH
 statusElement.textContent =
 "Your message is too long.";
 
+submitButton.disabled =
+false;
+
 return;
 
 }
 
 
-submitButton.disabled =
-true;
+// ===================================================
+// SEND TO WORKER
+// ===================================================
 
 submitButton.textContent =
 "SENDING...";
 
-
 statusElement.textContent =
-"Preparing your message...";
+"Submitting your message...";
 
 
-setTimeout(
-function(){
+const response =
+await fetch(
+WORKER_URL +
+"/submit-message",
+{
+method:"POST",
 
-submitButton.disabled =
-false;
-
-submitButton.textContent =
-"SEND MESSAGE";
-
-statusElement.textContent =
-"Ready for the next step.";
-
+headers:{
+"Content-Type":
+"application/json"
 },
-700
-);
+
+body:
+JSON.stringify({
+
+orderId,
+name,
+email,
+country,
+city,
+message
+
+})
 
 }
 );
 
 
-// ==============================
+const result =
+await response.json();
+
+
+console.log(
+"Submit result:",
+result
+);
+
+
+if(!response.ok){
+
+throw new Error(
+result.error ||
+"Message submission failed"
+);
+
+}
+
+
+if(
+result.success !== true ||
+result.submitted !== true
+){
+
+throw new Error(
+result.error ||
+"Message was not submitted"
+);
+
+}
+
+
+// ===================================================
+// SUCCESS
+// ===================================================
+
+statusElement.innerHTML =
+"✓ MESSAGE SUBMITTED<br>" +
+"Message Number: " +
+result.messageNumber;
+
+
+submitButton.textContent =
+"MESSAGE SENT";
+
+submitButton.disabled =
+true;
+
+
+messageInput.disabled =
+true;
+
+document
+.getElementById("name")
+.disabled =
+true;
+
+document
+.getElementById("email")
+.disabled =
+true;
+
+document
+.getElementById("country")
+.disabled =
+true;
+
+document
+.getElementById("city")
+.disabled =
+true;
+
+
+}catch(error){
+
+console.error(
+"Message submission failed:",
+error
+);
+
+statusElement.textContent =
+error.message ||
+"Could not submit your message.";
+
+submitButton.textContent =
+"SEND MESSAGE";
+
+submitButton.disabled =
+false;
+
+}
+
+}
+);
+
+
+// =====================================================
 // UNSAVED MESSAGE WARNING
-// ==============================
+// =====================================================
 
 let hasTyped =
 false;
+
 
 messageInput.addEventListener(
 "input",
@@ -1150,6 +1241,7 @@ messageInput.value
 
 }
 );
+
 
 window.addEventListener(
 "beforeunload",
