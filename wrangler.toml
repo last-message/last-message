@@ -1,0 +1,15 @@
+name = "soft-shape-5b8a"
+main = "src/index.js"
+compatibility_date = "2026-08-08"
+
+[[kv_namespaces]]
+binding = "PAYMENTS"
+id = "YOUR_KV_NAMESPACE_ID"
+
+[[durable_objects.bindings]]
+name = "SEQUENCE"
+class_name = "SequenceCounter"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["SequenceCounter"]
