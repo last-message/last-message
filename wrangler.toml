@@ -1,5 +1,5 @@
 name = "soft-shape-5b8a"
-main = "src/index.js"
+main = "worker.js"
 compatibility_date = "2026-08-08"
 
 [[kv_namespaces]]
