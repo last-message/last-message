@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Anonymous Messages — Messages From Real People | Last Human Message</title>
+<title>Anonymous Messages — Discover Words From Strangers</title>
 
 <meta
     name="description"
-    content="Discover anonymous messages from real people around the world. Read thoughts from strangers, explore anonymous human connections, and leave your own message for someone you may never meet."
+    content="Discover anonymous messages from strangers around the world. Explore anonymous human connections and leave your own message for someone you may never meet."
 >
 
 <meta
@@ -22,21 +22,29 @@
     href="https://last-message.github.io/last-message/anonymous-messages.html"
 >
 
-<meta name="theme-color" content="#520000">
+<meta
+    name="theme-color"
+    content="#520000"
+>
 
 
-<!-- Open Graph -->
+<!-- =========================================================
+     OPEN GRAPH
+========================================================= -->
 
-<meta property="og:type" content="article">
+<meta
+    property="og:type"
+    content="article"
+>
 
 <meta
     property="og:title"
-    content="Anonymous Messages — Messages From Real People"
+    content="Anonymous Messages — Discover Words From Strangers"
 >
 
 <meta
     property="og:description"
-    content="Discover anonymous messages from real people around the world and leave your own words for a stranger."
+    content="Discover anonymous messages from strangers around the world and leave your own words for someone you may never meet."
 >
 
 <meta
@@ -55,7 +63,9 @@
 >
 
 
-<!-- Twitter / X -->
+<!-- =========================================================
+     TWITTER / X
+========================================================= -->
 
 <meta
     name="twitter:card"
@@ -69,100 +79,80 @@
 
 <meta
     name="twitter:description"
-    content="Read anonymous messages from real people and leave your own words for a stranger."
+    content="Discover anonymous messages from strangers and leave your own words for another human."
 >
 
 
-<!-- Structured Data: WebPage -->
+<!-- =========================================================
+     STRUCTURED DATA
+========================================================= -->
 
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Anonymous Messages",
-    "url": "https://last-message.github.io/last-message/anonymous-messages.html",
-    "description": "Discover anonymous messages from real people around the world and leave your own words for a stranger.",
-    "isPartOf": {
-        "@type": "WebSite",
-        "name": "Last Human Message",
-        "url": "https://last-message.github.io/last-message/"
-    },
-    "about": {
-        "@type": "Thing",
-        "name": "Anonymous messages"
-    },
-    "inLanguage": "en"
-}
-</script>
+    "@graph": [
 
-
-<!-- Structured Data: Breadcrumb -->
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
         {
-            "@type": "ListItem",
-            "position": 1,
+            "@type": "WebSite",
+            "@id": "https://last-message.github.io/last-message/#website",
             "name": "Last Human Message",
-            "item": "https://last-message.github.io/last-message/"
+            "url": "https://last-message.github.io/last-message/",
+            "description": "A global chain of anonymous messages between strangers.",
+            "inLanguage": "en"
         },
+
         {
-            "@type": "ListItem",
-            "position": 2,
+            "@type": "WebPage",
+            "@id": "https://last-message.github.io/last-message/anonymous-messages.html#webpage",
             "name": "Anonymous Messages",
-            "item": "https://last-message.github.io/last-message/anonymous-messages.html"
+            "url": "https://last-message.github.io/last-message/anonymous-messages.html",
+            "description": "Discover anonymous messages from strangers around the world and explore human connections through words.",
+            "isPartOf": {
+                "@id": "https://last-message.github.io/last-message/#website"
+            },
+            "about": {
+                "@type": "Thing",
+                "name": "Anonymous messages"
+            },
+            "inLanguage": "en"
+        },
+
+        {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+                {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Last Human Message",
+                    "item": "https://last-message.github.io/last-message/"
+                },
+                {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Anonymous Messages",
+                    "item": "https://last-message.github.io/last-message/anonymous-messages.html"
+                }
+            ]
         }
+
     ]
 }
 </script>
 
 
-<!-- Structured Data: FAQ -->
-
-<script type="application/ld+json">
-{
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-        {
-            "@type": "Question",
-            "name": "What are anonymous messages?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Anonymous messages are messages shared without revealing the identity of the person who wrote them."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Why do people leave anonymous messages?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "People may leave anonymous messages to share thoughts, memories, questions, advice, or personal experiences without attaching their identity."
-            }
-        },
-        {
-            "@type": "Question",
-            "name": "Can anonymous messages connect strangers?",
-            "acceptedAnswer": {
-                "@type": "Answer",
-                "text": "Yes. An anonymous message can create a moment of connection between people who may never meet or know each other's identities."
-            }
-        }
-    ]
-}
-</script>
-
-
-<!-- Fonts -->
+<!-- =========================================================
+     FONTS
+========================================================= -->
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet"
 >
 
+
+<!-- =========================================================
+     STYLES
+========================================================= -->
 
 <style>
 
@@ -196,10 +186,43 @@ body{
 
     color:white;
 
+    overflow-x:hidden;
 }
 
 
+body:before{
+
+    content:"◈ ✦ ∞ ◉ ? ✦ ◈";
+
+    position:fixed;
+
+    top:25px;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:25px;
+
+    letter-spacing:18px;
+
+    color:rgba(255,255,255,.18);
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container{
+
+    position:relative;
+
+    z-index:1;
 
     width:90%;
 
@@ -208,9 +231,12 @@ body{
     margin:auto;
 
     padding:65px 20px;
-
 }
 
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .symbol{
 
@@ -220,7 +246,6 @@ body{
 
     text-shadow:
         0 0 30px red;
-
 }
 
 
@@ -237,9 +262,12 @@ body{
     color:#ffcccc;
 
     font-weight:700;
-
 }
 
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
 
@@ -247,12 +275,13 @@ nav{
 
     justify-content:center;
 
+    align-items:center;
+
     flex-wrap:wrap;
 
     gap:18px;
 
     margin-top:35px;
-
 }
 
 
@@ -264,8 +293,9 @@ nav a{
 
     font-size:14px;
 
-    transition:.2s;
+    font-weight:600;
 
+    transition:.2s;
 }
 
 
@@ -275,9 +305,12 @@ nav a:focus{
     color:white;
 
     text-decoration:underline;
-
 }
 
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 h1{
 
@@ -297,10 +330,14 @@ h1{
         55px 0 30px;
 
     text-shadow:
-        0 0 20px rgba(255,0,0,.8);
-
+        0 0 20px
+        rgba(255,0,0,.8);
 }
 
+
+/* =========================================================
+   INTRO
+========================================================= */
 
 .intro{
 
@@ -315,9 +352,12 @@ h1{
     line-height:1.9;
 
     color:#eee;
-
 }
 
+
+/* =========================================================
+   CONTENT CARD
+========================================================= */
 
 .card{
 
@@ -334,16 +374,21 @@ h1{
 
     border-radius:28px;
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:
+        blur(18px);
 
-    -webkit-backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:
+        blur(18px);
 
     box-shadow:
         0 20px 70px
         rgba(0,0,0,.7);
-
 }
 
+
+/* =========================================================
+   HEADINGS
+========================================================= */
 
 h2{
 
@@ -356,13 +401,13 @@ h2{
 
     font-size:30px;
 
+    line-height:1.2;
 }
 
 
 h2:first-child{
 
     margin-top:0;
-
 }
 
 
@@ -377,8 +422,13 @@ h3{
 
     font-size:23px;
 
+    line-height:1.3;
 }
 
+
+/* =========================================================
+   TEXT
+========================================================= */
 
 p{
 
@@ -387,16 +437,36 @@ p{
     line-height:1.9;
 
     color:#ddd;
-
 }
 
+
+.content-link{
+
+    color:#ffcccc;
+
+    text-decoration:underline;
+
+    text-decoration-thickness:1px;
+
+    text-underline-offset:3px;
+}
+
+
+.content-link:hover{
+
+    color:white;
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
 
 ul{
 
     padding-left:25px;
 
     color:#ddd;
-
 }
 
 
@@ -406,21 +476,22 @@ li{
         14px 0;
 
     line-height:1.7;
-
 }
 
 
+/* =========================================================
+   FAQ
+========================================================= */
+
 .faq{
 
-    margin-top:45px;
-
+    margin-top:50px;
 }
 
 
 .faq h2{
 
     margin-bottom:25px;
-
 }
 
 
@@ -432,7 +503,12 @@ li{
     border-bottom:
         1px solid
         rgba(255,255,255,.15);
+}
 
+
+.faq-item:last-child{
+
+    border-bottom:0;
 }
 
 
@@ -440,23 +516,24 @@ li{
 
     margin:
         0 0 10px;
-
 }
 
 
 .faq-item p{
 
     margin:0;
-
 }
 
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
 
     text-align:center;
 
     margin-top:50px;
-
 }
 
 
@@ -477,8 +554,9 @@ li{
 
     font-weight:900;
 
-    transition:.2s;
-
+    transition:
+        transform .2s,
+        box-shadow .2s;
 }
 
 
@@ -487,8 +565,15 @@ li{
 
     transform:scale(1.04);
 
+    box-shadow:
+        0 0 35px
+        rgba(255,255,255,.25);
 }
 
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
 
@@ -500,33 +585,62 @@ footer{
 
     font-size:14px;
 
+    line-height:1.8;
 }
 
+
+footer a{
+
+    color:#ccc;
+
+    text-decoration:none;
+}
+
+
+footer a:hover{
+
+    color:white;
+
+    text-decoration:underline;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
     .container{
 
         padding-top:45px;
-
     }
+
 
     .card{
 
-        padding:25px 20px;
-
+        padding:
+            25px 20px;
     }
+
 
     .intro{
 
         font-size:19px;
-
     }
+
 
     p{
 
         font-size:17px;
+    }
 
+
+    body:before{
+
+        font-size:18px;
+
+        letter-spacing:8px;
     }
 
 }
@@ -538,291 +652,344 @@ footer{
 
 <body>
 
+
 <main class="container">
 
+
+<!-- =========================================================
+     BRAND
+========================================================= -->
 
 <div
     class="symbol"
     aria-hidden="true"
 >
-◈ ✦ ∞
+    ◈ ✦ ∞
 </div>
 
 
 <div class="logo">
-GLOBAL HUMAN ARCHIVE
+    GLOBAL HUMAN ARCHIVE
 </div>
 
 
+<!-- =========================================================
+     INTERNAL NAVIGATION
+========================================================= -->
+
 <nav aria-label="Main navigation">
 
-<a href="index.html">
-Last Human Message
-</a>
+    <a href="index.html">
+        Last Human Message
+    </a>
 
-<a href="anonymous-messages.html"
-   aria-current="page">
-Anonymous Messages
-</a>
+    <a
+        href="anonymous-messages.html"
+        aria-current="page"
+    >
+        Anonymous Messages
+    </a>
 
-<a href="messages-from-strangers.html">
-Messages From Strangers
-</a>
+    <a href="messages-from-strangers.html">
+        Messages From Strangers
+    </a>
 
-<a href="about.html">
-About
-</a>
+    <a href="about.html">
+        About
+    </a>
 
 </nav>
 
 
+<!-- =========================================================
+     PAGE TITLE
+========================================================= -->
+
 <h1>
-Anonymous Messages
+    Anonymous Messages
 </h1>
 
 
 <p class="intro">
 
-What would a stranger say if they knew
-they would never meet you?
+    What would a stranger say if they knew
+    they would never meet you?
 
-Anonymous messages can turn a simple thought
-into a connection between two people who may
-live thousands of miles apart.
+    Anonymous messages can turn a simple thought
+    into a connection between two people who may
+    live thousands of miles apart.
 
 </p>
 
 
-<section class="card">
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<section
+    class="card"
+    aria-label="Information about anonymous messages"
+>
 
 
 <h2>
-What Are Anonymous Messages?
+    What Are Anonymous Messages?
 </h2>
+
 
 <p>
 
-An anonymous message is a message shared without
-revealing the identity of the person who wrote it.
+    An anonymous message is a message shared without
+    revealing the identity of the person who wrote it.
 
-That simplicity can make the experience different
-from ordinary social media. There is no profile to
-judge, no follower count to consider, and no need
-to know who is on the other side.
+    That simplicity can make the experience different
+    from ordinary social media. There is no profile to
+    judge, no follower count to consider, and no need
+    to know who is on the other side.
 
 </p>
 
 
 <h2>
-Why Do People Leave Anonymous Messages?
+    Why Do People Leave Anonymous Messages?
 </h2>
 
+
 <p>
 
-People sometimes have thoughts they want to express
-without attaching their name to them.
+    People sometimes have thoughts they want to express
+    without attaching their name to them.
 
-It might be a memory, an observation, a question,
-a piece of advice, a personal thought, or simply
-a sentence intended for someone they will never meet.
+    It might be a memory, an observation, a question,
+    a piece of advice, a personal thought, or simply
+    a sentence intended for someone they will never meet.
 
 </p>
 
 
 <h3>
-Anonymous Messages From Strangers
+    Anonymous Messages From Strangers
 </h3>
+
 
 <p>
 
-There is something unusual about receiving words
-from a stranger.
+    There is something unusual about receiving words
+    from a stranger.
 
-You don't know their name.
+    You don't know their name.
 
-You don't know where they live.
+    You don't know where they live.
 
-You may never know anything else about them.
+    You may never know anything else about them.
 
-Yet for a moment, you share the same space through
-a message.
+    Yet for a moment, you share the same space through
+    a message.
 
-If you want to explore the broader idea of messages
-from strangers, see our
-<a href="messages-from-strangers.html"
-   style="color:#ffcccc;">
-messages from strangers
-</a>
-page.
+</p>
+
+
+<p>
+
+    If you are interested in the broader idea of
+    <a
+        class="content-link"
+        href="messages-from-strangers.html"
+    >
+        messages from strangers
+    </a>,
+    explore our guide to unexpected connections
+    between people who may never meet.
 
 </p>
 
 
 <h3>
-A Different Kind of Online Connection
+    A Different Kind of Online Connection
 </h3>
+
 
 <p>
 
-Most online platforms are built around identity.
+    Most online platforms are built around identity.
 
-People create profiles, collect followers,
-receive likes and build public histories.
+    People create profiles, collect followers,
+    receive likes and build public histories.
 
-Last Human Message explores a different idea:
+    Last Human Message explores a different idea:
 
-a connection that does not require knowing
-who the other person is.
+    a connection that does not require knowing
+    who the other person is.
 
 </p>
 
 
 <h3>
-How Last Human Message Works
+    How Last Human Message Works
 </h3>
+
 
 <p>
 
-Last Human Message is built around a chain of human
-messages.
+    Last Human Message is built around a chain of human
+    messages.
 
-A person discovers a hidden message left by another
-human.
+    A person discovers a hidden message left by another
+    human.
 
-After reading it, they can leave their own words
-for the next person.
+    After reading it, they can leave their own words
+    for the next person.
 
-The message then becomes part of a continuing chain
-between strangers.
+    The message then becomes part of a continuing chain
+    between strangers.
+
+</p>
+
+
+<p>
+
+    You can return to the
+    <a
+        class="content-link"
+        href="index.html"
+    >
+        Last Human Message
+    </a>
+    homepage to discover the experience.
 
 </p>
 
 
 <h3>
-What Kind of Message Can You Leave?
+    What Kind of Message Can You Leave?
 </h3>
+
 
 <p>
 
-There is no single correct type of message.
+    There is no single correct type of message.
 
-You might leave:
+    You might leave:
 
 </p>
 
 
 <ul>
 
-<li>
-A thought you have never shared before.
-</li>
+    <li>
+        A thought you have never shared before.
+    </li>
 
-<li>
-A short piece of advice.
-</li>
+    <li>
+        A short piece of advice.
+    </li>
 
-<li>
-A memory from your life.
-</li>
+    <li>
+        A memory from your life.
+    </li>
 
-<li>
-A question for an unknown person.
-</li>
+    <li>
+        A question for an unknown person.
+    </li>
 
-<li>
-A sentence that might make someone think.
-</li>
+    <li>
+        A sentence that might make someone think.
+    </li>
 
-<li>
-Something you simply want another human to read.
-</li>
+    <li>
+        Something you simply want another human to read.
+    </li>
 
 </ul>
 
 
 <h3>
-Why Anonymous Messages Can Feel Different
+    Why Anonymous Messages Can Feel Different
 </h3>
+
 
 <p>
 
-Without a public identity attached to the interaction,
-the focus can move away from popularity and toward
-the words themselves.
+    Without a public identity attached to the interaction,
+    the focus can move away from popularity and toward
+    the words themselves.
 
-That is the idea Last Human Message is experimenting with.
+    That is the idea Last Human Message is experimenting with.
 
 </p>
 
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
 
 <section
     class="faq"
     aria-labelledby="faq-title"
 >
 
+
 <h2 id="faq-title">
-Frequently Asked Questions About Anonymous Messages
+    Frequently Asked Questions About Anonymous Messages
 </h2>
 
 
 <div class="faq-item">
 
-<h3>
-What are anonymous messages?
-</h3>
+    <h3>
+        What are anonymous messages?
+    </h3>
 
-<p>
-
-Anonymous messages are messages shared without
-revealing the identity of the person who wrote them.
-
-</p>
+    <p>
+        Anonymous messages are messages shared without
+        revealing the identity of the person who wrote them.
+    </p>
 
 </div>
 
 
 <div class="faq-item">
 
-<h3>
-Why do people leave anonymous messages?
-</h3>
+    <h3>
+        Why do people leave anonymous messages?
+    </h3>
 
-<p>
-
-People may leave anonymous messages to share thoughts,
-memories, questions, advice, or experiences without
-attaching their identity.
-
-</p>
+    <p>
+        People may leave anonymous messages to share thoughts,
+        memories, questions, advice, or experiences without
+        attaching their identity.
+    </p>
 
 </div>
 
 
 <div class="faq-item">
 
-<h3>
-Can anonymous messages connect strangers?
-</h3>
+    <h3>
+        Can anonymous messages connect strangers?
+    </h3>
 
-<p>
-
-Yes. A message can create a small moment of connection
-between people who may never meet or know each other's
-identities.
-
-</p>
+    <p>
+        Yes. A message can create a small moment of connection
+        between people who may never meet or know each other's
+        identities.
+    </p>
 
 </div>
 
 
 </section>
 
+
+<!-- =========================================================
+     CTA
+========================================================= -->
 
 <div class="cta">
 
-<a href="index.html">
-DISCOVER A MESSAGE
-</a>
+    <a href="index.html">
+        DISCOVER A MESSAGE
+    </a>
 
 </div>
 
@@ -830,14 +997,35 @@ DISCOVER A MESSAGE
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-A connection between strangers around the world.
+    <p>
+        A connection between strangers around the world.
+    </p>
+
+    <p>
+
+        Read
+        <a href="messages-from-strangers.html">
+            messages from strangers
+        </a>
+
+        or learn more
+        <a href="about.html">
+            about Last Human Message
+        </a>.
+
+    </p>
 
 </footer>
 
 
 </main>
+
 
 </body>
 </html>
