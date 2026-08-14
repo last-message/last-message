@@ -15,11 +15,11 @@
      SEO
 ========================================================= -->
 
-<title>Last Human Message — A Message From One Human to Another</title>
+<title>Last Human Message — Leave a Message for a Stranger</title>
 
 <meta
     name="description"
-    content="Discover a message left by another human and leave your own words for the next stranger. Last Human Message is a global chain of anonymous messages between people."
+    content="Discover a message from a stranger and leave your own words for the next human. Last Human Message is a simple global chain of anonymous messages."
 >
 
 <meta
@@ -37,12 +37,6 @@
     content="#520000"
 >
 
-<meta
-    name="keywords"
-    content="last human message, message for a stranger, anonymous message, message to a stranger, human messages, global message, leave a message"
->
-
-
 <!-- =========================================================
      OPEN GRAPH
 ========================================================= -->
@@ -54,12 +48,12 @@
 
 <meta
     property="og:title"
-    content="Last Human Message — A Message From One Human to Another"
+    content="Last Human Message — Leave a Message for a Stranger"
 >
 
 <meta
     property="og:description"
-    content="Discover a message left by another human and leave your own words for the next stranger."
+    content="Discover a message from a stranger and leave your own words for the next human."
 >
 
 <meta
@@ -77,7 +71,6 @@
     content="en_US"
 >
 
-
 <!-- =========================================================
      TWITTER / X
 ========================================================= -->
@@ -89,12 +82,12 @@
 
 <meta
     name="twitter:title"
-    content="Last Human Message"
+    content="Last Human Message — Leave a Message for a Stranger"
 >
 
 <meta
     name="twitter:description"
-    content="A global chain of anonymous messages between strangers. Discover one message and leave your own for the next human."
+    content="Discover an anonymous message from another human and leave your own words for the next stranger."
 >
 
 
@@ -105,12 +98,28 @@
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Last Human Message",
-    "alternateName": "Global Human Archive",
-    "url": "https://last-message.github.io/last-message/",
-    "description": "A global chain of anonymous messages between strangers.",
-    "inLanguage": "en"
+    "@graph": [
+        {
+            "@type": "WebSite",
+            "@id": "https://last-message.github.io/last-message/#website",
+            "name": "Last Human Message",
+            "alternateName": "Global Human Archive",
+            "url": "https://last-message.github.io/last-message/",
+            "description": "A global chain of anonymous messages between strangers.",
+            "inLanguage": "en"
+        },
+        {
+            "@type": "WebPage",
+            "@id": "https://last-message.github.io/last-message/#webpage",
+            "url": "https://last-message.github.io/last-message/",
+            "name": "Last Human Message — Leave a Message for a Stranger",
+            "description": "Discover a message from a stranger and leave your own words for the next human.",
+            "isPartOf": {
+                "@id": "https://last-message.github.io/last-message/#website"
+            },
+            "inLanguage": "en"
+        }
+    ]
 }
 </script>
 
@@ -132,304 +141,439 @@
 <style>
 
 *{
-box-sizing:border-box;
+    box-sizing:border-box;
 }
 
 body{
 
-margin:0;
+    margin:0;
 
-min-height:100vh;
+    min-height:100vh;
 
-font-family:'Inter',sans-serif;
+    font-family:'Inter',sans-serif;
 
-background:
-radial-gradient(circle at 50% 0%, #b40000 0%, #520000 35%, #050505 80%);
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #b40000 0%,
+            #520000 35%,
+            #050505 80%
+        );
 
-color:white;
+    color:white;
 
-overflow-x:hidden;
-
+    overflow-x:hidden;
 }
 
 
 body:before{
 
-content:"◈ ✦ ∞ ◉ ? ✦ ◈";
+    content:"◈ ✦ ∞ ◉ ? ✦ ◈";
 
-position:fixed;
+    position:fixed;
 
-top:25px;
+    top:25px;
 
-width:100%;
+    width:100%;
 
-text-align:center;
+    text-align:center;
 
-font-size:25px;
+    font-size:25px;
 
-letter-spacing:18px;
+    letter-spacing:18px;
 
-color:rgba(255,255,255,.18);
+    color:rgba(255,255,255,.18);
 
+    pointer-events:none;
+
+    z-index:0;
 }
 
 
 .container{
 
-max-width:900px;
+    position:relative;
 
-width:90%;
+    z-index:1;
 
-margin:auto;
+    max-width:900px;
 
-padding:70px 20px;
+    width:90%;
 
-text-align:center;
+    margin:auto;
 
+    padding:70px 20px;
+
+    text-align:center;
 }
 
 
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:30px;
+}
+
+
+nav a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    transition:.2s;
+}
+
+
+nav a:hover{
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .symbol{
 
-font-size:60px;
+    font-size:60px;
 
-text-shadow:0 0 30px #ff0000;
-
+    text-shadow:
+        0 0 30px #ff0000;
 }
-
 
 
 .logo{
 
-margin-top:15px;
+    margin-top:15px;
 
-font-size:13px;
+    font-size:13px;
 
-letter-spacing:10px;
+    letter-spacing:10px;
 
-color:#ffcccc;
+    color:#ffcccc;
 
-font-weight:700;
-
+    font-weight:700;
 }
 
 
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 h1{
 
-font-family:'Space Grotesk',sans-serif;
+    font-family:'Space Grotesk',sans-serif;
 
-font-size:clamp(48px,9vw,90px);
+    font-size:
+        clamp(48px,9vw,90px);
 
-font-weight:700;
+    font-weight:700;
 
-line-height:.95;
+    line-height:.95;
 
-letter-spacing:-3px;
+    letter-spacing:-3px;
 
-margin:35px 0;
+    margin:35px 0;
 
-text-shadow:
-
-0 0 20px rgba(255,0,0,.8);
-
+    text-shadow:
+        0 0 20px
+        rgba(255,0,0,.8);
 }
-
 
 
 .subtitle{
 
-font-size:clamp(22px,4vw,38px);
+    font-size:
+        clamp(22px,4vw,38px);
 
-font-weight:900;
+    font-weight:900;
 
+    line-height:1.2;
+
+    margin:0;
 }
 
 
+/* =========================================================
+   INTRO
+========================================================= */
 
 .text{
 
-max-width:700px;
+    max-width:700px;
 
-margin:35px auto;
+    margin:35px auto;
 
-font-size:21px;
+    font-size:21px;
 
-line-height:2;
+    line-height:2;
 
-font-weight:500;
+    font-weight:500;
 
-color:#eeeeee;
-
+    color:#eeeeee;
 }
-
 
 
 .text p{
 
-margin:0 0 25px;
-
+    margin:
+        0 0 25px;
 }
 
 
+/* =========================================================
+   MESSAGE CARD
+========================================================= */
 
 .card{
 
-margin-top:50px;
+    margin-top:50px;
 
-padding:45px 35px;
+    padding:45px 35px;
 
-background:
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.04)
+        );
 
-linear-gradient(
+    border:
+        1px solid
+        rgba(255,255,255,.25);
 
-145deg,
+    border-radius:35px;
 
-rgba(255,255,255,.12),
+    backdrop-filter:
+        blur(20px);
 
-rgba(255,255,255,.04)
+    -webkit-backdrop-filter:
+        blur(20px);
 
-);
-
-border:1px solid rgba(255,255,255,.25);
-
-border-radius:35px;
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-
-0 20px 80px rgba(0,0,0,.8);
-
+    box-shadow:
+        0 20px 80px
+        rgba(0,0,0,.8);
 }
 
+
+.card h2{
+
+    font-size:28px;
+
+    margin:
+        0 0 25px;
+}
 
 
 .price{
 
-font-family:'Space Grotesk',sans-serif;
+    font-family:'Space Grotesk',sans-serif;
 
-font-size:70px;
+    font-size:70px;
 
-font-weight:900;
-
+    font-weight:900;
 }
-
 
 
 .card p{
 
-font-size:20px;
+    font-size:20px;
 
-line-height:1.8;
+    line-height:1.8;
 
-color:#ddd;
+    color:#ddd;
 
+    margin:20px 0;
 }
 
 
+/* =========================================================
+   CTA
+========================================================= */
 
-button{
+.cta{
 
-margin-top:30px;
+    display:inline-block;
 
-padding:22px 55px;
+    margin-top:30px;
 
-border:0;
+    padding:
+        22px 55px;
 
-border-radius:60px;
+    border:0;
 
-background:white;
+    border-radius:60px;
 
-color:#600000;
+    background:white;
 
-font-family:'Inter',sans-serif;
+    color:#600000;
 
-font-weight:900;
+    text-decoration:none;
 
-font-size:20px;
+    font-family:'Inter',sans-serif;
 
-letter-spacing:2px;
+    font-weight:900;
 
-cursor:pointer;
+    font-size:20px;
 
-box-shadow:
+    letter-spacing:2px;
 
-0 0 40px rgba(255,255,255,.25);
+    cursor:pointer;
 
-transition:.3s;
+    box-shadow:
+        0 0 40px
+        rgba(255,255,255,.25);
 
+    transition:
+        transform .3s,
+        box-shadow .3s;
 }
 
 
+.cta:hover{
 
-button:hover{
+    transform:
+        scale(1.07);
 
-transform:scale(1.07);
-
+    box-shadow:
+        0 0 55px
+        rgba(255,255,255,.4);
 }
 
 
+/* =========================================================
+   TRUST SIGNALS
+========================================================= */
 
 .trust{
 
-margin-top:45px;
+    margin-top:45px;
 
-display:flex;
+    display:flex;
 
-justify-content:center;
+    justify-content:center;
 
-gap:25px;
+    gap:25px;
 
-flex-wrap:wrap;
+    flex-wrap:wrap;
 
-font-size:14px;
+    font-size:14px;
 
-color:#bbb;
+    color:#bbb;
 
-letter-spacing:1px;
-
+    letter-spacing:1px;
 }
 
 
+/* =========================================================
+   FOOTER
+========================================================= */
 
 .footer{
 
-margin-top:60px;
+    margin-top:60px;
 
-color:#aaa;
+    color:#aaa;
 
-font-size:14px;
+    font-size:14px;
 
+    line-height:1.8;
 }
 
 
+.footer a{
+
+    color:#ccc;
+
+    text-decoration:none;
+}
+
+
+.footer a:hover{
+
+    color:white;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
-.container{
+    .container{
 
-padding-top:55px;
+        padding-top:55px;
+    }
+
+
+    nav{
+
+        gap:12px;
+    }
+
+
+    nav a{
+
+        font-size:13px;
+    }
+
+
+    .logo{
+
+        letter-spacing:6px;
+    }
+
+
+    .card{
+
+        padding:
+            35px 20px;
+    }
+
+
+    .price{
+
+        font-size:65px;
+    }
+
+
+    .cta{
+
+        width:100%;
+
+        padding:
+            22px 15px;
+    }
+
+
+    body:before{
+
+        font-size:18px;
+
+        letter-spacing:8px;
+    }
 
 }
-
-
-.card{
-
-padding:35px 20px;
-
-}
-
-
-button{
-
-width:100%;
-
-}
-
-}
-
 
 </style>
 
@@ -442,27 +586,60 @@ width:100%;
 <main class="container">
 
 
+<!-- =========================================================
+     BRAND
+========================================================= -->
+
 <div
     class="symbol"
     aria-hidden="true"
 >
-◈ ✦ ∞
+    ◈ ✦ ∞
 </div>
 
 
 <div class="logo">
-GLOBAL HUMAN ARCHIVE
+    GLOBAL HUMAN ARCHIVE
 </div>
 
 
+<!-- =========================================================
+     INTERNAL NAVIGATION
+========================================================= -->
+
+<nav aria-label="Main navigation">
+
+    <a href="index.html">
+        Last Human Message
+    </a>
+
+    <a href="anonymous-messages.html">
+        Anonymous Messages
+    </a>
+
+    <a href="messages-from-strangers.html">
+        Messages From Strangers
+    </a>
+
+    <a href="about.html">
+        About
+    </a>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
 <h1>
-LAST HUMAN<br>
-MESSAGE
+    LAST HUMAN<br>
+    MESSAGE
 </h1>
 
 
 <h2 class="subtitle">
-Someone left a message for you.
+    Someone left a message for you.
 </h2>
 
 
@@ -471,69 +648,101 @@ Someone left a message for you.
     aria-label="About Last Human Message"
 >
 
-<p>
-A stranger you will never meet.
-A thought you were never supposed to find.
-</p>
+    <p>
+        A stranger you will never meet.
+        A thought you were never supposed to find.
+    </p>
 
-<p>
-Maybe a secret.
-Maybe a memory.
-Maybe a sentence that stays with you forever.
-</p>
+    <p>
+        Maybe a secret.
+        Maybe a memory.
+        Maybe a sentence that stays with you forever.
+    </p>
 
 </section>
 
+
+<!-- =========================================================
+     MAIN ACTION
+========================================================= -->
 
 <section
     class="card"
-    aria-label="Discover and leave a message"
+    aria-labelledby="message-action-title"
 >
 
-<div class="price">
-$2
-</div>
+    <h2 id="message-action-title">
+        Discover a Message From a Stranger
+    </h2>
 
 
-<p>
-
-Unlock one hidden message.<br><br>
-
-Then leave your own words<br>
-for the next human.
-
-</p>
+    <div
+        class="price"
+        aria-label="Two dollars"
+    >
+        $2
+    </div>
 
 
-<a
-    href="payment.html"
-    aria-label="Reveal the hidden message"
->
+    <p>
+        Unlock one hidden message.
+        Then leave your own words
+        for the next human.
+    </p>
 
-<button type="button">
-◉ REVEAL THE MESSAGE
-</button>
 
-</a>
-
+    <a
+        class="cta"
+        href="payment.html"
+        aria-label="Reveal the hidden message"
+    >
+        ◉ REVEAL THE MESSAGE
+    </a>
 
 </section>
 
 
+<!-- =========================================================
+     TRUST / TOPIC SIGNALS
+========================================================= -->
+
 <div class="trust">
 
-<span>◉ Anonymous</span>
+    <span>
+        ◉ Anonymous
+    </span>
 
-<span>◈ Global</span>
+    <span>
+        ◈ Global
+    </span>
 
-<span>∞ Human Stories</span>
+    <span>
+        ∞ Human Stories
+    </span>
 
 </div>
 
 
+<!-- =========================================================
+     FOOTER + INTERNAL LINKS
+========================================================= -->
+
 <footer class="footer">
 
-A connection between strangers around the world
+    <p>
+        A connection between strangers around the world.
+    </p>
+
+    <p>
+        Explore
+        <a href="anonymous-messages.html">
+            anonymous messages
+        </a>
+        or read about
+        <a href="messages-from-strangers.html">
+            messages from strangers
+        </a>.
+    </p>
 
 </footer>
 
