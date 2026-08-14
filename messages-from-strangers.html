@@ -3,13 +3,19 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Messages From Strangers — Read & Leave Anonymous Messages</title>
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+Messages From Strangers — Anonymous Words From Around the World
+</title>
 
 <meta
     name="description"
-    content="Discover messages from strangers around the world. Read an unexpected message from another human and leave your own anonymous words for the next stranger."
+    content="Discover messages from strangers around the world. Read unexpected anonymous words, thoughts, memories, questions, and stories from people you may never meet."
 >
 
 <meta
@@ -27,7 +33,6 @@
     content="#520000"
 >
 
-
 <!-- =========================================================
      OPEN GRAPH
 ========================================================= -->
@@ -39,12 +44,12 @@
 
 <meta
     property="og:title"
-    content="Messages From Strangers — Read & Leave Anonymous Messages"
+    content="Messages From Strangers — Anonymous Words From Around the World"
 >
 
 <meta
     property="og:description"
-    content="What would a stranger say to you if you knew you would never meet them? Discover anonymous messages from people around the world."
+    content="Discover unexpected messages from strangers around the world and explore a different kind of human connection."
 >
 
 <meta
@@ -79,25 +84,41 @@
 
 <meta
     name="twitter:description"
-    content="Discover an unexpected message from a stranger and leave your own words for the next human."
+    content="Read unexpected anonymous words from strangers around the world and leave something for another human."
 >
 
 
 <!-- =========================================================
-     STRUCTURED DATA
+     STRUCTURED DATA — WEBSITE
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://last-message.github.io/last-message/#website",
+    "name": "Last Human Message",
+    "url": "https://last-message.github.io/last-message/",
+    "description": "A global chain of anonymous messages between strangers.",
+    "inLanguage": "en"
+}
+</script>
+
+
+<!-- =========================================================
+     STRUCTURED DATA — WEBPAGE
 ========================================================= -->
 
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Messages From Strangers",
+    "@id": "https://last-message.github.io/last-message/messages-from-strangers.html#webpage",
     "url": "https://last-message.github.io/last-message/messages-from-strangers.html",
+    "name": "Messages From Strangers",
     "description": "Discover messages from strangers around the world and explore anonymous human connections.",
     "isPartOf": {
-        "@type": "WebSite",
-        "name": "Last Human Message",
-        "url": "https://last-message.github.io/last-message/"
+        "@id": "https://last-message.github.io/last-message/#website"
     },
     "about": {
         "@type": "Thing",
@@ -107,6 +128,36 @@
 }
 </script>
 
+
+<!-- =========================================================
+     STRUCTURED DATA — BREADCRUMB
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Last Human Message",
+            "item": "https://last-message.github.io/last-message/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Messages From Strangers",
+            "item": "https://last-message.github.io/last-message/messages-from-strangers.html"
+        }
+    ]
+}
+</script>
+
+
+<!-- =========================================================
+     STRUCTURED DATA — FAQ
+========================================================= -->
 
 <script type="application/ld+json">
 {
@@ -126,7 +177,7 @@
             "name": "Why do people send messages to strangers?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "People may send messages to strangers because they want to share an idea, leave something meaningful behind, encourage another person, or communicate without the expectations that come with an existing relationship."
+                "text": "People may send messages to strangers to share an idea, leave something meaningful behind, encourage another person, ask a question, or communicate without the expectations of an existing relationship."
             }
         },
         {
@@ -134,15 +185,15 @@
             "name": "Can I leave a message for a stranger?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. Last Human Message allows one person to discover a message and then leave their own words for another human in the chain."
+                "text": "Yes. Last Human Message is built around a chain where one person can discover a message and leave their own words for another human."
             }
         },
         {
             "@type": "Question",
-            "name": "Are the messages anonymous?",
+            "name": "Are messages from strangers anonymous?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The Last Human Message concept focuses on the words rather than public profiles, followers, or social status. Messages are intended to create a connection between strangers."
+                "text": "Last Human Message focuses on the words rather than public profiles, followers, or social status. The concept is designed around anonymous connections between strangers."
             }
         }
     ]
@@ -155,15 +206,34 @@
 ========================================================= -->
 
 <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+>
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet"
 >
 
 
+<!-- =========================================================
+     STYLES
+========================================================= -->
+
 <style>
 
 *{
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -186,21 +256,63 @@ body{
             #050505 80%
         );
 
-    color:white;
+    color:#ffffff;
 
+    overflow-x:hidden;
 }
 
+
+body::before{
+
+    content:"◈ ✦ ∞ ◉ ? ✦ ◈";
+
+    position:fixed;
+
+    top:25px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    font-size:25px;
+
+    letter-spacing:18px;
+
+    color:
+        rgba(255,255,255,.16);
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .container{
+
+    position:relative;
+
+    z-index:1;
 
     width:90%;
 
     max-width:900px;
 
-    margin:auto;
+    margin:0 auto;
 
-    padding:65px 20px;
-
+    padding:
+        65px 20px;
 }
+
+
+/* =========================================================
+   BRAND
+========================================================= */
 
 .symbol{
 
@@ -208,10 +320,13 @@ body{
 
     font-size:55px;
 
-    text-shadow:
-        0 0 30px red;
+    line-height:1;
 
+    text-shadow:
+        0 0 30px
+        rgba(255,0,0,.9);
 }
+
 
 .logo{
 
@@ -226,8 +341,12 @@ body{
     color:#ffcccc;
 
     font-weight:700;
-
 }
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 nav{
 
@@ -235,32 +354,51 @@ nav{
 
     justify-content:center;
 
+    align-items:center;
+
     flex-wrap:wrap;
 
     gap:18px;
 
     margin-top:35px;
-
 }
+
 
 nav a{
 
-    color:#ddd;
+    color:#dddddd;
 
     text-decoration:none;
 
     font-size:14px;
 
+    font-weight:600;
+
     transition:
-        color .2s ease;
+        color .2s ease,
+        opacity .2s ease;
+}
+
+
+nav a:hover,
+nav a:focus{
+
+    color:#ffffff;
+
+    text-decoration:underline;
+}
+
+
+nav a[aria-current="page"]{
+
+    color:#ffffff;
 
 }
 
-nav a:hover{
 
-    color:white;
-
-}
+/* =========================================================
+   MAIN HEADING
+========================================================= */
 
 h1{
 
@@ -276,29 +414,41 @@ h1{
 
     line-height:1;
 
+    letter-spacing:-2px;
+
     margin:
         55px 0 30px;
 
     text-shadow:
-        0 0 20px rgba(255,0,0,.8);
-
+        0 0 20px
+        rgba(255,0,0,.8);
 }
+
+
+/* =========================================================
+   INTRO
+========================================================= */
 
 .intro{
 
-    text-align:center;
-
     max-width:720px;
 
-    margin:auto;
+    margin:
+        0 auto;
+
+    text-align:center;
 
     font-size:21px;
 
     line-height:1.9;
 
-    color:#eee;
-
+    color:#eeeeee;
 }
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
 
 .card{
 
@@ -324,34 +474,52 @@ h1{
     box-shadow:
         0 20px 70px
         rgba(0,0,0,.7);
-
 }
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
 
 h2{
 
     margin-top:45px;
 
+    font-family:
+        'Space Grotesk',
+        Arial,
+        sans-serif;
+
     font-size:30px;
 
     line-height:1.2;
-
 }
+
 
 .card h2:first-child{
 
     margin-top:0;
-
 }
+
 
 h3{
 
     margin-top:35px;
 
+    font-family:
+        'Space Grotesk',
+        Arial,
+        sans-serif;
+
     font-size:23px;
 
     line-height:1.3;
-
 }
+
+
+/* =========================================================
+   TEXT
+========================================================= */
 
 p{
 
@@ -359,9 +527,13 @@ p{
 
     line-height:1.9;
 
-    color:#ddd;
-
+    color:#dddddd;
 }
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
 
 .quote{
 
@@ -372,10 +544,14 @@ p{
         25px;
 
     border-left:
-        3px solid #ff4444;
+        3px solid
+        #ff4444;
 
     background:
         rgba(0,0,0,.25);
+
+    border-radius:
+        0 15px 15px 0;
 
     font-size:22px;
 
@@ -383,17 +559,21 @@ p{
 
     font-style:italic;
 
-    color:#fff;
-
+    color:#ffffff;
 }
+
+
+/* =========================================================
+   LIST
+========================================================= */
 
 ul{
 
     padding-left:25px;
 
-    color:#ddd;
-
+    color:#dddddd;
 }
+
 
 li{
 
@@ -401,14 +581,18 @@ li{
         14px 0;
 
     line-height:1.7;
-
 }
+
+
+/* =========================================================
+   FAQ
+========================================================= */
 
 .faq{
 
     margin-top:50px;
-
 }
+
 
 .faq-item{
 
@@ -418,8 +602,14 @@ li{
     border-bottom:
         1px solid
         rgba(255,255,255,.12);
-
 }
+
+
+.faq-item:last-child{
+
+    border-bottom:0;
+}
+
 
 .faq-item h3{
 
@@ -427,14 +617,18 @@ li{
         0 0 10px;
 
     font-size:20px;
-
 }
+
 
 .faq-item p{
 
     margin:0;
-
 }
+
+
+/* =========================================================
+   INTERNAL LINKS
+========================================================= */
 
 .internal-links{
 
@@ -444,11 +638,13 @@ li{
 
     justify-content:center;
 
+    align-items:center;
+
     flex-wrap:wrap;
 
     gap:15px;
-
 }
+
 
 .internal-links a{
 
@@ -463,7 +659,7 @@ li{
 
     border-radius:40px;
 
-    color:white;
+    color:#ffffff;
 
     text-decoration:none;
 
@@ -473,26 +669,31 @@ li{
     transition:
         background .2s ease,
         transform .2s ease;
-
 }
 
-.internal-links a:hover{
+
+.internal-links a:hover,
+.internal-links a:focus{
 
     background:
         rgba(255,255,255,.12);
 
     transform:
         translateY(-2px);
-
 }
+
+
+/* =========================================================
+   CTA
+========================================================= */
 
 .cta{
 
     text-align:center;
 
     margin-top:50px;
-
 }
+
 
 .cta a{
 
@@ -503,7 +704,7 @@ li{
 
     border-radius:50px;
 
-    background:white;
+    background:#ffffff;
 
     color:#600000;
 
@@ -511,11 +712,33 @@ li{
 
     font-weight:900;
 
+    letter-spacing:1px;
+
     box-shadow:
         0 0 35px
         rgba(255,255,255,.2);
 
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
+
+
+.cta a:hover,
+.cta a:focus{
+
+    transform:
+        scale(1.04);
+
+    box-shadow:
+        0 0 45px
+        rgba(255,255,255,.3);
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
 
@@ -523,37 +746,108 @@ footer{
 
     text-align:center;
 
-    color:#999;
+    color:#999999;
 
     font-size:14px;
 
+    line-height:1.8;
 }
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:600px){
 
     .container{
 
-        padding-top:45px;
-
+        padding:
+            45px 15px;
     }
+
+
+    .symbol{
+
+        font-size:45px;
+    }
+
+
+    .logo{
+
+        font-size:11px;
+
+        letter-spacing:6px;
+    }
+
+
+    nav{
+
+        gap:12px;
+    }
+
+
+    nav a{
+
+        font-size:13px;
+    }
+
+
+    h1{
+
+        font-size:
+            clamp(40px,12vw,60px);
+
+        letter-spacing:-1px;
+    }
+
+
+    .intro{
+
+        font-size:19px;
+
+        line-height:1.8;
+    }
+
 
     .card{
 
         padding:
             25px 20px;
-
     }
+
+
+    h2{
+
+        font-size:27px;
+    }
+
+
+    h3{
+
+        font-size:21px;
+    }
+
+
+    p{
+
+        font-size:17px;
+    }
+
 
     .quote{
 
         font-size:19px;
 
+        padding:20px;
     }
 
-    h2{
 
-        font-size:27px;
+    body::before{
 
+        font-size:18px;
+
+        letter-spacing:8px;
     }
 
 }
@@ -565,396 +859,481 @@ footer{
 
 <body>
 
-
 <main class="container">
 
+
+<!-- =========================================================
+     BRAND
+========================================================= -->
 
 <div
     class="symbol"
     aria-hidden="true"
 >
-◈ ✦ ∞
+    ◈ ✦ ∞
 </div>
 
 
 <div class="logo">
-GLOBAL HUMAN ARCHIVE
+    GLOBAL HUMAN ARCHIVE
 </div>
 
 
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <nav aria-label="Main navigation">
 
-<a href="./">
-Last Human Message
-</a>
+    <a href="./">
+        Last Human Message
+    </a>
 
-<a href="anonymous-messages.html">
-Anonymous Messages
-</a>
+    <a href="anonymous-messages.html">
+        Anonymous Messages
+    </a>
 
-<a href="messages-from-strangers.html"
-   aria-current="page">
-Messages From Strangers
-</a>
+    <a
+        href="messages-from-strangers.html"
+        aria-current="page"
+    >
+        Messages From Strangers
+    </a>
 
-<a href="about.html">
-About
-</a>
+    <a href="about.html">
+        About
+    </a>
 
 </nav>
 
 
+<!-- =========================================================
+     PAGE TITLE
+========================================================= -->
+
 <h1>
-Messages From Strangers
+    Messages From Strangers
 </h1>
 
 
 <p class="intro">
 
-A message from a stranger can be simple,
-unexpected, personal, funny, or unforgettable.
+    A message from a stranger can be simple,
+    unexpected, personal, funny, or unforgettable.
 
-What would someone you've never met
-choose to tell you?
+    What would someone you've never met
+    choose to tell you?
 
 </p>
 
 
-<section class="card">
+<!-- =========================================================
+     MAIN CONTENT
+========================================================= -->
+
+<section
+    class="card"
+    aria-label="Messages from strangers information"
+>
 
 
 <h2>
-What Are Messages From Strangers?
+    What Are Messages From Strangers?
 </h2>
+
 
 <p>
 
-Messages from strangers are words shared between
-people who do not know each other.
+    Messages from strangers are words shared between
+    people who do not know each other.
 
-There is something different about reading a message
-when you know almost nothing about the person who
-wrote it.
-
-You don't know their story.
-
-You don't know what their day looked like.
-
-You don't know what happened before they wrote
-those words.
-
-You only have the message.
+    There is something different about reading a message
+    when you know almost nothing about the person who
+    wrote it.
 
 </p>
 
 
 <p>
 
-That lack of context creates a special kind of
-curiosity. A short sentence can feel surprisingly
-personal when it comes from someone you may never
-meet.
+    You don't know their story.
+
+    You don't know what their day looked like.
+
+    You don't know what happened before they wrote
+    those words.
+
+    You only have the message.
+
+</p>
+
+
+<p>
+
+    That lack of context creates a special kind of
+    curiosity.
+
+    A short sentence can feel surprisingly personal
+    when it comes from someone you may never meet.
 
 </p>
 
 
 <div class="quote">
 
-"You may never know who wrote these words.
-But for a moment, they were meant for another human."
+    "You may never know who wrote these words.
+    But for a moment, they were meant for another human."
 
 </div>
 
 
 <h2>
-Why Do People Send Messages to Strangers?
+    Why Do People Send Messages to Strangers?
 </h2>
+
 
 <p>
 
-People communicate with strangers for many reasons.
+    People communicate with strangers for many reasons.
 
-Sometimes they want to share an idea without knowing
-who will eventually read it. Sometimes they want to
-leave behind a memory, a lesson, a question, or a few
-words of encouragement.
+    Sometimes they want to share an idea without knowing
+    who will eventually read it.
 
-There can also be something freeing about writing to
-someone you will probably never meet.
+    Sometimes they want to leave behind a memory,
+    a lesson, a question, or a few words of encouragement.
+
+</p>
+
+
+<p>
+
+    There can also be something freeing about writing
+    to someone you will probably never meet.
 
 </p>
 
 
 <ul>
 
-<li>
-To share a thought with someone outside their normal
-circle.
-</li>
+    <li>
+        To share a thought with someone outside their
+        normal circle.
+    </li>
 
-<li>
-To leave behind a personal memory or lesson.
-</li>
+    <li>
+        To leave behind a personal memory or lesson.
+    </li>
 
-<li>
-To encourage another person somewhere in the world.
-</li>
+    <li>
+        To encourage another person somewhere in the world.
+    </li>
 
-<li>
-To ask a question without expecting an immediate answer.
-</li>
+    <li>
+        To ask a question without expecting an immediate
+        answer.
+    </li>
 
-<li>
-To write something meaningful without building a
-public profile around it.
-</li>
+    <li>
+        To write something meaningful without building
+        a public profile around it.
+    </li>
 
-<li>
-Simply to see where their words might eventually go.
-</li>
+    <li>
+        Simply to see where their words might eventually go.
+    </li>
 
 </ul>
 
 
 <h2>
-What Can a Message From a Stranger Say?
+    What Can a Message From a Stranger Say?
 </h2>
 
+
 <p>
 
-There is no single type of message.
+    There is no single type of message.
 
-One stranger might write about a moment they still
-remember years later. Another might leave practical
-advice. Someone else might write a joke, a question,
-a warning, or one sentence they hope another person
-will remember.
+    One stranger might write about a moment they still
+    remember years later.
+
+    Another might leave practical advice.
+
+    Someone else might write a joke, a question,
+    a warning, or one sentence they hope another person
+    will remember.
 
 </p>
 
 
 <p>
 
-The interesting part is that you cannot predict what
-will appear next.
-
-</p>
-
-
-<h3>
-A Memory</h3>
-
-<p>
-
-A stranger may leave a small memory from their life:
-a place they visited, a person they loved, a mistake
-they learned from, or an ordinary moment that became
-important later.
+    The interesting part is that you cannot predict
+    what will appear next.
 
 </p>
 
 
 <h3>
-A Lesson</h3>
+    A Memory
+</h3>
+
 
 <p>
 
-Some messages are things people wish they had heard
-earlier in life.
-
-A few honest words from someone who has already made
-a mistake can sometimes be more memorable than a long
-lecture.
+    A stranger may leave a small memory from their life:
+    a place they visited, a person they loved, a mistake
+    they learned from, or an ordinary moment that became
+    important later.
 
 </p>
 
 
 <h3>
-A Question</h3>
+    A Lesson
+</h3>
+
 
 <p>
 
-A message does not always need an answer.
+    Some messages are things people wish they had heard
+    earlier in life.
 
-A stranger can leave a question simply because they
-want another human somewhere in the world to think
-about it.
+    A few honest words from someone who has already made
+    a mistake can sometimes be more memorable than
+    a long lecture.
 
 </p>
 
 
 <h3>
-A Few Words of Encouragement</h3>
+    A Question
+</h3>
+
 
 <p>
 
-Sometimes a short message is enough.
+    A message does not always need an answer.
 
-You might not know who needs to read it, but the right
-sentence can arrive at the right moment.
+    A stranger can leave a question simply because they
+    want another human somewhere in the world to think
+    about it.
+
+</p>
+
+
+<h3>
+    A Few Words of Encouragement
+</h3>
+
+
+<p>
+
+    Sometimes a short message is enough.
+
+    You might not know who needs to read it,
+    but the right sentence can arrive at the right moment.
 
 </p>
 
 
 <h2>
-The Curiosity of Reading an Anonymous Message
+    The Curiosity of Reading an Anonymous Message
 </h2>
+
 
 <p>
 
-Anonymous messages remove much of the usual social
-context.
+    Anonymous messages remove much of the usual social
+    context.
 
-There is no follower count to influence how you read
-the words.
+    There is no follower count to influence how you read
+    the words.
 
-No profile picture tells you what to expect.
+    No profile picture tells you what to expect.
 
-No social status tells you whether the message is
-supposed to matter.
-
-There are simply words written by another person.
+    No social status tells you whether the message is
+    supposed to matter.
 
 </p>
 
 
 <p>
 
-That is what makes messages from strangers interesting:
-you are left to interpret the message itself.
+    There are simply words written by another person.
+
+    That is what makes messages from strangers interesting:
+    you are left to interpret the message itself.
 
 </p>
 
 
 <h2>
-Messages From Strangers Around the World
+    Messages From Strangers Around the World
 </h2>
+
 
 <p>
 
-Two people can live thousands of miles apart and still
-share the same basic experiences.
+    Two people can live thousands of miles apart and still
+    share the same basic experiences.
 
-People remember.
+</p>
 
-People worry.
 
-People fall in love.
+<ul>
 
-People make mistakes.
+    <li>People remember.</li>
 
-People hope.
+    <li>People worry.</li>
 
-People wonder about the future.
+    <li>People fall in love.</li>
+
+    <li>People make mistakes.</li>
+
+    <li>People hope.</li>
+
+    <li>People wonder about the future.</li>
+
+</ul>
+
+
+<p>
+
+    A message can cross that distance in seconds.
+
+    The person reading it may never know where the writer
+    lived.
+
+    The writer may never know who eventually found
+    their words.
 
 </p>
 
 
 <p>
 
-A message can cross that distance in seconds.
-
-The person reading it may never know where the writer
-lived. The writer may never know who eventually found
-their words.
-
-But for a brief moment, two strangers are connected
-through the same thought.
+    But for a brief moment, two strangers are connected
+    through the same thought.
 
 </p>
 
 
 <h2>
-Last Human Message</h2>
+    Last Human Message
+</h2>
+
 
 <p>
 
-Last Human Message is built around this simple idea.
+    Last Human Message is built around this simple idea.
 
-One human discovers a message from another stranger.
+    One human discovers a message from another stranger.
 
-Then that human can leave their own words for the next
-person.
+    Then that human can leave their own words for the
+    next person.
 
-The goal is not to create another social network where
-people compete for attention.
+</p>
 
-The goal is to create a chain of human messages.
+
+<p>
+
+    The goal is not to create another social network where
+    people compete for attention.
+
+    The goal is to create a chain of human messages.
 
 </p>
 
 
 <h3>
-No Followers. No Likes. No Public Profiles.</h3>
+    No Followers. No Likes. No Public Profiles.
+</h3>
+
 
 <p>
 
-Traditional social platforms often turn communication
-into a competition for attention.
+    Traditional social platforms often turn communication
+    into a competition for attention.
 
-Last Human Message takes a different approach.
+    Last Human Message takes a different approach.
 
-The message is the important part.
+</p>
 
-You do not need an audience.
 
-You do not need followers.
+<p>
 
-You do not need to become famous.
+    The message is the important part.
 
-You simply leave something for another human.
+    You do not need an audience.
+
+    You do not need followers.
+
+    You do not need to become famous.
+
+    You simply leave something for another human.
 
 </p>
 
 
 <h2>
-What Would You Say to a Stranger?
+    What Would You Say to a Stranger?
 </h2>
 
+
 <p>
 
-Imagine that someone you will never meet is going to
-read your words.
+    Imagine that someone you will never meet is going to
+    read your words.
 
-You have no idea who they are.
+    You have no idea who they are.
 
-They could be thousands of miles away.
+    They could be thousands of miles away.
 
-They could read your message tomorrow, next month,
-or much later.
+    They could read your message tomorrow, next month,
+    or much later.
 
 </p>
 
 
 <p>
 
-What would you leave behind?
-
-A useful lesson?
-
-A memory?
-
-A question?
-
-A joke?
-
-A warning?
-
-A sentence you wish someone had told you?
+    What would you leave behind?
 
 </p>
+
+
+<ul>
+
+    <li>A useful lesson?</li>
+
+    <li>A memory?</li>
+
+    <li>A question?</li>
+
+    <li>A joke?</li>
+
+    <li>A warning?</li>
+
+    <li>A sentence you wish someone had told you?</li>
+
+</ul>
 
 
 <p>
 
-Sometimes the most interesting message is not the
-longest one.
+    Sometimes the most interesting message is not the
+    longest one.
 
-It is the one that makes another person stop and
-think.
+    It is the one that makes another person stop
+    and think.
 
 </p>
 
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
 
 <section
     class="faq"
@@ -963,77 +1342,82 @@ think.
 
 
 <h2 id="faq-heading">
-Frequently Asked Questions About Messages From Strangers
+    Frequently Asked Questions About Messages From Strangers
 </h2>
 
 
 <div class="faq-item">
 
-<h3>
-What are messages from strangers?
-</h3>
+    <h3>
+        What are messages from strangers?
+    </h3>
 
-<p>
+    <p>
 
-Messages from strangers are words shared between people
-who do not know each other. They can contain memories,
-questions, advice, encouragement, stories, or simple
-thoughts.
+        Messages from strangers are words shared between
+        people who do not know each other.
 
-</p>
+        They can contain memories, questions, advice,
+        encouragement, stories, or simple thoughts.
 
-</div>
-
-
-<div class="faq-item">
-
-<h3>
-Why do people send messages to strangers?
-</h3>
-
-<p>
-
-People may send messages to strangers to share an idea,
-leave something meaningful behind, encourage another
-person, or communicate without the expectations of an
-existing relationship.
-
-</p>
+    </p>
 
 </div>
 
 
 <div class="faq-item">
 
-<h3>
-Can I leave a message for a stranger?
-</h3>
+    <h3>
+        Why do people send messages to strangers?
+    </h3>
 
-<p>
+    <p>
 
-Yes. Last Human Message allows one person to discover
-a message and then leave their own words for another
-human in the chain.
+        People may send messages to strangers to share
+        an idea, leave something meaningful behind,
+        encourage another person, ask a question,
+        or communicate without the expectations
+        of an existing relationship.
 
-</p>
+    </p>
 
 </div>
 
 
 <div class="faq-item">
 
-<h3>
-Are messages from strangers anonymous?
-</h3>
+    <h3>
+        Can I leave a message for a stranger?
+    </h3>
 
-<p>
+    <p>
 
-The Last Human Message concept focuses on the message
-rather than public profiles, followers, or social status.
-The idea is to create a connection between strangers
-through their words.
+        Yes.
 
-</p>
+        Last Human Message is built around a chain where
+        one person can discover a message and leave their
+        own words for another human.
+
+    </p>
+
+</div>
+
+
+<div class="faq-item">
+
+    <h3>
+        Are messages from strangers anonymous?
+    </h3>
+
+    <p>
+
+        Last Human Message focuses on the message rather
+        than public profiles, followers, or social status.
+
+        The concept is designed around anonymous connections
+        between strangers.
+
+    </p>
 
 </div>
 
@@ -1041,28 +1425,39 @@ through their words.
 </section>
 
 
-<div class="internal-links">
+<!-- =========================================================
+     INTERNAL LINKS
+========================================================= -->
 
-<a href="./">
-Explore Last Human Message
-</a>
+<div
+    class="internal-links"
+    aria-label="Related pages"
+>
 
-<a href="anonymous-messages.html">
-Explore Anonymous Messages
-</a>
+    <a href="./">
+        Explore Last Human Message
+    </a>
 
-<a href="about.html">
-About the Project
-</a>
+    <a href="anonymous-messages.html">
+        Explore Anonymous Messages
+    </a>
+
+    <a href="about.html">
+        About the Project
+    </a>
 
 </div>
 
+
+<!-- =========================================================
+     CTA
+========================================================= -->
 
 <div class="cta">
 
-<a href="./">
-DISCOVER A MESSAGE
-</a>
+    <a href="./">
+        DISCOVER A MESSAGE
+    </a>
 
 </div>
 
@@ -1070,15 +1465,20 @@ DISCOVER A MESSAGE
 </section>
 
 
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
 <footer>
 
-A connection between strangers around the world.
+    <p>
+        A connection between strangers around the world.
+    </p>
 
 </footer>
 
 
 </main>
-
 
 </body>
 </html>
