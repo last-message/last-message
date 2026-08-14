@@ -3,9 +3,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-        <loc>https://last-message.github.io/last-message/</loc>
+
+        <loc>
+            https://last-message.github.io/last-message/
+        </loc>
+
         <priority>1.0</priority>
+
         <changefreq>weekly</changefreq>
+
+    </url>
+
+
+    <url>
+
+        <loc>
+            https://last-message.github.io/last-message/about.html
+        </loc>
+
+        <priority>0.6</priority>
+
+        <changefreq>monthly</changefreq>
+
     </url>
 
 </urlset>
