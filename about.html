@@ -28,10 +28,7 @@
     content="#520000"
 >
 
-
-<!-- =========================================================
-     OPEN GRAPH
-========================================================= -->
+<!-- Open Graph -->
 
 <meta
     property="og:type"
@@ -63,10 +60,7 @@
     content="en_US"
 >
 
-
-<!-- =========================================================
-     TWITTER / X
-========================================================= -->
+<!-- Twitter / X -->
 
 <meta
     name="twitter:card"
@@ -83,15 +77,13 @@
     content="A global experiment connecting strangers through anonymous messages."
 >
 
-
-<!-- =========================================================
-     STRUCTURED DATA — WEBSITE
-========================================================= -->
+<!-- Structured Data: WebSite -->
 
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": "https://last-message.github.io/last-message/#website",
     "name": "Last Human Message",
     "url": "https://last-message.github.io/last-message/",
     "description": "A global experiment connecting strangers through anonymous messages.",
@@ -99,31 +91,24 @@
 }
 </script>
 
-
-<!-- =========================================================
-     STRUCTURED DATA — ABOUT PAGE
-========================================================= -->
+<!-- Structured Data: AboutPage -->
 
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "AboutPage",
+    "@id": "https://last-message.github.io/last-message/about.html#webpage",
     "name": "About Last Human Message",
     "url": "https://last-message.github.io/last-message/about.html",
     "description": "Learn about Last Human Message, a global experiment connecting strangers through anonymous messages.",
     "isPartOf": {
-        "@type": "WebSite",
-        "name": "Last Human Message",
-        "url": "https://last-message.github.io/last-message/"
+        "@id": "https://last-message.github.io/last-message/#website"
     },
     "inLanguage": "en"
 }
 </script>
 
-
-<!-- =========================================================
-     STRUCTURED DATA — BREADCRUMB
-========================================================= -->
+<!-- Structured Data: Breadcrumb -->
 
 <script type="application/ld+json">
 {
@@ -146,10 +131,7 @@
 }
 </script>
 
-
-<!-- =========================================================
-     STRUCTURED DATA — FAQ
-========================================================= -->
+<!-- Structured Data: FAQ -->
 
 <script type="application/ld+json">
 {
@@ -184,36 +166,28 @@
 }
 </script>
 
-
-<!-- =========================================================
-     FONTS
-========================================================= -->
+<!-- Fonts -->
 
 <link
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
     rel="stylesheet"
 >
 
-
-<!-- =========================================================
-     STYLES
-========================================================= -->
-
 <style>
 
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+html {
+    scroll-behavior: smooth;
 }
 
-body{
+body {
 
-    margin:0;
+    margin: 0;
 
-    min-height:100vh;
+    min-height: 100vh;
 
     font-family:
         'Inter',
@@ -229,142 +203,129 @@ body{
             #050505 80%
         );
 
-    color:white;
+    color: #fff;
 
-    overflow-x:hidden;
-
+    overflow-x: hidden;
 }
 
+body::before {
 
-body::before{
+    content: "◈ ✦ ∞ ◉ ? ✦ ◈";
 
-    content:"◈ ✦ ∞ ◉ ? ✦ ◈";
+    position: fixed;
 
-    position:fixed;
+    top: 25px;
+    left: 0;
 
-    top:25px;
+    width: 100%;
 
-    left:0;
+    text-align: center;
 
-    width:100%;
+    font-size: 20px;
 
-    text-align:center;
+    letter-spacing: 14px;
 
-    font-size:20px;
+    color: rgba(255,255,255,.12);
 
-    letter-spacing:14px;
+    pointer-events: none;
 
-    color:rgba(255,255,255,.12);
-
-    pointer-events:none;
-
-    z-index:0;
-
+    z-index: 0;
 }
 
+.container {
 
-.container{
+    position: relative;
 
-    position:relative;
+    z-index: 1;
 
-    z-index:1;
+    width: 90%;
 
-    width:90%;
+    max-width: 900px;
 
-    max-width:900px;
+    margin: auto;
 
-    margin:auto;
-
-    padding:65px 20px;
-
+    padding: 65px 20px;
 }
 
+/* Brand */
 
-.symbol{
+.symbol {
 
-    text-align:center;
+    text-align: center;
 
-    font-size:55px;
+    font-size: 55px;
 
     text-shadow:
         0 0 30px red;
-
 }
 
+.logo {
 
-.logo{
+    text-align: center;
 
-    text-align:center;
+    margin-top: 15px;
 
-    margin-top:15px;
+    font-size: 13px;
 
-    font-size:13px;
+    letter-spacing: 8px;
 
-    letter-spacing:8px;
+    color: #ffcccc;
 
-    color:#ffcccc;
-
-    font-weight:700;
-
+    font-weight: 700;
 }
 
+/* Navigation */
 
-nav{
+nav {
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    align-items:center;
+    align-items: center;
 
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
-    gap:18px;
+    gap: 18px;
 
-    margin-top:35px;
-
+    margin-top: 35px;
 }
 
+nav a {
 
-nav a{
+    color: #ddd;
 
-    color:#ddd;
+    text-decoration: none;
 
-    text-decoration:none;
+    font-size: 14px;
 
-    font-size:14px;
-
-    padding:5px 2px;
+    padding: 5px 2px;
 
     transition:
         color .2s ease,
         opacity .2s ease;
-
 }
-
 
 nav a:hover,
-nav a:focus{
+nav a:focus {
 
-    color:white;
+    color: #fff;
 
-    text-decoration:underline;
-
+    text-decoration: underline;
 }
 
+nav a[aria-current="page"] {
 
-nav a[aria-current="page"]{
+    color: #fff;
 
-    color:white;
-
-    font-weight:700;
-
+    font-weight: 700;
 }
 
+/* Main heading */
 
-h1{
+h1 {
 
-    text-align:center;
+    text-align: center;
 
     font-family:
         'Space Grotesk',
@@ -372,44 +333,44 @@ h1{
         sans-serif;
 
     font-size:
-        clamp(42px,8vw,72px);
+        clamp(42px, 8vw, 72px);
 
-    line-height:1;
+    line-height: 1;
 
-    letter-spacing:-2px;
+    letter-spacing: -2px;
 
     margin:
         55px 0 30px;
 
     text-shadow:
         0 0 20px rgba(255,0,0,.8);
-
 }
 
+/* Introduction */
 
-.intro{
+.intro {
 
-    max-width:720px;
+    max-width: 720px;
 
     margin:
         0 auto 45px;
 
-    text-align:center;
+    text-align: center;
 
-    font-size:21px;
+    font-size: 21px;
 
-    line-height:1.9;
+    line-height: 1.9;
 
-    color:#eee;
-
+    color: #eee;
 }
 
+/* Main card */
 
-.card{
+.card {
 
-    margin-top:35px;
+    margin-top: 35px;
 
-    padding:40px 35px;
+    padding: 40px 35px;
 
     background:
         linear-gradient(
@@ -422,154 +383,135 @@ h1{
         1px solid
         rgba(255,255,255,.20);
 
-    border-radius:28px;
+    border-radius: 28px;
 
-    backdrop-filter:blur(18px);
+    backdrop-filter: blur(18px);
 
-    -webkit-backdrop-filter:blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
     box-shadow:
         0 20px 70px
         rgba(0,0,0,.7);
-
 }
 
+/* Headings */
 
-h2{
+h2 {
 
-    margin-top:45px;
+    margin-top: 45px;
 
     font-family:
         'Space Grotesk',
         Arial,
         sans-serif;
 
-    font-size:28px;
+    font-size: 28px;
 
-    line-height:1.25;
-
+    line-height: 1.25;
 }
 
+h2:first-child {
 
-h2:first-child{
-
-    margin-top:0;
-
+    margin-top: 0;
 }
 
+h3 {
 
-h3{
-
-    margin-top:35px;
+    margin-top: 35px;
 
     font-family:
         'Space Grotesk',
         Arial,
         sans-serif;
 
-    font-size:23px;
+    font-size: 23px;
 
-    line-height:1.3;
-
+    line-height: 1.3;
 }
 
+/* Text */
 
-p{
+p {
 
-    font-size:18px;
+    font-size: 18px;
 
-    line-height:1.9;
+    line-height: 1.9;
 
-    color:#e5e5e5;
-
+    color: #e5e5e5;
 }
 
+.card a {
 
-.card a{
+    color: #ffcccc;
 
-    color:#ffcccc;
-
-    text-decoration:underline;
+    text-decoration: underline;
 
     text-decoration-color:
         rgba(255,204,204,.45);
 
-    text-underline-offset:3px;
-
+    text-underline-offset: 3px;
 }
-
 
 .card a:hover,
-.card a:focus{
+.card a:focus {
 
-    color:white;
-
+    color: #fff;
 }
 
+/* FAQ */
 
-.faq{
+.faq {
 
-    margin-top:50px;
-
+    margin-top: 50px;
 }
 
+.faq-item {
 
-.faq-item{
-
-    padding:
-        22px 0;
+    padding: 22px 0;
 
     border-bottom:
         1px solid
         rgba(255,255,255,.15);
-
 }
 
-
-.faq-item:first-of-type{
+.faq-item:first-of-type {
 
     border-top:
         1px solid
         rgba(255,255,255,.15);
-
 }
 
-
-.faq-item h3{
+.faq-item h3 {
 
     margin:
         0 0 10px;
 
-    font-size:20px;
-
+    font-size: 20px;
 }
 
+.faq-item p {
 
-.faq-item p{
-
-    margin:0;
-
+    margin: 0;
 }
 
+/* Internal links */
 
-.internal-links{
+.internal-links {
 
-    display:flex;
+    display: flex;
 
-    justify-content:center;
+    justify-content: center;
 
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 
-    gap:14px;
+    gap: 14px;
 
-    margin-top:45px;
-
+    margin-top: 45px;
 }
 
+.internal-links a {
 
-.internal-links a{
-
-    display:inline-block;
+    display: inline-block;
 
     padding:
         13px 20px;
@@ -578,27 +520,25 @@ p{
         1px solid
         rgba(255,255,255,.25);
 
-    border-radius:40px;
+    border-radius: 40px;
 
     background:
         rgba(255,255,255,.06);
 
-    color:white;
+    color: #fff;
 
-    text-decoration:none;
+    text-decoration: none;
 
-    font-size:14px;
+    font-size: 14px;
 
     transition:
         background .2s ease,
         transform .2s ease,
         border-color .2s ease;
-
 }
 
-
 .internal-links a:hover,
-.internal-links a:focus{
+.internal-links a:focus {
 
     background:
         rgba(255,255,255,.12);
@@ -608,17 +548,17 @@ p{
 
     transform:
         translateY(-2px);
-
 }
 
+/* CTA */
 
-.home{
+.home {
 
-    display:block;
+    display: block;
 
-    width:max-content;
+    width: max-content;
 
-    max-width:100%;
+    max-width: 100%;
 
     margin:
         40px auto 0;
@@ -626,17 +566,17 @@ p{
     padding:
         17px 32px;
 
-    border-radius:40px;
+    border-radius: 40px;
 
-    background:white;
+    background: #fff;
 
-    color:#600000 !important;
+    color: #600000 !important;
 
-    text-decoration:none !important;
+    text-decoration: none !important;
 
-    font-weight:900;
+    font-weight: 900;
 
-    text-align:center;
+    text-align: center;
 
     transition:
         transform .2s ease,
@@ -645,89 +585,87 @@ p{
     box-shadow:
         0 0 35px
         rgba(255,255,255,.20);
-
 }
 
-
 .home:hover,
-.home:focus{
+.home:focus {
 
-    transform:scale(1.04);
+    transform: scale(1.04);
 
     box-shadow:
         0 0 45px
         rgba(255,255,255,.30);
-
 }
 
+/* Footer */
 
-footer{
+footer {
 
-    margin-top:60px;
+    margin-top: 60px;
 
-    text-align:center;
+    text-align: center;
 
-    color:#999;
+    color: #999;
 
-    font-size:14px;
+    font-size: 14px;
 
+    line-height: 1.8;
 }
 
+/* Mobile */
 
-@media(max-width:600px){
+@media (max-width: 600px) {
 
-    .container{
+    .container {
 
         padding:
             45px 15px;
-
     }
 
-    .card{
+    .card {
 
         padding:
             30px 20px;
-
     }
 
-    .intro{
+    .intro {
 
-        font-size:19px;
-
+        font-size: 19px;
     }
 
-    p{
+    p {
 
-        font-size:17px;
-
+        font-size: 17px;
     }
 
-    h2{
+    h2 {
 
-        font-size:26px;
-
+        font-size: 26px;
     }
 
-    h3{
+    h3 {
 
-        font-size:21px;
-
+        font-size: 21px;
     }
 
-    .internal-links a{
+    .internal-links a {
 
-        width:100%;
+        width: 100%;
 
-        text-align:center;
-
+        text-align: center;
     }
 
-    .home{
+    .home {
 
-        width:100%;
-
+        width: 100%;
     }
 
+    body::before {
+
+        font-size: 16px;
+
+        letter-spacing: 8px;
+    }
 }
 
 </style>
@@ -739,315 +677,287 @@ footer{
 
 <main class="container">
 
-
-<!-- =========================================================
-     HEADER
-========================================================= -->
+<!-- Brand -->
 
 <div
     class="symbol"
     aria-hidden="true"
 >
-◈ ✦ ∞
+    ◈ ✦ ∞
 </div>
-
 
 <div class="logo">
-GLOBAL HUMAN ARCHIVE
+    GLOBAL HUMAN ARCHIVE
 </div>
 
+
+<!-- Navigation -->
 
 <nav aria-label="Main navigation">
 
-<a href="./">
-Last Human Message
-</a>
+    <a href="./">
+        Last Human Message
+    </a>
 
-<a href="anonymous-messages.html">
-Anonymous Messages
-</a>
+    <a href="anonymous-messages.html">
+        Anonymous Messages
+    </a>
 
-<a href="messages-from-strangers.html">
-Messages From Strangers
-</a>
+    <a href="messages-from-strangers.html">
+        Messages From Strangers
+    </a>
 
-<a
-    href="about.html"
-    aria-current="page"
->
-About
-</a>
+    <a
+        href="about.html"
+        aria-current="page"
+    >
+        About
+    </a>
 
 </nav>
 
 
-<!-- =========================================================
-     INTRO
-========================================================= -->
+<!-- Page introduction -->
 
 <h1>
-About Last Human Message
+    About Last Human Message
 </h1>
-
 
 <p class="intro">
 
-A simple global experiment about what can happen
-when one human leaves words for another human
-they may never meet.
+    A simple global experiment about what can happen
+    when one human leaves words for another human
+    they may never meet.
 
 </p>
 
 
-<!-- =========================================================
-     MAIN CONTENT
-========================================================= -->
+<!-- Main content -->
 
-<section class="card">
-
+<section
+    class="card"
+    aria-label="About Last Human Message"
+>
 
 <h2>
-What Is Last Human Message?
+    What Is Last Human Message?
 </h2>
 
-
 <p>
 
-Last Human Message is a global experiment built around
-one simple idea: connecting strangers through words.
+    Last Human Message is a global experiment built around
+    one simple idea: connecting strangers through words.
 
 </p>
 
-
 <p>
 
-One person discovers a message left by another human.
-After reading it, they have the opportunity to leave
-their own message for the next stranger.
+    One person discovers a message left by another human.
+    After reading it, they have the opportunity to leave
+    their own message for the next stranger.
 
 </p>
 
-
 <p>
 
-The goal is not to build another traditional social
-network. Instead, the project explores what happens when
-the message itself becomes the connection between people.
+    The goal is not to build another traditional social
+    network. Instead, the project explores what happens when
+    the message itself becomes the connection between people.
 
 </p>
 
 
 <h2>
-Why Was Last Human Message Created?
+    Why Was Last Human Message Created?
 </h2>
 
-
 <p>
 
-The internet connects billions of people, but many online
-interactions are built around profiles, followers, likes,
-comments and algorithms.
+    The internet connects billions of people, but many online
+    interactions are built around profiles, followers, likes,
+    comments, and algorithms.
 
 </p>
 
-
 <p>
 
-Last Human Message takes a different approach.
+    Last Human Message takes a different approach.
 
 </p>
 
-
 <p>
 
-There is no need to build a public identity around the
-message. The focus is simply on one person discovering
-words left by another person.
+    There is no need to build a public identity around the
+    message. The focus is simply on one person discovering
+    words left by another person.
 
 </p>
 
 
 <h2>
-How Does Last Human Message Work?
+    How Does Last Human Message Work?
 </h2>
 
-
 <p>
 
-The experience begins with a hidden message.
+    The experience begins with a hidden message.
 
-A person unlocks the message and discovers words left
-by another stranger.
+    A person unlocks the message and discovers words left
+    by another stranger.
 
 </p>
 
-
 <p>
 
-After reading it, they can leave their own words for the
-next human.
+    After reading it, they can leave their own words for the
+    next human.
 
 </p>
 
-
 <p>
 
-The result is a chain of messages connecting people who
-may live in completely different places and may never
-know one another.
+    The result is a chain of messages connecting people who
+    may live in completely different places and may never
+    know one another.
 
 </p>
 
 
 <h2>
-Anonymous Human Connections
+    Anonymous Human Connections
 </h2>
-
 
 <p>
 
-An important part of the idea is anonymity.
+    An important part of the idea is anonymity.
 
-When there is no public profile, follower count or
-personal brand attached to the interaction, the words
-can become more important than the identity behind them.
+    When there is no public profile, follower count, or
+    personal brand attached to the interaction, the words
+    can become more important than the identity behind them.
 
 </p>
 
-
 <p>
 
-This is closely related to the idea of
-<a href="anonymous-messages.html">
-anonymous messages
-</a>
-and the unexpected experience of receiving
-<a href="messages-from-strangers.html">
-messages from strangers
-</a>.
+    This is closely related to the idea of
+    <a href="anonymous-messages.html">
+        anonymous messages
+    </a>
+    and the unexpected experience of receiving
+    <a href="messages-from-strangers.html">
+        messages from strangers
+    </a>.
 
 </p>
 
 
 <h2>
-No Followers. No Likes. No Profiles.
+    No Followers. No Likes. No Profiles.
 </h2>
-
 
 <p>
 
-Traditional social platforms often encourage people to
-build an audience and compete for attention.
+    Traditional social platforms often encourage people to
+    build an audience and compete for attention.
 
-Last Human Message is intentionally different.
+    Last Human Message is intentionally different.
 
 </p>
 
-
 <p>
 
-The project is centered around a single human interaction:
-one message discovered by one person, followed by another
-message left for someone else.
+    The project is centered around a single human interaction:
+    one message discovered by one person, followed by another
+    message left for someone else.
 
 </p>
 
 
 <h2>
-The Idea Behind the Project
+    The Idea Behind the Project
 </h2>
 
-
 <p>
 
-A message can travel further than the person who wrote it.
+    A message can travel further than the person who wrote it.
 
 </p>
 
-
 <p>
 
-Someone somewhere in the world may eventually read words
-written by a person they will never meet.
+    Someone somewhere in the world may eventually read words
+    written by a person they will never meet.
 
-They may know nothing about that person's life, location
-or identity.
+    They may know nothing about that person's life, location,
+    or identity.
 
-They only have the words.
+    They only have the words.
 
 </p>
 
-
 <p>
 
-That uncertainty is part of the experiment.
+    That uncertainty is part of the experiment.
 
 </p>
 
 
 <h2>
-What Would You Leave Behind?
+    What Would You Leave Behind?
 </h2>
 
+<p>
+
+    Imagine knowing that one stranger somewhere in the world
+    would eventually read your words.
+
+</p>
 
 <p>
 
-Imagine knowing that one stranger somewhere in the world
-would eventually read your words.
+    Would you leave a memory?
+
+    A useful lesson?
+
+    A question?
+
+    A strange thought?
+
+    Something funny?
+
+    Or perhaps one sentence you hope another human remembers?
+
+</p>
+
+<p>
+
+    There is no required answer.
+
+    The message is yours.
 
 </p>
 
 
-<p>
-
-Would you leave a memory?
-
-A useful lesson?
-
-A question?
-
-A strange thought?
-
-Something funny?
-
-Or perhaps one sentence you hope another human remembers?
-
-</p>
-
-
-<p>
-
-There is no required answer.
-
-The message is yours.
-
-</p>
-
-
-<!-- =========================================================
-     INTERNAL NAVIGATION
-========================================================= -->
+<!-- Internal navigation -->
 
 <div class="internal-links">
 
-<a href="./">
-Explore Last Human Message
-</a>
+    <a href="./">
+        Explore Last Human Message
+    </a>
 
-<a href="anonymous-messages.html">
-Anonymous Messages
-</a>
+    <a href="anonymous-messages.html">
+        Anonymous Messages
+    </a>
 
-<a href="messages-from-strangers.html">
-Messages From Strangers
-</a>
+    <a href="messages-from-strangers.html">
+        Messages From Strangers
+    </a>
 
 </div>
 
 
-<!-- =========================================================
-     FAQ
-========================================================= -->
+<!-- FAQ -->
 
 <section
     class="faq"
@@ -1055,84 +965,82 @@ Messages From Strangers
 >
 
 <h2 id="faq-title">
-Frequently Asked Questions
+    Frequently Asked Questions
 </h2>
 
 
 <div class="faq-item">
 
-<h3>
-What is Last Human Message?
-</h3>
+    <h3>
+        What is Last Human Message?
+    </h3>
 
-<p>
+    <p>
 
-Last Human Message is a global experiment connecting
-strangers through anonymous messages and simple
-human-to-human communication.
+        Last Human Message is a global experiment connecting
+        strangers through anonymous messages and simple
+        human-to-human communication.
 
-</p>
-
-</div>
-
-
-<div class="faq-item">
-
-<h3>
-How does Last Human Message work?
-</h3>
-
-<p>
-
-A person discovers a hidden message left by another
-human and can then leave their own words for the next
-stranger.
-
-</p>
+    </p>
 
 </div>
 
 
 <div class="faq-item">
 
-<h3>
-Are the messages anonymous?
-</h3>
+    <h3>
+        How does Last Human Message work?
+    </h3>
 
-<p>
+    <p>
 
-The project is designed around anonymous communication
-rather than public profiles, followers or social identities.
+        A person discovers a hidden message left by another
+        human and can then leave their own words for the next
+        stranger.
 
-</p>
+    </p>
 
 </div>
 
+
+<div class="faq-item">
+
+    <h3>
+        Are the messages anonymous?
+    </h3>
+
+    <p>
+
+        The project is designed around anonymous communication
+        rather than public profiles, followers, or social
+        identities.
+
+    </p>
+
+</div>
 
 </section>
 
 
-<!-- =========================================================
-     CTA
-========================================================= -->
+<!-- CTA -->
 
 <a
     class="home"
     href="./"
 >
-DISCOVER A MESSAGE
+    DISCOVER A MESSAGE
 </a>
-
 
 </section>
 
 
+<!-- Footer -->
+
 <footer>
 
-A connection between strangers around the world.
+    A connection between strangers around the world.
 
 </footer>
-
 
 </main>
 
