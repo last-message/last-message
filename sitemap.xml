@@ -3,28 +3,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <url>
-
-        <loc>
-            https://last-message.github.io/last-message/
-        </loc>
-
-        <priority>1.0</priority>
-
-        <changefreq>weekly</changefreq>
-
+        <loc>https://last-message.github.io/last-message/</loc>
+        <lastmod>2026-08-14</lastmod>
     </url>
 
+    <url>
+        <loc>https://last-message.github.io/last-message/messages-from-strangers.html</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
 
     <url>
+        <loc>https://last-message.github.io/last-message/anonymous-messages.html</loc>
+        <lastmod>2026-08-14</lastmod>
+    </url>
 
-        <loc>
-            https://last-message.github.io/last-message/about.html
-        </loc>
-
-        <priority>0.6</priority>
-
-        <changefreq>monthly</changefreq>
-
+    <url>
+        <loc>https://last-message.github.io/last-message/about.html</loc>
+        <lastmod>2026-08-14</lastmod>
     </url>
 
 </urlset>
