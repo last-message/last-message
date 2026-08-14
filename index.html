@@ -5,9 +5,129 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Last Human Message</title>
+<!-- =========================================================
+     SEO
+========================================================= -->
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<title>Last Human Message — A Message From One Human to Another</title>
+
+<meta
+    name="description"
+    content="Discover a message left by another human and leave your own words for the next stranger. Last Human Message is a global chain of anonymous messages between people."
+>
+
+<meta
+    name="robots"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+>
+
+<link
+    rel="canonical"
+    href="https://last-message.github.io/last-message/"
+>
+
+<meta
+    name="theme-color"
+    content="#520000"
+>
+
+<!--
+    Primary topic signals.
+    These are intentionally natural and limited.
+-->
+<meta
+    name="keywords"
+    content="last human message, message for a stranger, anonymous message, message to a stranger, human messages, global message, leave a message"
+>
+
+
+<!-- =========================================================
+     OPEN GRAPH
+     Used by Reddit, Facebook, Discord, LinkedIn,
+     Telegram and other platforms when supported.
+========================================================= -->
+
+<meta
+    property="og:type"
+    content="website"
+>
+
+<meta
+    property="og:title"
+    content="Last Human Message — A Message From One Human to Another"
+>
+
+<meta
+    property="og:description"
+    content="Discover a message left by another human and leave your own words for the next stranger."
+>
+
+<meta
+    property="og:url"
+    content="https://last-message.github.io/last-message/"
+>
+
+<meta
+    property="og:site_name"
+    content="Last Human Message"
+>
+
+<meta
+    property="og:locale"
+    content="en_US"
+>
+
+
+<!-- =========================================================
+     TWITTER / X
+========================================================= -->
+
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="Last Human Message"
+>
+
+<meta
+    name="twitter:description"
+    content="A global chain of anonymous messages between strangers. Discover one message and leave your own for the next human."
+>
+
+
+<!-- =========================================================
+     STRUCTURED DATA
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Last Human Message",
+    "alternateName": "Global Human Archive",
+    "url": "https://last-message.github.io/last-message/",
+    "description": "A global chain of anonymous messages between strangers.",
+    "inLanguage": "en"
+}
+</script>
+
+
+<!-- =========================================================
+     FONTS
+========================================================= -->
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =========================================================
+     STYLES
+========================================================= -->
 
 <style>
 
@@ -141,6 +261,14 @@ line-height:2;
 font-weight:500;
 
 color:#eeeeee;
+
+}
+
+
+
+.text p{
+
+margin:0 0 25px;
 
 }
 
@@ -311,10 +439,13 @@ width:100%;
 <body>
 
 
-<div class="container">
+<main class="container">
 
 
-<div class="symbol">
+<div
+    class="symbol"
+    aria-hidden="true"
+>
 ◈ ✦ ∞
 </div>
 
@@ -330,26 +461,34 @@ MESSAGE
 </h1>
 
 
-<div class="subtitle">
+<h2 class="subtitle">
 Someone left a message for you.
-</div>
+</h2>
 
 
-<div class="text">
+<section
+    class="text"
+    aria-label="About Last Human Message"
+>
 
-A stranger you will never meet.<br>
+<p>
+A stranger you will never meet.
+A thought you were never supposed to find.
+</p>
 
-A thought you were never supposed to find.<br><br>
-
-Maybe a secret.<br>
-Maybe a memory.<br>
+<p>
+Maybe a secret.
+Maybe a memory.
 Maybe a sentence that stays with you forever.
+</p>
 
-</div>
+</section>
 
 
-
-<div class="card">
+<section
+    class="card"
+    aria-label="Discover and leave a message"
+>
 
 <div class="price">
 $2
@@ -366,17 +505,19 @@ for the next human.
 </p>
 
 
-<a href="payment.html">
+<a
+    href="payment.html"
+    aria-label="Reveal the hidden message"
+>
 
-<button>
+<button type="button">
 ◉ REVEAL THE MESSAGE
 </button>
 
 </a>
 
 
-</div>
-
+</section>
 
 
 <div class="trust">
@@ -390,15 +531,14 @@ for the next human.
 </div>
 
 
-
-<div class="footer">
+<footer class="footer">
 
 A connection between strangers around the world
 
-</div>
+</footer>
 
 
-</div>
+</main>
 
 
 </body>
