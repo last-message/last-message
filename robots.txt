@@ -1,4 +1,8 @@
+# Last Human Message
+# Public website - allow search engine crawling
+
 User-agent: *
 Allow: /
 
+# Sitemap
 Sitemap: https://last-message.github.io/last-message/sitemap.xml
