@@ -1,10 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Secure Payment</title>
+<!-- =========================================================
+     SEO
+========================================================= -->
+
+<title>Secure USDT TRC20 Payment — Last Human Message</title>
+
+<meta
+    name="description"
+    content="Secure payment page for Last Human Message. Send 2 USDT on the TRON TRC20 network to unlock the message."
+>
+
+<!-- Payment pages should not appear in Google search results -->
+<meta
+    name="robots"
+    content="noindex, nofollow, noarchive"
+>
+
+<link
+    rel="canonical"
+    href="https://last-message.github.io/last-message/payment.html"
+>
+
+<meta
+    name="theme-color"
+    content="#520000"
+>
+
+
+<!-- =========================================================
+     OPEN GRAPH
+========================================================= -->
+
+<meta
+    property="og:type"
+    content="website"
+>
+
+<meta
+    property="og:title"
+    content="Secure Payment — Last Human Message"
+>
+
+<meta
+    property="og:description"
+    content="Complete your payment to unlock a hidden message from another human."
+>
+
+<meta
+    property="og:url"
+    content="https://last-message.github.io/last-message/payment.html"
+>
+
+<meta
+    property="og:site_name"
+    content="Last Human Message"
+>
+
+<meta
+    property="og:locale"
+    content="en_US"
+>
+
+
+<!-- =========================================================
+     TWITTER / X
+========================================================= -->
+
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="Secure Payment — Last Human Message"
+>
+
+<meta
+    name="twitter:description"
+    content="Complete your payment to unlock a hidden message from another human."
+>
+
+
+<!-- =========================================================
+     FONTS
+========================================================= -->
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =========================================================
+     STYLES
+========================================================= -->
 
 <style>
 
@@ -293,47 +389,72 @@ button:disabled{
 </style>
 </head>
 
+
 <body>
 
-<div class="container">
 
-<div class="symbol">
+<main class="container">
+
+<div
+    class="symbol"
+    aria-hidden="true"
+>
 ◈ ✦ ∞
 </div>
+
 
 <div class="logo">
 GLOBAL HUMAN CONNECTION
 </div>
 
+
 <h1>
-PAYMENT
+SECURE PAYMENT
 </h1>
 
-<div class="card">
+
+<section
+    class="card"
+    aria-label="USDT TRC20 payment"
+>
 
 <div class="amount">
 $2
 </div>
 
+
 <div class="network">
 USDT TRC20
 </div>
 
+
 <div class="info">
+
 Send exactly <b>2 USDT</b><br>
+
 Network:
 <b>TRON (TRC20)</b>
+
 </div>
 
-<div class="wallet"
-     id="walletAddress">
+
+<div
+    class="wallet"
+    id="walletAddress"
+>
 TDq9HhTWvAB1Pft7pum4Ty5k9Kyb2adHdx
 </div>
 
+
 <div class="order">
+
 Order ID:
-<strong id="orderId">Creating...</strong>
+<strong id="orderId">
+Creating...
+</strong>
+
 </div>
+
 
 <button
     id="copyButton"
@@ -342,6 +463,7 @@ Order ID:
 >
 COPY WALLET ADDRESS
 </button>
+
 
 <div class="txid-box">
 
@@ -357,6 +479,7 @@ COPY WALLET ADDRESS
     aria-label="Transaction hash"
 >
 
+
 <button
     id="verifyButton"
     class="verify-button"
@@ -369,10 +492,15 @@ VERIFY PAYMENT
 
 </div>
 
+
 <div class="warning">
+
 Only send USDT on TRC20 network.<br>
+
 Sending another network may result in loss.
+
 </div>
+
 
 <div
     class="status"
@@ -382,9 +510,12 @@ Sending another network may result in loss.
 Creating your order...
 </div>
 
-</div>
 
-</div>
+</section>
+
+
+</main>
+
 
 <script>
 
@@ -467,9 +598,11 @@ function setStatus(
         "status";
 
     if(type){
+
         statusElement.classList.add(
             type
         );
+
     }
 
 }
@@ -532,12 +665,16 @@ async function copyWallet(){
 async function createOrder(){
 
     if(orderCreated){
+
         return;
+
     }
+
 
     setStatus(
         "Creating your order..."
     );
+
 
     try{
 
@@ -559,6 +696,7 @@ async function createOrder(){
 
 
         let result;
+
 
         try{
 
@@ -658,7 +796,9 @@ async function verifyPayment(){
     if(
         verificationInProgress
     ){
+
         return;
+
     }
 
 
@@ -778,6 +918,7 @@ async function verifyPayment(){
 
         let result;
 
+
         try{
 
             result =
@@ -809,11 +950,13 @@ async function verifyPayment(){
                 "success"
             );
 
+
             txidInput.disabled =
                 true;
 
             verifyButton.disabled =
                 true;
+
 
             return;
 
@@ -826,8 +969,9 @@ async function verifyPayment(){
         ){
 
             setStatus(
-                "Payment has not been confirmed yet. Please wait for the transaction to be confirmed on the TRON network.",
+                "Payment has not been confirmed yet. Please wait for the transaction to be confirmed on the TRON network."
             );
+
 
             return;
 
@@ -842,6 +986,7 @@ async function verifyPayment(){
                 "This transaction cannot be used for this order.",
                 "error"
             );
+
 
             return;
 
@@ -872,8 +1017,10 @@ async function verifyPayment(){
         verificationInProgress =
             false;
 
+
         txidInput.disabled =
             false;
+
 
         verifyButton.disabled =
             !orderId;
@@ -919,6 +1066,6 @@ createOrder();
 
 </script>
 
+
 </body>
 </html>
-
