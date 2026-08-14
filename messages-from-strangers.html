@@ -5,11 +5,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Messages From Strangers — Unexpected Human Connections</title>
+<title>Messages From Strangers — Read & Leave Anonymous Messages</title>
 
 <meta
     name="description"
-    content="Read about messages from strangers and the unexpected connections they can create. Discover how Last Human Message connects people through anonymous words."
+    content="Discover messages from strangers around the world. Read an unexpected message from another human and leave your own anonymous words for the next stranger."
 >
 
 <meta
@@ -22,21 +22,29 @@
     href="https://last-message.github.io/last-message/messages-from-strangers.html"
 >
 
-<meta name="theme-color" content="#520000">
+<meta
+    name="theme-color"
+    content="#520000"
+>
 
 
-<!-- Open Graph -->
+<!-- =========================================================
+     OPEN GRAPH
+========================================================= -->
 
-<meta property="og:type" content="article">
+<meta
+    property="og:type"
+    content="website"
+>
 
 <meta
     property="og:title"
-    content="Messages From Strangers — Unexpected Human Connections"
+    content="Messages From Strangers — Read & Leave Anonymous Messages"
 >
 
 <meta
     property="og:description"
-    content="What would a stranger say to you if you knew you would never meet them? Explore unexpected connections through anonymous messages."
+    content="What would a stranger say to you if you knew you would never meet them? Discover anonymous messages from people around the world."
 >
 
 <meta
@@ -55,7 +63,9 @@
 >
 
 
-<!-- Twitter / X -->
+<!-- =========================================================
+     TWITTER / X
+========================================================= -->
 
 <meta
     name="twitter:card"
@@ -69,11 +79,13 @@
 
 <meta
     name="twitter:description"
-    content="Discover unexpected human connections through messages from strangers around the world."
+    content="Discover an unexpected message from a stranger and leave your own words for the next human."
 >
 
 
-<!-- Structured Data -->
+<!-- =========================================================
+     STRUCTURED DATA
+========================================================= -->
 
 <script type="application/ld+json">
 {
@@ -81,15 +93,71 @@
     "@type": "WebPage",
     "name": "Messages From Strangers",
     "url": "https://last-message.github.io/last-message/messages-from-strangers.html",
-    "description": "Explore messages from strangers and unexpected human connections.",
+    "description": "Discover messages from strangers around the world and explore anonymous human connections.",
     "isPartOf": {
         "@type": "WebSite",
         "name": "Last Human Message",
         "url": "https://last-message.github.io/last-message/"
     },
+    "about": {
+        "@type": "Thing",
+        "name": "Messages From Strangers"
+    },
     "inLanguage": "en"
 }
 </script>
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What are messages from strangers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Messages from strangers are words shared between people who do not know each other. They can contain memories, questions, advice, encouragement, stories, or simple thoughts."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Why do people send messages to strangers?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "People may send messages to strangers because they want to share an idea, leave something meaningful behind, encourage another person, or communicate without the expectations that come with an existing relationship."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Can I leave a message for a stranger?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Last Human Message allows one person to discover a message and then leave their own words for another human in the chain."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are the messages anonymous?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The Last Human Message concept focuses on the words rather than public profiles, followers, or social status. Messages are intended to create a connection between strangers."
+            }
+        }
+    ]
+}
+</script>
+
+
+<!-- =========================================================
+     FONTS
+========================================================= -->
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+>
 
 
 <style>
@@ -105,6 +173,7 @@ body{
     min-height:100vh;
 
     font-family:
+        'Inter',
         Arial,
         Helvetica,
         sans-serif;
@@ -182,6 +251,9 @@ nav a{
 
     font-size:14px;
 
+    transition:
+        color .2s ease;
+
 }
 
 nav a:hover{
@@ -193,6 +265,11 @@ nav a:hover{
 h1{
 
     text-align:center;
+
+    font-family:
+        'Space Grotesk',
+        Arial,
+        sans-serif;
 
     font-size:
         clamp(42px,8vw,75px);
@@ -238,9 +315,11 @@ h1{
 
     border-radius:28px;
 
-    backdrop-filter:blur(18px);
+    backdrop-filter:
+        blur(18px);
 
-    -webkit-backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:
+        blur(18px);
 
     box-shadow:
         0 20px 70px
@@ -250,9 +329,17 @@ h1{
 
 h2{
 
-    margin-top:0;
+    margin-top:45px;
 
     font-size:30px;
+
+    line-height:1.2;
+
+}
+
+.card h2:first-child{
+
+    margin-top:0;
 
 }
 
@@ -261,6 +348,8 @@ h3{
     margin-top:35px;
 
     font-size:23px;
+
+    line-height:1.3;
 
 }
 
@@ -315,11 +404,93 @@ li{
 
 }
 
+.faq{
+
+    margin-top:50px;
+
+}
+
+.faq-item{
+
+    padding:
+        20px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+}
+
+.faq-item h3{
+
+    margin:
+        0 0 10px;
+
+    font-size:20px;
+
+}
+
+.faq-item p{
+
+    margin:0;
+
+}
+
+.internal-links{
+
+    margin-top:45px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.internal-links a{
+
+    display:inline-block;
+
+    padding:
+        13px 20px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.25);
+
+    border-radius:40px;
+
+    color:white;
+
+    text-decoration:none;
+
+    background:
+        rgba(255,255,255,.06);
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+}
+
+.internal-links a:hover{
+
+    background:
+        rgba(255,255,255,.12);
+
+    transform:
+        translateY(-2px);
+
+}
+
 .cta{
 
     text-align:center;
 
-    margin-top:45px;
+    margin-top:50px;
 
 }
 
@@ -339,6 +510,10 @@ li{
     text-decoration:none;
 
     font-weight:900;
+
+    box-shadow:
+        0 0 35px
+        rgba(255,255,255,.2);
 
 }
 
@@ -364,13 +539,20 @@ footer{
 
     .card{
 
-        padding:25px 20px;
+        padding:
+            25px 20px;
 
     }
 
     .quote{
 
         font-size:19px;
+
+    }
+
+    h2{
+
+        font-size:27px;
 
     }
 
@@ -382,6 +564,7 @@ footer{
 
 
 <body>
+
 
 <main class="container">
 
@@ -401,7 +584,7 @@ GLOBAL HUMAN ARCHIVE
 
 <nav aria-label="Main navigation">
 
-<a href="index.html">
+<a href="./">
 Last Human Message
 </a>
 
@@ -409,7 +592,8 @@ Last Human Message
 Anonymous Messages
 </a>
 
-<a href="messages-from-strangers.html">
+<a href="messages-from-strangers.html"
+   aria-current="page">
 Messages From Strangers
 </a>
 
@@ -427,10 +611,11 @@ Messages From Strangers
 
 <p class="intro">
 
-Sometimes the most unexpected message
-comes from someone you will never meet.
+A message from a stranger can be simple,
+unexpected, personal, funny, or unforgettable.
 
-What would a stranger choose to tell you?
+What would someone you've never met
+choose to tell you?
 
 </p>
 
@@ -439,20 +624,36 @@ What would a stranger choose to tell you?
 
 
 <h2>
-Why Messages From Strangers Are Interesting
+What Are Messages From Strangers?
 </h2>
 
 <p>
 
-A message from someone you know already comes with
-context. You know their personality, their history,
-and often what they are going to say.
+Messages from strangers are words shared between
+people who do not know each other.
 
-A message from a stranger is different.
+There is something different about reading a message
+when you know almost nothing about the person who
+wrote it.
 
-You have almost no context.
+You don't know their story.
 
-The words have to speak for themselves.
+You don't know what their day looked like.
+
+You don't know what happened before they wrote
+those words.
+
+You only have the message.
+
+</p>
+
+
+<p>
+
+That lack of context creates a special kind of
+curiosity. A short sentence can feel surprisingly
+personal when it comes from someone you may never
+meet.
 
 </p>
 
@@ -466,130 +667,400 @@ But for a moment, they were meant for another human."
 
 
 <h2>
-What Can a Stranger's Message Say?
+Why Do People Send Messages to Strangers?
 </h2>
 
 <p>
 
-There is no predictable answer.
+People communicate with strangers for many reasons.
 
-A stranger might share a memory, an idea, a question,
-a lesson, a warning, a joke, or something they have
-always wanted another person to hear.
+Sometimes they want to share an idea without knowing
+who will eventually read it. Sometimes they want to
+leave behind a memory, a lesson, a question, or a few
+words of encouragement.
+
+There can also be something freeing about writing to
+someone you will probably never meet.
 
 </p>
 
 
 <ul>
 
-<li>A memory they still think about.</li>
+<li>
+To share a thought with someone outside their normal
+circle.
+</li>
 
-<li>A lesson they learned the hard way.</li>
+<li>
+To leave behind a personal memory or lesson.
+</li>
 
-<li>A question for someone somewhere in the world.</li>
+<li>
+To encourage another person somewhere in the world.
+</li>
 
-<li>A thought they wanted to leave behind.</li>
+<li>
+To ask a question without expecting an immediate answer.
+</li>
 
-<li>A few words of encouragement.</li>
+<li>
+To write something meaningful without building a
+public profile around it.
+</li>
 
-<li>A completely unexpected idea.</li>
+<li>
+Simply to see where their words might eventually go.
+</li>
 
 </ul>
 
 
+<h2>
+What Can a Message From a Stranger Say?
+</h2>
+
+<p>
+
+There is no single type of message.
+
+One stranger might write about a moment they still
+remember years later. Another might leave practical
+advice. Someone else might write a joke, a question,
+a warning, or one sentence they hope another person
+will remember.
+
+</p>
+
+
+<p>
+
+The interesting part is that you cannot predict what
+will appear next.
+
+</p>
+
+
 <h3>
-The Curiosity of the Unknown
+A Memory</h3>
+
+<p>
+
+A stranger may leave a small memory from their life:
+a place they visited, a person they loved, a mistake
+they learned from, or an ordinary moment that became
+important later.
+
+</p>
+
+
+<h3>
+A Lesson</h3>
+
+<p>
+
+Some messages are things people wish they had heard
+earlier in life.
+
+A few honest words from someone who has already made
+a mistake can sometimes be more memorable than a long
+lecture.
+
+</p>
+
+
+<h3>
+A Question</h3>
+
+<p>
+
+A message does not always need an answer.
+
+A stranger can leave a question simply because they
+want another human somewhere in the world to think
+about it.
+
+</p>
+
+
+<h3>
+A Few Words of Encouragement</h3>
+
+<p>
+
+Sometimes a short message is enough.
+
+You might not know who needs to read it, but the right
+sentence can arrive at the right moment.
+
+</p>
+
+
+<h2>
+The Curiosity of Reading an Anonymous Message
+</h2>
+
+<p>
+
+Anonymous messages remove much of the usual social
+context.
+
+There is no follower count to influence how you read
+the words.
+
+No profile picture tells you what to expect.
+
+No social status tells you whether the message is
+supposed to matter.
+
+There are simply words written by another person.
+
+</p>
+
+
+<p>
+
+That is what makes messages from strangers interesting:
+you are left to interpret the message itself.
+
+</p>
+
+
+<h2>
+Messages From Strangers Around the World
+</h2>
+
+<p>
+
+Two people can live thousands of miles apart and still
+share the same basic experiences.
+
+People remember.
+
+People worry.
+
+People fall in love.
+
+People make mistakes.
+
+People hope.
+
+People wonder about the future.
+
+</p>
+
+
+<p>
+
+A message can cross that distance in seconds.
+
+The person reading it may never know where the writer
+lived. The writer may never know who eventually found
+their words.
+
+But for a brief moment, two strangers are connected
+through the same thought.
+
+</p>
+
+
+<h2>
+Last Human Message</h2>
+
+<p>
+
+Last Human Message is built around this simple idea.
+
+One human discovers a message from another stranger.
+
+Then that human can leave their own words for the next
+person.
+
+The goal is not to create another social network where
+people compete for attention.
+
+The goal is to create a chain of human messages.
+
+</p>
+
+
+<h3>
+No Followers. No Likes. No Public Profiles.</h3>
+
+<p>
+
+Traditional social platforms often turn communication
+into a competition for attention.
+
+Last Human Message takes a different approach.
+
+The message is the important part.
+
+You do not need an audience.
+
+You do not need followers.
+
+You do not need to become famous.
+
+You simply leave something for another human.
+
+</p>
+
+
+<h2>
+What Would You Say to a Stranger?
+</h2>
+
+<p>
+
+Imagine that someone you will never meet is going to
+read your words.
+
+You have no idea who they are.
+
+They could be thousands of miles away.
+
+They could read your message tomorrow, next month,
+or much later.
+
+</p>
+
+
+<p>
+
+What would you leave behind?
+
+A useful lesson?
+
+A memory?
+
+A question?
+
+A joke?
+
+A warning?
+
+A sentence you wish someone had told you?
+
+</p>
+
+
+<p>
+
+Sometimes the most interesting message is not the
+longest one.
+
+It is the one that makes another person stop and
+think.
+
+</p>
+
+
+<section
+    class="faq"
+    aria-labelledby="faq-heading"
+>
+
+
+<h2 id="faq-heading">
+Frequently Asked Questions About Messages From Strangers
+</h2>
+
+
+<div class="faq-item">
+
+<h3>
+What are messages from strangers?
 </h3>
 
 <p>
 
-Part of the experience is not knowing.
-
-You don't know the stranger's name.
-
-You don't know their age.
-
-You don't know where they live.
-
-You don't know what their life looks like.
-
-You only have their words.
+Messages from strangers are words shared between people
+who do not know each other. They can contain memories,
+questions, advice, encouragement, stories, or simple
+thoughts.
 
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-A Message Across Distance</h3>
+Why do people send messages to strangers?
+</h3>
 
 <p>
 
-Two people can live on opposite sides of the world
-and still share a single thought.
-
-Distance does not matter when the only thing being
-sent is a message.
+People may send messages to strangers to share an idea,
+leave something meaningful behind, encourage another
+person, or communicate without the expectations of an
+existing relationship.
 
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-Last Human Message</h3>
+Can I leave a message for a stranger?
+</h3>
 
 <p>
 
-Last Human Message turns this idea into a simple
-chain.
-
-One human discovers a message from another stranger.
-
-Then that person can leave their own words for the
-next human.
-
-The chain continues from person to person.
+Yes. Last Human Message allows one person to discover
+a message and then leave their own words for another
+human in the chain.
 
 </p>
 
+</div>
+
+
+<div class="faq-item">
 
 <h3>
-No Followers. No Likes. No Profiles.</h3>
+Are messages from strangers anonymous?
+</h3>
 
 <p>
 
-The idea is intentionally different from traditional
-social networks.
-
-The focus is not on building an audience.
-
-It is on the message itself.
-
-A person can leave something behind without needing
-to build a public identity around it.
+The Last Human Message concept focuses on the message
+rather than public profiles, followers, or social status.
+The idea is to create a connection between strangers
+through their words.
 
 </p>
 
+</div>
 
-<h3>
-What Would You Leave Behind?</h3>
 
-<p>
+</section>
 
-If you knew that one stranger somewhere in the world
-would eventually read your words, what would you say?
 
-Would you tell them something useful?
+<div class="internal-links">
 
-Something personal?
+<a href="./">
+Explore Last Human Message
+</a>
 
-Something funny?
+<a href="anonymous-messages.html">
+Explore Anonymous Messages
+</a>
 
-Or simply one sentence you hope they remember?
+<a href="about.html">
+About the Project
+</a>
 
-</p>
+</div>
 
 
 <div class="cta">
 
-<a href="index.html">
+<a href="./">
 DISCOVER A MESSAGE
 </a>
 
@@ -607,6 +1078,7 @@ A connection between strangers around the world.
 
 
 </main>
+
 
 </body>
 </html>
