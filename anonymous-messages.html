@@ -34,7 +34,7 @@
 
 <meta
     property="og:type"
-    content="article"
+    content="website"
 >
 
 <meta
@@ -96,6 +96,7 @@
             "@type": "WebSite",
             "@id": "https://last-message.github.io/last-message/#website",
             "name": "Last Human Message",
+            "alternateName": "Global Human Archive",
             "url": "https://last-message.github.io/last-message/",
             "description": "A global chain of anonymous messages between strangers.",
             "inLanguage": "en"
@@ -104,7 +105,7 @@
         {
             "@type": "WebPage",
             "@id": "https://last-message.github.io/last-message/anonymous-messages.html#webpage",
-            "name": "Anonymous Messages",
+            "name": "Anonymous Messages — Discover Words From Strangers",
             "url": "https://last-message.github.io/last-message/anonymous-messages.html",
             "description": "Discover anonymous messages from strangers around the world and explore human connections through words.",
             "isPartOf": {
@@ -119,6 +120,7 @@
 
         {
             "@type": "BreadcrumbList",
+            "@id": "https://last-message.github.io/last-message/anonymous-messages.html#breadcrumb",
             "itemListElement": [
                 {
                     "@type": "ListItem",
@@ -132,6 +134,41 @@
                     "name": "Anonymous Messages",
                     "item": "https://last-message.github.io/last-message/anonymous-messages.html"
                 }
+            ]
+        },
+
+        {
+            "@type": "FAQPage",
+            "@id": "https://last-message.github.io/last-message/anonymous-messages.html#faq",
+            "mainEntity": [
+
+                {
+                    "@type": "Question",
+                    "name": "What are anonymous messages?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Anonymous messages are messages shared without revealing the identity of the person who wrote them."
+                    }
+                },
+
+                {
+                    "@type": "Question",
+                    "name": "Why do people leave anonymous messages?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "People may leave anonymous messages to share thoughts, memories, questions, advice, or experiences without attaching their identity."
+                    }
+                },
+
+                {
+                    "@type": "Question",
+                    "name": "Can anonymous messages connect strangers?",
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": "Yes. A message can create a small moment of connection between people who may never meet or know each other's identities."
+                    }
+                }
+
             ]
         }
 
@@ -295,7 +332,9 @@ nav a{
 
     font-weight:600;
 
-    transition:.2s;
+    transition:
+        color .2s ease,
+        text-decoration-color .2s ease;
 }
 
 
@@ -449,10 +488,14 @@ p{
     text-decoration-thickness:1px;
 
     text-underline-offset:3px;
+
+    transition:
+        color .2s ease;
 }
 
 
-.content-link:hover{
+.content-link:hover,
+.content-link:focus{
 
     color:white;
 }
@@ -501,6 +544,14 @@ li{
         22px 0;
 
     border-bottom:
+        1px solid
+        rgba(255,255,255,.15);
+}
+
+
+.faq-item:first-of-type{
+
+    border-top:
         1px solid
         rgba(255,255,255,.15);
 }
@@ -555,8 +606,8 @@ li{
     font-weight:900;
 
     transition:
-        transform .2s,
-        box-shadow .2s;
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 
@@ -589,6 +640,14 @@ footer{
 }
 
 
+footer p{
+
+    font-size:14px;
+
+    color:#999;
+}
+
+
 footer a{
 
     color:#ccc;
@@ -597,7 +656,8 @@ footer a{
 }
 
 
-footer a:hover{
+footer a:hover,
+footer a:focus{
 
     color:white;
 
@@ -633,6 +693,18 @@ footer a:hover{
     p{
 
         font-size:17px;
+    }
+
+
+    h2{
+
+        font-size:27px;
+    }
+
+
+    h3{
+
+        font-size:21px;
     }
 
 
@@ -792,12 +864,14 @@ footer a:hover{
 <p>
 
     If you are interested in the broader idea of
+
     <a
         class="content-link"
         href="messages-from-strangers.html"
     >
         messages from strangers
     </a>,
+
     explore our guide to unexpected connections
     between people who may never meet.
 
@@ -849,12 +923,14 @@ footer a:hover{
 <p>
 
     You can return to the
+
     <a
         class="content-link"
         href="index.html"
     >
         Last Human Message
     </a>
+
     homepage to discover the experience.
 
 </p>
@@ -1010,11 +1086,13 @@ footer a:hover{
     <p>
 
         Read
+
         <a href="messages-from-strangers.html">
             messages from strangers
         </a>
 
         or learn more
+
         <a href="about.html">
             about Last Human Message
         </a>.
