@@ -8,10 +8,4 @@
         <changefreq>weekly</changefreq>
     </url>
 
-    <url>
-        <loc>https://last-message.github.io/last-message/payment.html</loc>
-        <priority>0.7</priority>
-        <changefreq>monthly</changefreq>
-    </url>
-
 </urlset>
