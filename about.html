@@ -6,16 +6,20 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>About Last Human Message — Connecting Strangers Through Messages</title>
+<!-- =========================================================
+     SEO
+========================================================= -->
+
+<title>About Last Human Message — A Global Human Connection</title>
 
 <meta
     name="description"
-    content="Learn about Last Human Message, a global experiment where strangers discover anonymous messages and leave words for the next human."
+    content="Learn about Last Human Message, a global experiment connecting strangers through anonymous messages and simple human-to-human communication."
 >
 
 <meta
     name="robots"
-    content="index, follow, max-image-preview:large"
+    content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 >
 
 <link
@@ -24,18 +28,28 @@
 >
 
 <meta
+    name="theme-color"
+    content="#520000"
+>
+
+
+<!-- =========================================================
+     OPEN GRAPH
+========================================================= -->
+
+<meta
     property="og:type"
     content="website"
 >
 
 <meta
     property="og:title"
-    content="About Last Human Message"
+    content="About Last Human Message — A Global Human Connection"
 >
 
 <meta
     property="og:description"
-    content="A global experiment connecting strangers through anonymous messages."
+    content="Learn about Last Human Message, a global experiment connecting strangers through anonymous messages."
 >
 
 <meta
@@ -48,10 +62,155 @@
     content="Last Human Message"
 >
 
+<meta
+    property="og:locale"
+    content="en_US"
+>
+
+
+<!-- =========================================================
+     TWITTER / X
+========================================================= -->
+
+<meta
+    name="twitter:card"
+    content="summary"
+>
+
+<meta
+    name="twitter:title"
+    content="About Last Human Message"
+>
+
+<meta
+    name="twitter:description"
+    content="A global experiment connecting strangers through anonymous messages."
+>
+
+
+<!-- =========================================================
+     STRUCTURED DATA — WEBSITE
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Last Human Message",
+    "url": "https://last-message.github.io/last-message/",
+    "description": "A global experiment connecting strangers through anonymous messages.",
+    "inLanguage": "en"
+}
+</script>
+
+
+<!-- =========================================================
+     STRUCTURED DATA — ABOUT PAGE
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "name": "About Last Human Message",
+    "url": "https://last-message.github.io/last-message/about.html",
+    "description": "Learn about Last Human Message, a global experiment connecting strangers through anonymous messages.",
+    "isPartOf": {
+        "@type": "WebSite",
+        "name": "Last Human Message",
+        "url": "https://last-message.github.io/last-message/"
+    },
+    "inLanguage": "en"
+}
+</script>
+
+
+<!-- =========================================================
+     STRUCTURED DATA — BREADCRUMB
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Last Human Message",
+            "item": "https://last-message.github.io/last-message/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://last-message.github.io/last-message/about.html"
+        }
+    ]
+}
+</script>
+
+
+<!-- =========================================================
+     STRUCTURED DATA — FAQ
+========================================================= -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "What is Last Human Message?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Last Human Message is a global experiment built around connecting strangers through anonymous messages."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "How does Last Human Message work?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A person discovers a hidden message left by another human and can then leave their own words for the next stranger."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Are the messages anonymous?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The project is designed around anonymous human-to-human communication rather than public profiles, followers, or social identities."
+            }
+        }
+    ]
+}
+</script>
+
+
+<!-- =========================================================
+     FONTS
+========================================================= -->
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Space+Grotesk:wght@500;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<!-- =========================================================
+     STYLES
+========================================================= -->
+
 <style>
 
 *{
     box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -61,6 +220,7 @@ body{
     min-height:100vh;
 
     font-family:
+        'Inter',
         Arial,
         Helvetica,
         sans-serif;
@@ -77,17 +237,19 @@ body{
 
 }
 
+
 .container{
 
     width:90%;
 
-    max-width:850px;
+    max-width:900px;
 
     margin:auto;
 
-    padding:70px 20px;
+    padding:65px 20px;
 
 }
+
 
 .symbol{
 
@@ -99,6 +261,7 @@ body{
         0 0 30px red;
 
 }
+
 
 .logo{
 
@@ -116,41 +279,91 @@ body{
 
 }
 
+
+nav{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:18px;
+
+    margin-top:35px;
+
+}
+
+
+nav a{
+
+    color:#ddd;
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    transition:.2s;
+
+}
+
+
+nav a:hover,
+nav a:focus{
+
+    color:white;
+
+    text-decoration:underline;
+
+}
+
+
 h1{
 
     text-align:center;
 
+    font-family:
+        'Space Grotesk',
+        Arial,
+        sans-serif;
+
     font-size:
         clamp(42px,8vw,72px);
 
+    line-height:1;
+
     margin:
-        45px 0 30px;
+        55px 0 30px;
+
+    text-shadow:
+        0 0 20px rgba(255,0,0,.8);
 
 }
 
-h2{
 
-    margin-top:45px;
+.intro{
 
-    font-size:28px;
+    max-width:720px;
 
-}
+    margin:
+        0 auto 45px;
 
-p{
+    text-align:center;
 
-    font-size:19px;
+    font-size:21px;
 
     line-height:1.9;
 
-    color:#e5e5e5;
+    color:#eee;
 
 }
+
 
 .card{
 
     margin-top:35px;
 
-    padding:35px;
+    padding:40px 35px;
 
     background:
         rgba(255,255,255,.08);
@@ -159,23 +372,130 @@ p{
         1px solid
         rgba(255,255,255,.2);
 
-    border-radius:25px;
+    border-radius:28px;
+
+    backdrop-filter:blur(18px);
+
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+        0 20px 70px
+        rgba(0,0,0,.7);
 
 }
 
-a{
 
-    color:#ffffff;
+h2{
+
+    margin-top:45px;
+
+    font-family:
+        'Space Grotesk',
+        Arial,
+        sans-serif;
+
+    font-size:28px;
 
 }
+
+
+h2:first-child{
+
+    margin-top:0;
+
+}
+
+
+h3{
+
+    margin-top:35px;
+
+    font-family:
+        'Space Grotesk',
+        Arial,
+        sans-serif;
+
+    font-size:23px;
+
+}
+
+
+p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#e5e5e5;
+
+}
+
+
+.card a:not(.home){
+
+    color:#ffcccc;
+
+}
+
+
+.card a:not(.home):hover{
+
+    color:white;
+
+}
+
+
+.faq{
+
+    margin-top:50px;
+
+}
+
+
+.faq-item{
+
+    padding:
+        22px 0;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,.15);
+
+}
+
+
+.faq-item:first-of-type{
+
+    border-top:
+        1px solid
+        rgba(255,255,255,.15);
+
+}
+
+
+.faq-item h3{
+
+    margin:
+        0 0 10px;
+
+}
+
+
+.faq-item p{
+
+    margin:0;
+
+}
+
 
 .home{
 
     display:inline-block;
 
-    margin-top:35px;
+    margin-top:40px;
 
-    padding:16px 30px;
+    padding:
+        17px 32px;
 
     border-radius:40px;
 
@@ -187,7 +507,18 @@ a{
 
     font-weight:900;
 
+    transition:.2s;
+
 }
+
+
+.home:hover,
+.home:focus{
+
+    transform:scale(1.04);
+
+}
+
 
 footer{
 
@@ -195,9 +526,39 @@ footer{
 
     text-align:center;
 
-    color:#aaa;
+    color:#999;
 
     font-size:14px;
+
+}
+
+
+@media(max-width:600px){
+
+    .container{
+
+        padding-top:45px;
+
+    }
+
+    .card{
+
+        padding:
+            30px 20px;
+
+    }
+
+    .intro{
+
+        font-size:19px;
+
+    }
+
+    p{
+
+        font-size:17px;
+
+    }
 
 }
 
@@ -205,91 +566,384 @@ footer{
 
 </head>
 
+
 <body>
 
 <main class="container">
 
-<div class="symbol">
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<div
+    class="symbol"
+    aria-hidden="true"
+>
 ◈ ✦ ∞
 </div>
+
 
 <div class="logo">
 GLOBAL HUMAN ARCHIVE
 </div>
 
+
+<nav aria-label="Main navigation">
+
+<a href="index.html">
+Last Human Message
+</a>
+
+<a href="anonymous-messages.html">
+Anonymous Messages
+</a>
+
+<a href="messages-from-strangers.html">
+Messages From Strangers
+</a>
+
+<a
+    href="about.html"
+    aria-current="page"
+>
+About
+</a>
+
+</nav>
+
+
+<!-- =========================================================
+     MAIN INTRO
+========================================================= -->
+
 <h1>
 About Last Human Message
 </h1>
 
-<div class="card">
+
+<p class="intro">
+
+A simple global experiment about what can happen
+when one human leaves words for another human
+they may never meet.
+
+</p>
+
+
+<!-- =========================================================
+     CONTENT
+========================================================= -->
+
+<section class="card">
+
 
 <h2>
-What is Last Human Message?
+What Is Last Human Message?
 </h2>
 
-<p>
-Last Human Message is a simple global experiment built around one idea:
-connecting strangers through words.
-</p>
 
 <p>
-One person discovers a message left by another human. After reading it,
-they have the opportunity to leave their own message for the next stranger.
+
+Last Human Message is a global experiment built around
+one simple idea: connecting strangers through words.
+
 </p>
+
+
+<p>
+
+One person discovers a message left by another human.
+After reading it, they have the opportunity to leave
+their own message for the next stranger.
+
+</p>
+
+
+<p>
+
+The goal is not to build another traditional social
+network. Instead, the project explores what happens when
+the message itself becomes the connection between people.
+
+</p>
+
 
 <h2>
-Why was it created?
+Why Was Last Human Message Created?
 </h2>
 
-<p>
-The internet connects billions of people, but many online interactions are
-built around profiles, followers, likes and algorithms.
-</p>
 
 <p>
-Last Human Message takes a different approach. It focuses on a simple
-human-to-human connection between people who may never meet.
+
+The internet connects billions of people, but many online
+interactions are built around profiles, followers, likes,
+comments and algorithms.
+
 </p>
+
+
+<p>
+
+Last Human Message takes a different approach.
+
+</p>
+
+
+<p>
+
+There is no need to build a public identity around the
+message. The focus is simply on one person discovering
+words left by another person.
+
+</p>
+
 
 <h2>
-How does it work?
+How Does Last Human Message Work?
 </h2>
 
-<p>
-A person unlocks a hidden message. They read the words left by another
-stranger and can then leave a message for the next human.
-</p>
 
 <p>
-The result is a chain of messages connecting people across the world.
+
+The experience begins with a hidden message.
+
+A person unlocks the message and discovers words left
+by another stranger.
+
 </p>
+
+
+<p>
+
+After reading it, they can leave their own words for the
+next human.
+
+</p>
+
+
+<p>
+
+The result is a chain of messages connecting people who
+may live in completely different places and may never
+know one another.
+
+</p>
+
 
 <h2>
-The idea behind the project
+Anonymous Human Connections
 </h2>
 
+
 <p>
+
+An important part of the idea is anonymity.
+
+When there is no public profile, follower count or
+personal brand attached to the interaction, the words
+can become more important than the identity behind them.
+
+</p>
+
+
+<p>
+
+This is closely related to the idea of
+<a href="anonymous-messages.html">
+anonymous messages
+</a>
+and the unexpected experience of receiving
+<a href="messages-from-strangers.html">
+messages from strangers
+</a>.
+
+</p>
+
+
+<h2>
+No Followers. No Likes. No Profiles.
+</h2>
+
+
+<p>
+
+Traditional social platforms often encourage people to
+build an audience and compete for attention.
+
+Last Human Message is intentionally different.
+
+</p>
+
+
+<p>
+
+The project is centered around a single human interaction:
+one message discovered by one person, followed by another
+message left for someone else.
+
+</p>
+
+
+<h2>
+The Idea Behind the Project
+</h2>
+
+
+<p>
+
 A message can travel further than the person who wrote it.
-A stranger somewhere in the world may eventually read words that were
-written by someone they will never know.
+
 </p>
 
+
 <p>
-That is the experiment behind Last Human Message.
+
+Someone somewhere in the world may eventually read words
+written by a person they will never meet.
+
+They may know nothing about that person's life, location
+or identity.
+
+They only have the words.
+
 </p>
+
+
+<p>
+
+That uncertainty is part of the experiment.
+
+</p>
+
+
+<h2>
+What Would You Leave Behind?
+</h2>
+
+
+<p>
+
+Imagine knowing that one stranger somewhere in the world
+would eventually read your words.
+
+</p>
+
+
+<p>
+
+Would you leave a memory?
+
+A useful lesson?
+
+A question?
+
+A strange thought?
+
+Something funny?
+
+Or perhaps one sentence you hope another human remembers?
+
+</p>
+
+
+<p>
+
+There is no required answer.
+
+The message is yours.
+
+</p>
+
+
+<!-- =========================================================
+     FAQ
+========================================================= -->
+
+<section
+    class="faq"
+    aria-labelledby="faq-title"
+>
+
+<h2 id="faq-title">
+Frequently Asked Questions
+</h2>
+
+
+<div class="faq-item">
+
+<h3>
+What is Last Human Message?
+</h3>
+
+<p>
+
+Last Human Message is a global experiment connecting
+strangers through anonymous messages and simple
+human-to-human communication.
+
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>
+How does Last Human Message work?
+</h3>
+
+<p>
+
+A person discovers a hidden message left by another
+human and can then leave their own words for the next
+stranger.
+
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>
+Are the messages anonymous?
+</h3>
+
+<p>
+
+The project is designed around anonymous communication
+rather than public profiles, followers or social identities.
+
+</p>
+
+</div>
+
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
 
 <a
     class="home"
     href="index.html"
 >
-BACK TO LAST HUMAN MESSAGE
+DISCOVER A MESSAGE
 </a>
 
-</div>
+
+</section>
+
 
 <footer>
+
 A connection between strangers around the world.
+
 </footer>
+
 
 </main>
 
